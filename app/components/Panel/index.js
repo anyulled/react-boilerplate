@@ -4,7 +4,7 @@
  *
  */
 import React from "react";
-import {Col, Panel, ButtonGroup, Button, Glyphicon, Label} from "react-bootstrap";
+import {Panel, ButtonGroup, Button, Glyphicon, Label} from "react-bootstrap";
 
 class MyPanel extends React.Component { // eslint-disable-line react/prefer-stateless-function
   constructor(...args) {
@@ -30,11 +30,11 @@ class MyPanel extends React.Component { // eslint-disable-line react/prefer-stat
         </ButtonGroup>
       </div>
     </div>;
-    return (<Col sm={this.state.size}>
-      <Panel header={header} collapsible expanded={this.state.open} draggable="true">
+    return (
+      <Panel header={header} collapsible expanded={this.state.open}>
         {this.props.children}
       </Panel>
-    </Col>);
+    );
   }
 }
 
