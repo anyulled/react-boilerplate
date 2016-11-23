@@ -32,7 +32,7 @@ class GridLayout extends React.Component { // eslint-disable-line react/prefer-s
     return (
       <div>
         <HeaderContainer />
-        <BreadcrumbContainer />
+        <BreadcrumbContainer {...this.props} />
         <ReactGridLayout className="layout" layout={layout} cols={12} rowHeight={30} width={1200}>
           <div className="react-grid-item" key={'dealCore'}>
             <span className="text"><Deal /></span>

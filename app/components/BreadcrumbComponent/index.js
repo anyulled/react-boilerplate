@@ -6,7 +6,7 @@
 
 import React from 'react';
 import { Nav, NavItem, Grid, Row, Col } from 'react-bootstrap';
-import PageActions from '../PageActions';
+import PageActionsContainer from '../../containers/PageActionsContainer';
 
 class BreadcrumbComponent extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
@@ -22,14 +22,18 @@ class BreadcrumbComponent extends React.Component { // eslint-disable-line react
                 <NavItem disabled>Main Data</NavItem>
               </Nav>
             </Col>
-            <Col md={6} lg={4}>
-              <PageActions />
-            </Col>
+            {this.props.pageActionsBreadcrumb &&
+              <PageActionsContainer {...this.props} />
+            }
           </Row>
         </Grid>
       </div>
     );
   }
 }
+
+BreadcrumbComponent.propTypes = {
+  pageActionsBreadcrumb: React.PropTypes.bool.isRequired,
+};
 
 export default BreadcrumbComponent;
