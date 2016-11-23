@@ -1,0 +1,38 @@
+.page-header-block {
+    background: #e4e9ed;
+    border-bottom: 1px solid #bbc2c7;
+    padding: 0 10px;
+    z-index: 9;
+}
+
+.page-header-block .nav .current-page-title {
+    font-size: 12px;
+    padding:0;
+    margin-right: 25px;
+}
+
+.page-header-block .nav li{
+    margin-right: 20px;
+}
+
+.page-header-block .nav a{
+    color: #169BD5;
+    font-size: 12px;
+    padding:0;
+}
+
+
+.page-header-block .nav .disabled a{
+    color: #169BD5;
+    font-weight: bold;
+}
+
+
+.page-header-block .nav .current-page-title.disabled a{
+    color: #333333;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+    background: none;
+    color: #169BD5;
+}
