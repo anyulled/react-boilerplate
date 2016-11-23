@@ -1,0 +1,42 @@
+.main-data{
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    float: left;
+    padding: 15px 0 0;
+    width: 50%;
+}
+
+.main-data .description{
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 13px;
+    height: 39px;
+    padding: 0px 20px;
+}
+
+.main-data form{
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    float: left;
+    padding: 20px 20px 0px;
+    width: 100%;
+}
+
+.main-data form label{
+    margin-bottom: 5px;
+}
+
+.main-data form .row{
+    margin-bottom: 20px;
+}
+
+.main-data form .optional{
+    color: rgba(255, 255, 255, 0.5);
+    float: left;
+    font-size: 11px;
+    font-style: italic;
+    margin-top: 25px;
+}
+
+.main-data form .btn-group{
+    display: block;
+}

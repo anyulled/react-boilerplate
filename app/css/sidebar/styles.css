@@ -1,0 +1,77 @@
+.sidebar{
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    float: left;
+    width: 50%;
+}
+
+.sidebar ul{
+    padding-right: 2%;
+}
+
+.sidebar li{
+    margin-top: 13px !important;
+}
+
+.sidebar li a{
+    background: url(arrow-down2.png) right center no-repeat #1b6993;
+    border-radius: 8px;
+    color: #ffffff;
+    padding: 15px 45px 15px 20px;
+    text-transform: uppercase;
+}
+
+.sidebar li a:hover, .sidebar li a:focus{
+    background: url(arrow-down2.png) right center no-repeat #1b6993;
+    color: #ffffff;
+}
+
+.sidebar li a .percent{
+    color: #e33737;
+    margin-left: 5px;
+}
+
+.sidebar li a .percent.done{
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.sidebar li a .edit{
+    color: #45c4fd;
+    cursor: pointer;
+    display: none;
+    margin-left: 15px;
+}
+
+.sidebar li a .expand{
+    color: rgba(255, 255, 255, 0.5);
+    display: none;
+    float: right;
+    font-size: 11px;
+    font-style: italic;
+    margin-right: 10px;
+    margin-top: 1px;
+    text-transform: none;
+}
+
+.sidebar li a img{
+    float: right;
+}
+
+.sidebar li a:hover .edit, .sidebar li a:hover .expand{
+    display: inline;
+}
+
+.sidebar .blocked a, .sidebar .blocked a:hover{
+    background: #1b6993;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: default;
+    padding: 15px 20px;
+}
+
+.sidebar .blocked .not-available{
+    color: rgba(255, 255, 255, 0.5);
+    float: right;
+    font-size: 11px;
+    font-style: italic;
+    margin-top: 1px;
+    text-transform: none;
+}

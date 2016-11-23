@@ -1,5 +1,5 @@
 .page-header-box{
-    margin-top: 50px;
+    margin-top: 45px;
 }
 
 .page-header-box .page-header{
@@ -9,6 +9,7 @@
 }
 
 .page-header-box h1{
+    font-size: 31px;
     font-weight: bold;
     margin: 0px;
 }
@@ -28,7 +29,7 @@
 .page-header-box .page-actions {
     background: none;
     height: auto;
-    margin-right: 0px;
+    margin-right: -10px;
 }
 
 .page-header-box .autosave{

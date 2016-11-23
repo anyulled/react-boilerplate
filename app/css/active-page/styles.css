@@ -1,0 +1,14 @@
+.active-page{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    float: left;
+    padding: 20px;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.active-page span{
+    color: #e33737;
+    margin-left: 5px;
+}

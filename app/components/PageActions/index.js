@@ -37,26 +37,24 @@ class PageActions extends React.Component { // eslint-disable-line react/prefer-
       );
     }
     return (
-      <Grid fluid className="page-actions">
-        <Row>
-          <Col md={5} lg={6}>
-            <ListGroup className="autosave">
-              <ListGroupItem>
-                Autosaved draft 10:00:21 31.12.1999
-              </ListGroupItem>
-              <ListGroupItem>
-                <Button>Restore</Button>
-                <Button bsStyle="danger">Delete deal</Button>
-              </ListGroupItem>
-            </ListGroup>
-          </Col>
+      <Row className="page-actions">
+        <Col md={5} lg={6}>
+          <ListGroup className="autosave">
+            <ListGroupItem>
+              Autosaved draft 10:00:21 31.12.1999
+            </ListGroupItem>
+            <ListGroupItem>
+              <Button>Restore</Button>
+              <Button bsStyle="danger">Delete deal</Button>
+            </ListGroupItem>
+          </ListGroup>
+        </Col>
 
-          <Col md={7} lg={6}>
-            <Button bsStyle="primary" bsSize="lg" className="no-margin-left">Save</Button>
-            <Button bsStyle="primary" bsSize="lg">Send to approval</Button>
-          </Col>
-        </Row>
-      </Grid>
+        <Col md={7} lg={6}>
+          <Button bsStyle="primary" bsSize="lg" className="no-margin-left">Save</Button>
+          <Button bsStyle="primary" bsSize="lg">Send to approval</Button>
+        </Col>
+      </Row>
     );
   }
 }
