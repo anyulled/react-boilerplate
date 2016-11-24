@@ -1,5 +1,5 @@
 .react-grid-layout.layout {
-  padding-top: 90px;
+  padding-top: 50px;
   position: relative;
   transition: height 200ms ease;
 }

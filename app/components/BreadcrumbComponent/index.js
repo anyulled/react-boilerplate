@@ -5,11 +5,18 @@
 */
 
 import React from 'react';
+import { Link } from 'react-router';
 import { Nav, NavItem, Grid, Row, Col } from 'react-bootstrap';
 import PageActionsContainer from '../../containers/PageActionsContainer';
 
 class BreadcrumbComponent extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
+    const breadcrumbItems = this.props.routes ? this.props.routes.filter((r) => r.path).map((crumb, id) =>
+      <Link to={crumb.path} key={id}>
+        {crumb.name}
+      </Link>
+    ) : null;
+
     return (
       <div className="page-header-block navbar-fixed-top">
         <Grid fluid>
@@ -20,6 +27,7 @@ class BreadcrumbComponent extends React.Component { // eslint-disable-line react
                 <NavItem title="Item">DEALS</NavItem>
                 <NavItem title="Item">DEAL ID XXX</NavItem>
                 <NavItem disabled>Main Data</NavItem>
+                {breadcrumbItems}
               </Nav>
             </Col>
             {this.props.pageActionsBreadcrumb &&
@@ -34,6 +42,7 @@ class BreadcrumbComponent extends React.Component { // eslint-disable-line react
 
 BreadcrumbComponent.propTypes = {
   pageActionsBreadcrumb: React.PropTypes.bool.isRequired,
+  routes: React.PropTypes.array.isRequired,
 };
 
 export default BreadcrumbComponent;

@@ -13,9 +13,6 @@ import Contacts from '../Contacts';
 import Derisking from '../Derisking';
 import Utilization from '../Utilization';
 import RiskReturn from '../RiskReturn';
-import HeaderContainer from '../../containers/HeaderContainer';
-import BreadcrumbContainer from '../../containers/BreadcrumbContainer';
-import FooterContainer from '../../containers/FooterContainer';
 
 class GridLayout extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
@@ -31,8 +28,6 @@ class GridLayout extends React.Component { // eslint-disable-line react/prefer-s
     ];
     return (
       <div>
-        <HeaderContainer />
-        <BreadcrumbContainer {...this.props} />
         <ReactGridLayout className="layout" layout={layout} cols={12} rowHeight={30} width={1200}>
           <div className="react-grid-item" key={'dealCore'}>
             <span className="text"><Deal /></span>
@@ -59,7 +54,6 @@ class GridLayout extends React.Component { // eslint-disable-line react/prefer-s
             <RiskReturn />
           </div>
         </ReactGridLayout>
-        <FooterContainer />
       </div>
     );
   }
