@@ -16,7 +16,6 @@ class BreadcrumbComponent extends React.Component { // eslint-disable-line react
         {crumb.name}
       </Link>
     ) : null;
-
     return (
       <div className="page-header-block navbar-fixed-top">
         <Grid fluid>
@@ -24,9 +23,6 @@ class BreadcrumbComponent extends React.Component { // eslint-disable-line react
             <Col md={6} lg={8}>
               <Nav bsStyle="pills">
                 <NavItem disabled className="current-page-title">You are here:</NavItem>
-                <NavItem title="Item">DEALS</NavItem>
-                <NavItem title="Item">DEAL ID XXX</NavItem>
-                <NavItem disabled>Main Data</NavItem>
                 {breadcrumbItems}
               </Nav>
             </Col>

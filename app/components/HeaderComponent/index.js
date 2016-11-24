@@ -5,9 +5,10 @@
 */
 
 import React from 'react';
-import { Navbar, Nav, NavDropdown, NavItem, Glyphicon } from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown, NavItem, Glyphicon, MenuItem } from 'react-bootstrap';
 
 class HeaderComponent extends React.Component { // eslint-disable-line react/prefer-stateless-function
+
   render() {
     return (
       <Navbar fluid fixedTop className="navbar navbar-default">
@@ -18,8 +19,11 @@ class HeaderComponent extends React.Component { // eslint-disable-line react/pre
         </Navbar.Header>
 
         <Nav activeKey={2}>
-          <NavItem eventKey={1} href="#">Dashboard</NavItem>
-          <NavItem eventKey={2} href="#">Deals</NavItem>
+          <NavItem eventKey={1} href="/">Dashboard</NavItem>
+          <NavDropdown eventKey={2} title="Deals" id="deals-dropdown">
+            <MenuItem eventKey={2.1} href="/deals_v2">Deals v2</MenuItem>
+            <MenuItem eventKey={2.2} href="/deals_v3">Deals v3</MenuItem>
+          </NavDropdown>
           <NavItem eventKey={3} href="#">Instruments</NavItem>
         </Nav>
 

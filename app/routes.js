@@ -22,7 +22,7 @@ export default function createRoutes(store) {
       name: 'home',
       getComponent(nextState, cb) {
         const importModules = Promise.all([
-          System.import('containers/HomePage'),
+          System.import('containers/App'),
         ]);
 
         const renderRoute = loadModule(cb);
@@ -33,27 +33,31 @@ export default function createRoutes(store) {
 
         importModules.catch(errorLoading);
       },
+      childRoutes: [
+        {
+          path: '/deals_v2',
+          name: 'deals_v2',
+          getComponent(nextState, cb) {
+            System.import('containers/Version2')
+              .then(loadModule(cb))
+              .catch(errorLoading);
+          },
+        },
+        {
+          path: '/deals_v3',
+          name: 'deals_v3',
+          getComponent(location, cb) {
+            System.import('components/GridLayout')
+              .then(loadModule(cb))
+              .catch(errorLoading);
+          },
+        },
+      ],
     }, {
       path: '/distribute',
       name: 'distributePage',
       getComponent(location, cb) {
         System.import('containers/DistributePage')
-          .then(loadModule(cb))
-          .catch(errorLoading);
-      },
-    }, {
-      path: '/gridlayout',
-      name: 'gridLayout',
-      getComponent(location, cb) {
-        System.import('components/GridLayout')
-          .then(loadModule(cb))
-          .catch(errorLoading);
-      },
-    }, {
-      path: '/v2',
-      name: 'version2',
-      getComponent(location, cb) {
-        System.import('containers/Version2')
           .then(loadModule(cb))
           .catch(errorLoading);
       },

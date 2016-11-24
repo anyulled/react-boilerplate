@@ -15,23 +15,18 @@
     margin-left: -10px;
 }
 
-.page-header-block .nav li{
-    margin-right: 20px;
-}
-
 .page-header-block .nav a{
     color: #169BD5;
     font-size: 12px;
+    margin-right: 20px;
     padding:0;
     text-transform: uppercase;
 }
 
-
-.page-header-block .nav .disabled a{
+.page-header-block .nav a:last-child {
     color: #169BD5;
     font-weight: bold;
 }
-
 
 .page-header-block .nav .current-page-title.disabled a{
     color: #333333;

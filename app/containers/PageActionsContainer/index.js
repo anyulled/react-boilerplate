@@ -16,7 +16,7 @@ export class PageActionsContainer extends React.Component { // eslint-disable-li
       pageActionsPosition: '',
     };
 
-    if (this.props.location.pathname === '/gridlayout') {
+    if (this.props.location.pathname === '/deals_v3') {
       this.state = {
         pageActionsPosition: 'breadcrumb',
       };

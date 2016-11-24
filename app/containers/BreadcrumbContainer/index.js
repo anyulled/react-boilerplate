@@ -17,7 +17,7 @@ export class BreadcrumbContainer extends React.Component { // eslint-disable-lin
       pageActionsBreadcrumb: false,
     };
 
-    if (this.props.location.pathname === '/gridlayout') {
+    if (this.props.location.pathname === '/deals_v3') {
       this.state = {
         pageActionsBreadcrumb: true,
       };
