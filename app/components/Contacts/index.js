@@ -9,8 +9,11 @@ import {Link} from "react-router";
 import Panel from "../Panel";
 
 class Contacts extends React.Component { // eslint-disable-line react/prefer-stateless-function
+  constructor(props){
+    super(props);
+  }
   render() {
-    return (<Panel name="Contacts">
+    return (<Panel name="Contacts"  onToggleSize={ this.props.onToggleSize } >
       <Button bsStyle="primary" bsSize="small" block>Add new Contact</Button>
       <Table condensed bordered>
         <tbody>

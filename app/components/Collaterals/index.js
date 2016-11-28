@@ -9,8 +9,11 @@ import {Link} from "react-router";
 import Panel from "../Panel";
 
 class Collaterals extends React.Component { // eslint-disable-line react/prefer-stateless-function
+  constructor(props){
+    super(props);
+  }
   render() {
-    return (<Panel name="Collaterals">
+    return (<Panel name="Collaterals" onToggleSize={ this.props.onToggleSize } >
       <Table condensed bordered>
         <tbody>
         <tr>

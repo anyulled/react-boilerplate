@@ -9,8 +9,11 @@ import {Link} from "react-router";
 import Panel from "../Panel";
 
 class Counterparties extends React.Component { // eslint-disable-line react/prefer-stateless-function
+ constructor(props){
+    super(props);
+  }
   render() {
-    return (<Panel name="Counterparties">
+    return (<Panel name="Counterparties" onToggleSize={ this.props.onToggleSize }>
       <Button bsStyle="primary" bsSize="small" block>Add new Client</Button>
       <Table condensed>
         <tbody>
