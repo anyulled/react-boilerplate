@@ -52,6 +52,15 @@ export default function createRoutes(store) {
               .catch(errorLoading);
           },
         },
+        {
+          path: '/deals_v4',
+          name: 'version4',
+          getComponent(location, cb) {
+            System.import('containers/Version4')
+              .then(loadModule(cb))
+              .catch(errorLoading);
+          },
+        },
       ],
     }, {
       path: '/distribute',

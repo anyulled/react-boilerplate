@@ -1,0 +1,212 @@
+.deal-header{
+    padding-top: 40px;
+}
+
+.deal-header .page-header-block{
+    padding: 0px;
+}
+
+.deal-header h1{
+    float: left;
+    font-size: 30px;
+    font-weight: 600;
+    margin: 5px 0px;
+}
+
+.deal-header h1 span{
+    color: #888888;
+    cursor: pointer;
+    float: left;
+    font-size: 25px;
+    margin-top: 4px;
+    margin-right: 5px;
+}
+
+.deal-header .autosave{
+    color: rgba(29, 29, 29, 0.65);
+    float: right;
+    margin-top: 7px;
+}
+
+.deal-header .autosave small{    
+    float: right;
+    margin-right: 3px;
+    margin-top: 4px;
+    text-align: right;
+}
+
+.deal-header .autosave span{
+    color: rgba(0, 0, 0, 0.4);
+    float: right;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 3px;
+}
+
+.deal-header .autosave button{
+    float: right;
+    margin-left: 10px;
+    margin-top: 2px;
+}
+
+.deal-header .deal-details{
+    float: left;     
+    list-style: none;
+    margin: 8px 0px 0px 10px;    
+    padding: 0px;
+}
+
+.deal-header .deal-details li{
+    border-left: 1px solid rgba(0, 0, 0, 0.12);
+    color: rgba(29, 29, 29, 0.65);
+    float: left;
+    font-style: italic;
+    height: 29px;
+    line-height: 29px;
+    padding: 0px 10px;
+    text-align: center;
+    width: 120px;
+}
+
+.deal-header .deal-details li span{
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+}
+
+.deal-header .nav{
+    float: left;
+    margin: 0px;
+    margin-left: -10px;
+    width: 100%;
+}
+
+.deal-header .nav li{
+    float: left;    
+}
+
+.deal-header .nav li a{
+    color: #333333;
+    float: left;
+    font-size: 12px;
+    padding: 7px 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.deal-header .nav li.active a{
+    border-bottom: 4px solid #169BD5;
+    padding-bottom: 3px;
+    font-weight: 600;
+}
+
+.deal-header .nav li a:hover{
+    background: none;
+}
+
+.deal-header .nav li a span{
+    float: left;
+    font-size: 16px;
+    margin-right: 5px;
+    margin-top: -2px;
+}
+
+.navbar-fixed-top + .deal-content{
+    padding-top: 32px;
+}
+
+.deal-content .row-stretch{
+    float: left;
+    width: 100%;
+    min-height: 100vh;
+    padding: 110px 0px 60px !important;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+.deal-content .deal-sections{
+    float: left;
+    width: 200px;    
+}
+
+.deal-sections .switch-view{
+    color: rgba(29, 29, 29, 0.65);
+    cursor: pointer;
+    float: left;
+    padding: 5px 10px 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.deal-sections .switch-view small{
+    display: inline-block;
+    font-size: 12px;
+    line-height: normal;
+    padding-top: 8px;
+    vertical-align: middle;
+}
+
+.deal-sections .switch-view span{
+    display: inline-block;
+    font-size: 20px;
+    line-height: normal;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.deal-sections .nav{
+    float: left;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.deal-sections .nav li{
+    float: left;
+    font-size: 14px;
+    margin-bottom: 20px;
+    text-align: right;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.deal-sections .nav a{
+    color: #333333;
+    margin-right: -1px;    
+    margin-left: 10px;
+    padding: 20px 15px;
+}
+
+.deal-sections .nav a:hover{
+    background: none;
+}
+
+.deal-sections .nav .active a{
+    background: #f1f5f8;
+    font-weight: 600;
+}
+
+.deal-content .tab-header .content-pane{
+    border-right: 0px;
+}
+
+.deal-content .top-toolbar{    
+    padding: 10px;
+}
+
+.deal-content .tab-title{
+    font-size: 18px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.deal-content .tab-title span{
+    color: #8BCDEA;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 5px;
+}
+
+.deal-content .tab-title span:hover{
+    color: #169BD5;    
+}
