@@ -15,11 +15,18 @@ class MyPanel extends React.Component { // eslint-disable-line react/prefer-stat
     };
   }
 
-  render() {
+  collapsePanel(props){
+    this.props.onToggleSize();
+    this.setState({
+      open: !this.state.open
+    });
+  }
+
+   render() {
     const header = <div>{this.props.name} <Label bsStyle="danger">Incomplete</Label>
       <div className="pull-right">
         <ButtonGroup>
-          <Button onClick={ () => this.setState({open: !this.state.open})} bsSize="xs">
+          <Button onClick={ () => this.collapsePanel() } bsSize="xs">
             <Glyphicon glyph="collapse-down"/>
           </Button>
           <Button onClick={ () => this.setState((prevState) => {

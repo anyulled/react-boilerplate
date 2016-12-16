@@ -35,6 +35,7 @@
 }
 
 .react-grid-item > .react-resizable-handle {
+  display: none;
   position: absolute;
   width: 20px;
   height: 20px;
@@ -47,4 +48,8 @@
   background-origin: content-box;
   box-sizing: border-box;
   cursor: se-resize;
+}
+
+.react-grid-item.react-resizable .panel.panel-default {
+  height: 100%
 }

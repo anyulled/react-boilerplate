@@ -9,9 +9,12 @@ import {Link} from "react-router";
 import Panel from "../Panel";
 
 class Deal extends React.Component { // eslint-disable-line react/prefer-stateless-function
+ constructor(props){
+    super(props);
+  }
   render() {
     return (
-      <Panel name="Deal 2016_0001">
+      <Panel name="Deal 2016_0001" onToggleSize={ this.props.onToggleSize } >
         <Table>
           <tbody>
           <tr>
