@@ -18,10 +18,11 @@
     cursor: pointer;
     float: left;
     font-size: 25px;
-    margin-top: 4px;
+    margin-top: 2px;
     margin-right: 5px;
 }
 
+/* -------- AUTOSAVECOMPONENT -------- */
 .deal-header .autosave{
     color: rgba(29, 29, 29, 0.65);
     float: right;
@@ -48,7 +49,8 @@
     margin-left: 10px;
     margin-top: 2px;
 }
-
+/* -------- END AUTOSAVECOMPONENT -------- */
+/* -------- DEALDETAILSCOMPONENT  -------- */
 .deal-header .deal-details{
     float: left;     
     list-style: none;
@@ -73,53 +75,21 @@
     vertical-align: middle;
     line-height: normal;
 }
-
+/* -------- END DEALDETAILSCOMPONENT -------- */
 .deal-header .nav{
     float: left;
-    margin: 0px;
-    margin-left: -10px;
     width: 100%;
 }
 
-.deal-header .nav li{
-    float: left;    
-}
-
-.deal-header .nav li a{
-    color: #333333;
-    float: left;
-    font-size: 12px;
-    padding: 7px 10px;
-    text-decoration: none;
-    text-transform: uppercase;
-}
-
-.deal-header .nav li.active a{
-    border-bottom: 4px solid #169BD5;
-    padding-bottom: 3px;
-    font-weight: 600;
-}
-
-.deal-header .nav li a:hover{
-    background: none;
-}
-
-.deal-header .nav li a span{
-    float: left;
-    font-size: 16px;
-    margin-right: 5px;
-    margin-top: -2px;
-}
-
 .navbar-fixed-top + .deal-content{
-    padding-top: 32px;
+    padding-top: 60px;
 }
 
 .deal-content .row-stretch{
     float: left;
     width: 100%;
     min-height: 100vh;
-    padding: 110px 0px 60px !important;
+    padding: 140px 0px 60px !important;
     position: absolute;
     top: 0;
     z-index: 1;
@@ -130,6 +100,12 @@
     width: 200px;    
 }
 
+.deal-content .deal-sections .fixed{
+    position: fixed;
+    width: 180px;
+}
+
+/* -------- DEALSWITCHVIEWCOMPONENT -------- */
 .deal-sections .switch-view{
     color: rgba(29, 29, 29, 0.65);
     cursor: pointer;
@@ -154,59 +130,158 @@
     margin-left: 10px;
     vertical-align: middle;
 }
+/* -------- END DEALSWITCHVIEWCOMPONENT -------- */
 
-.deal-sections .nav{
+.deal-sections .sidebar-list{
     float: left;
-    margin-top: 10px;
+    margin: 0px;
+    padding: 8px 10px;
     width: 100%;
 }
 
-.deal-sections .nav li{
-    float: left;
-    font-size: 14px;
-    margin-bottom: 20px;
-    text-align: right;
-    text-transform: uppercase;
-    width: 100%;
-}
-
-.deal-sections .nav a{
-    color: #333333;
-    margin-right: -1px;    
-    margin-left: 10px;
-    padding: 20px 15px;
-}
-
-.deal-sections .nav a:hover{
-    background: none;
-}
-
-.deal-sections .nav .active a{
-    background: #f1f5f8;
-    font-weight: 600;
-}
-
-.deal-content .tab-header .content-pane{
-    border-right: 0px;
-}
-
-.deal-content .top-toolbar{    
+.deal-content .top-toolbar, .deal-content .content-block{
     padding: 10px;
 }
 
-.deal-content .tab-title{
-    font-size: 18px;
+.deal-content .top-toolbar h3{
     margin: 0px;
     padding: 0px;
 }
 
-.deal-content .tab-title span{
-    color: #8BCDEA;
+.deal-content .top-toolbar h3 span{
     cursor: pointer;
+    float: right;
     font-size: 16px;
-    margin-left: 5px;
 }
 
-.deal-content .tab-title span:hover{
-    color: #169BD5;    
+.deal-content .content-block .row{
+    margin-bottom: 15px;
+}
+
+.deal-content .content-block label{
+    padding-bottom: 3px;
+    width: 100%;
+}
+
+.deal-content .content-block .row small{
+    color: rgba(29, 29, 29, 0.65);
+    float: left;
+    font-style: italic;
+    margin-right: 10px;
+    margin-top: 24px;
+}
+
+.deal-content .edit-field button{
+    display: none;
+    float: left;
+    margin-top: 17px;
+}
+
+.deal-content .edit-field .btn-group button{
+    display: block;
+    margin-top: 0px;    
+}
+
+.deal-content .answer{
+    float: left;
+    font-weight: 600;
+    padding: 9px 0px;
+}
+
+.deal-content .edit-field:hover button{
+    display: block;
+}
+
+.text-center{
+    text-align: center;
+}
+
+/* -------- RIGHTSIDEBARCOMPONENT -------- */
+.sidebar-content {
+    display: block;
+    z-index: 2;
+}
+
+.sidebar-content .mask{
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    float: left;
+    left: 0;
+    min-height: 100%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.sidebar-content.visible .mask{
+    display: block;
+}
+
+.sidebar-content > div {
+    min-height: 100%;
+    padding-top: 140px;
+    position: fixed;
+    top: 0;
+    width: 400px;
+    z-index: 2;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-transition: -webkit-transform ease 250ms;
+    -moz-transition: -webkit-transform ease 250ms;
+    -ms-transition: -webkit-transform ease 250ms;
+    -o-transition: -webkit-transform ease 250ms;
+    transition: -webkit-transform ease 250ms;
+    -webkit-transition: transform ease 250ms;
+    -moz-transition: transform ease 250ms;
+    -ms-transition: transform ease 250ms;
+    -o-transition: transform ease 250ms;
+    transition: transform ease 250ms;
+}
+
+.sidebar-content > div.right {
+    background: #ffffff;
+    right: -400px;
+}
+
+.sidebar-content.visible > .right {
+    transform: translate3d(-400px, 0, 0);
+    -ms-transform: translate3d(-400px, 0, 0);
+    -webkit-transform: translate3d(-400px, 0, 0);
+    -o-transform: translate3d(-400px, 0, 0);
+    -moz-transform: translate3d(-400px, 0, 0);
+}
+
+.sidebar-content h3 span{
+    cursor: pointer;
+    float: left;
+    margin-right: 10px;
+}
+/* -------- END RIGHTSIDEBARCOMPONENT -------- */
+/* -------- TREECOMPONENT -------- */
+.sidebar-content .panel button{
+    color: #1d769f;
+    cursor: pointer;
+    float: right;
+}
+.sidebar-content .panel.child{
+    margin-left: 30px;
+}
+/* -------- END TREECOMPONENT -------- */
+
+.sidebar-content form .row{
+    margin-bottom: 15px;
+}
+
+.sidebar-content form label{
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.sidebar-content .load-more{
+    cursor: pointer;
+    float: left;
+    margin-bottom: 15px;
+    text-decoration: none;
+    width: 100%;
 }

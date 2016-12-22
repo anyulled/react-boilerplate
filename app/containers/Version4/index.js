@@ -6,17 +6,64 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
-import { Grid, Row, Col, Glyphicon, Nav, NavItem } from 'react-bootstrap';
+import { Grid, Row, Col, Glyphicon } from 'react-bootstrap';
 
 import DealTabsContainer from '../../containers/Version4/DealTabsContainer';
-import AutosaveComponent from '../../components/Version4/AutosaveComponent';
 import DealDetailsContainer from '../../containers/Version4/DealDetailsContainer';
-// import NewDealForm from '../../components/Version4/NewDealForm';
+import DealSectionsContainer from '../../containers/Version4/DealSectionsContainer';
+
+import AutosaveComponent from '../../components/Version4/AutosaveComponent';
+import DealLimitsComponent from '../../components/Version4/DealLimitsComponent';
+import LimitsComponent from '../../components/Version4/LimitsComponent';
+import ProductComponent from '../../components/Version4/ProductComponent';
+import CounterpartyComponent from '../../components/Version4/CounterpartyComponent';
+import BookingComponent from '../../components/Version4/BookingComponent';
+import CollateralComponent from '../../components/Version4/CollateralComponent';
+import ContactComponent from '../../components/Version4/ContactComponent';
+import RightSidebarComponent from '../../components/Version4/RightSidebarComponent';
+import AddSubLimitComponent from '../../components/Version4/AddSubLimitComponent';
 
 export class Version4 extends React.Component { // eslint-disable-line react/prefer-stateless-function
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      visible: '',
+      sublimit: false,
+      sidebarComponent: '',
+    };
+  }
+
+  showSidebar = (component) => {
+    this.setState({
+      visible: 'visible',
+      sidebarComponent: component,
+    });
+  }
+
+  hideSidebar = () => {
+    this.setState({
+      visible: '',
+      sidebarComponent: '',
+    });
+  }
+
+  newSubLimit = () => {
+    this.setState({ sublimit: true });
+    this.hideSidebar();
+  }
+
   render() {
     return (
       <div>
+
+        <RightSidebarComponent
+          visible={this.state.visible}
+          hideSidebar={this.hideSidebar}
+          newSubLimit={this.newSubLimit}
+          sidebarComponent={this.state.sidebarComponent}
+        />
+
         <div className="navbar-fixed-top deal-header">
           <Grid fluid>
             <Row className="page-header-block">
@@ -35,83 +82,36 @@ export class Version4 extends React.Component { // eslint-disable-line react/pre
 
         <Grid fluid className="deal-content">
           <Row className="row-stretch">
-            <div className="content-pane pane-3 deal-sections">
-              <div className="switch-view">
-                <small>Switch to tree</small>
-                <Glyphicon glyph="align-left" />
-              </div>
-              <div className="switch-view hide">
-                <small>Switch to list</small>
-                <Glyphicon glyph="list" />
-              </div>
-              <Nav stacked activeKey={1}>
-                <NavItem eventKey={1} href="">Main Data</NavItem>
-                <NavItem eventKey={2} href="">Limit</NavItem>
-                <NavItem eventKey={3} href="">Product</NavItem>
-                <NavItem eventKey={4} href="">Counterparty</NavItem>
-                <NavItem eventKey={5} href="">Booking</NavItem>
-                <NavItem eventKey={6} href="">Collateral</NavItem>
-                <NavItem eventKey={7} href="">Contact</NavItem>
-              </Nav>
-            </div>
-
-            <Col md={6} className="content-pane pane-2 left-pane">
+            <DealSectionsContainer />
+            <Col md={3} className="content-pane pane-2 left-pane">
+              <DealLimitsComponent title="Deal Limits" />
+              <LimitsComponent title="Limits" />
+              <ProductComponent title="Products" />
+              <CounterpartyComponent
+                showSidebar={() => this.showSidebar('counterparty')}
+                title="Counterparty"
+              />
+              <BookingComponent title="Booking" />
+              <CollateralComponent title="Collateral" />
+              <ContactComponent title="Contact" />
             </Col>
 
-            <Col md={6} className="content-pane">
-            </Col>
-          </Row>
+            {this.state.sublimit &&
+              <Col md={3} className="content-pane">
+                <DealLimitsComponent title="Sub-limit name" draft />
+                <LimitsComponent title="Limits" />
+                <ProductComponent title="Products" />
+                <CounterpartyComponent title="Counterparty" />
+                <BookingComponent title="Booking" />
+                <CollateralComponent title="Collateral" />
+                <ContactComponent title="Contact" />
+              </Col>
+            }
 
-          <Row className="tab-header hide">
-            <Col md={6} className="content-pane">
-              <div className="top-toolbar">
-                <h2 className="tab-title">Global Limits</h2>
-              </div>
-            </Col>
-
-            <Col md={6} className="content-pane">
-              <div className="top-toolbar">
-                <h2 className="tab-title">
-                  Deal Limits <Glyphicon glyph="resize-full" />
-                </h2>
-              </div>
-            </Col>
-          </Row>
-
-          <Row className="row-stretch hide">
-            <Col md={6} className="content-pane pane-2">
-              <div className="top-toolbar">
-                <h2 className="tab-title">Global Limits</h2>
-              </div>
-              <div className="content-pane pane-3 col-md-4">
-                aaaaa
-              </div>
-              <div className="content-pane pane-2 col-md-8">
-                aaaaa
-              </div>
-            </Col>
-          </Row>
-
-          <Row className="row-stretch hide">
-            <Col md={6} className="content-pane pane-2 left-pane">
-              <div className="top-toolbar">
-                <h2 className="tab-title">Global Limits</h2>
-              </div>
-              <div className="content-pane pane-3 col-md-4">
-                aaaaa
-              </div>
-              <div className="content-pane pane-2 col-md-8">
-                aaaaa
-              </div>
-            </Col>
-
-            <Col md={6} mdOffset={6} className="content-pane right-pane">
-              <div className="top-toolbar">
-                <h2 className="tab-title">
-                  Deal Limits <Glyphicon glyph="resize-full" />
-                </h2>
-              </div>
-            </Col>
+            <AddSubLimitComponent
+              showSidebar={() => this.showSidebar('sublimit')}
+              sublimit={this.state.sublimit}
+            />
           </Row>
         </Grid>
       </div>

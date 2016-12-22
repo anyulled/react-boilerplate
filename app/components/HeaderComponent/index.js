@@ -23,7 +23,6 @@ class HeaderComponent extends React.Component { // eslint-disable-line react/pre
           <NavDropdown eventKey={2} title="Deals" id="deals-dropdown">
             <MenuItem eventKey={2.1} href="/deals_v4">Deals v4</MenuItem>
           </NavDropdown>
-          <NavItem eventKey={3} href="#">Instruments</NavItem>
         </Nav>
 
         <Nav pullRight>
