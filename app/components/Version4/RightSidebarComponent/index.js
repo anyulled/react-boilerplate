@@ -12,7 +12,7 @@ import ChooseSubLimitComponent from '../../../components/Version4/ChooseSubLimit
 import CounterpartyDetailComponent from '../../../components/Version4/CounterpartyDetailComponent';
 import DealHeaderInformationComponent from '../../../components/Version4/DealHeaderInformationComponent';
 
-function RightSidebarComponent({ hideSidebar, visible, newSubLimit, sidebarComponent, counterpartyDetail, backCounterpartyList, viewCounterparty }) {
+function RightSidebarComponent({ hideSidebar, visible, newSubLimit, sidebarComponent, counterpartyDetail, backCounterpartyList, viewCounterparty, addDealHeaderInformation }) {
   return (
     <div className={`sidebar-content ${visible}`}>
       <div className="mask"></div>
@@ -35,9 +35,13 @@ function RightSidebarComponent({ hideSidebar, visible, newSubLimit, sidebarCompo
 
         <p className="text-center">
           {counterpartyDetail && <Button bsStyle="primary" onClick={() => { hideSidebar(); backCounterpartyList(); }}>Add</Button>}
-          {sidebarComponent === 'dealInformation' && <Button bsStyle="primary" onClick={hideSidebar}>Apply</Button>}
+
+          {sidebarComponent === 'dealInformation' && <Button bsStyle="primary" onClick={() => { hideSidebar(); addDealHeaderInformation(); }}>Apply</Button>}
+
           <Button bsStyle="default" onClick={() => { hideSidebar(); backCounterpartyList(); }}>Cancel</Button>
+
           {sidebarComponent === 'dealInformation' && <Button bsStyle="danger" onClick={hideSidebar}>Delete Deal</Button>}
+
           {counterpartyDetail && <Button bsStyle="default" onClick={backCounterpartyList}>Back</Button>}
         </p>
       </div>
@@ -46,6 +50,7 @@ function RightSidebarComponent({ hideSidebar, visible, newSubLimit, sidebarCompo
 }
 
 RightSidebarComponent.propTypes = {
+  addDealHeaderInformation: PropTypes.func.isRequired,
   backCounterpartyList: PropTypes.func.isRequired,
   counterpartyDetail: PropTypes.bool.isRequired,
   hideSidebar: PropTypes.func.isRequired,

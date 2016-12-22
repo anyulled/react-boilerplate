@@ -62,6 +62,10 @@ export class Version4 extends React.Component { // eslint-disable-line react/pre
     this.hideSidebar();
   }
 
+  addDealHeaderInformation = () => {
+    this.child.updateHeaderDeal();
+  }
+
   render() {
     return (
       <div>
@@ -71,6 +75,7 @@ export class Version4 extends React.Component { // eslint-disable-line react/pre
           hideSidebar={this.hideSidebar}
           newSubLimit={this.newSubLimit}
           sidebarComponent={this.state.sidebarComponent}
+          addDealHeaderInformation={this.addDealHeaderInformation}
         />
 
         <div className="navbar-fixed-top deal-header">
@@ -82,7 +87,10 @@ export class Version4 extends React.Component { // eslint-disable-line react/pre
                   <Glyphicon glyph="circle-arrow-left" />
                   Deal 1234567890
                 </h1>
-                <DealDetailsContainer />
+                <DealDetailsContainer
+                  onRef={(ref) => (this.child = ref)}
+                  showSidebar={() => this.showSidebar('dealInformation')}
+                />
                 <DealTabsContainer />
               </Col>
             </Row>

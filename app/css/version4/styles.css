@@ -1,3 +1,4 @@
+/* -------- COMMOM -------- */
 .deal-header{
     padding-top: 40px;
 }
@@ -22,58 +23,6 @@
     margin-right: 5px;
 }
 
-/* -------- AUTOSAVECOMPONENT -------- */
-.deal-header .autosave{
-    color: rgba(29, 29, 29, 0.65);
-    float: right;
-    margin-top: 7px;
-}
-
-.deal-header .autosave small{    
-    float: right;
-    margin-right: 3px;
-    margin-top: 4px;
-    text-align: right;
-}
-
-.deal-header .autosave span{
-    color: rgba(0, 0, 0, 0.4);
-    float: right;
-    font-size: 20px;
-}
-
-.deal-header .autosave button{
-    float: right;
-    margin-left: 10px;
-    margin-top: 2px;
-}
-/* -------- END AUTOSAVECOMPONENT -------- */
-/* -------- DEALDETAILSCOMPONENT  -------- */
-.deal-header .deal-details{
-    float: left;     
-    list-style: none;
-    margin: 8px 0px 0px 10px;    
-    padding: 0px;
-}
-
-.deal-header .deal-details li{
-    border-left: 1px solid rgba(0, 0, 0, 0.12);
-    color: rgba(29, 29, 29, 0.65);
-    float: left;
-    font-style: italic;
-    height: 29px;
-    line-height: 29px;
-    padding: 0px 10px;
-    text-align: center;
-    width: 120px;
-}
-
-.deal-header .deal-details li span{
-    display: inline-block;
-    vertical-align: middle;
-    line-height: normal;
-}
-/* -------- END DEALDETAILSCOMPONENT -------- */
 .deal-header .nav{
     float: left;
     width: 100%;
@@ -101,40 +50,6 @@
 .deal-content .deal-sections .fixed{
     position: fixed;
     width: 180px;
-}
-
-/* -------- DEALSWITCHVIEWCOMPONENT -------- */
-.deal-sections .switch-view{
-    color: rgba(29, 29, 29, 0.65);
-    cursor: pointer;
-    float: left;
-    padding: 5px 10px 10px;
-    text-align: center;
-    width: 100%;
-}
-
-.deal-sections .switch-view small{
-    display: inline-block;
-    font-size: 12px;
-    line-height: normal;
-    padding-top: 8px;
-    vertical-align: middle;
-}
-
-.deal-sections .switch-view span{
-    display: inline-block;
-    font-size: 20px;
-    line-height: normal;
-    margin-left: 10px;
-    vertical-align: middle;
-}
-/* -------- END DEALSWITCHVIEWCOMPONENT -------- */
-
-.deal-sections .sidebar-list{
-    float: left;
-    margin: 0px;
-    padding: 8px 10px;
-    width: 100%;
 }
 
 .deal-content .top-toolbar, .deal-content .content-block{
@@ -198,6 +113,151 @@
     margin-left: 5px;
 }
 
+.deal-content .alert{
+    left: 0;
+    position: fixed;
+    text-align: center;
+    top: 140px;
+    width: 100%;
+    z-index: 9999;
+    opacity:1;
+    transition: opacity 3s;     
+}
+
+.deal-content .alert.fade {
+    opacity:0;
+}
+
+.deal-content .alert-success{
+    background: rgba(169,202,104,0.95);    
+}
+/* -------- END COMMOM -------- */
+/* -------- AUTOSAVECOMPONENT -------- */
+.deal-header .autosave{
+    color: rgba(29, 29, 29, 0.65);
+    float: right;
+    margin-top: 7px;
+}
+
+.deal-header .autosave small{    
+    float: right;
+    margin-right: 3px;
+    margin-top: 4px;
+    text-align: right;
+}
+
+.deal-header .autosave span{
+    color: rgba(0, 0, 0, 0.4);
+    float: right;
+    font-size: 20px;
+}
+
+.deal-header .autosave button{
+    float: right;
+    margin-left: 10px;
+    margin-top: 2px;
+}
+/* -------- END AUTOSAVECOMPONENT -------- */
+/* -------- DEALDETAILSCOMPONENT  -------- */
+.deal-header .deal-details{
+    float: left;     
+    list-style: none;
+    margin: 8px 0px 0px 10px;    
+    padding: 0px;
+}
+
+.deal-header .deal-details li{
+    border-left: 1px solid rgba(0, 0, 0, 0.12);
+    color: rgba(29, 29, 29, 0.65);
+    float: left;
+    font-style: italic;
+    height: 29px;
+    line-height: 29px;
+    padding: 0px 10px;
+    text-align: center;
+    width: 120px;
+}
+
+.deal-header .deal-details li.edit{
+    font-style: normal;
+    width: 320px;
+}
+
+.deal-header .deal-details li.edit span{
+    text-align: left;
+}
+
+.deal-header .deal-details li.edit:first-child{
+    color: #000000;
+    font-weight: 600;
+    width: 160px;
+}
+
+.deal-header .deal-details li.edit:last-child{
+    color: #1d769f;
+    width: 120px;
+}
+
+.deal-header .deal-details li span{
+    display: inline-block;
+    line-height: normal;
+    vertical-align: middle;
+}
+
+.deal-header .deal-details li button{
+    color: #1d769f;
+    cursor: pointer;
+    display: none;
+    line-height: normal;
+    vertical-align: middle;
+}
+
+.deal-header .deal-details li:hover span{
+    display: none;
+}
+
+.deal-header .deal-details li:hover button{
+    display: inline-block;
+}
+
+.deal-header .deal-details li.edit button{
+    font-weight: normal;
+}
+/* -------- END DEALDETAILSCOMPONENT -------- */
+/* -------- DEALSWITCHVIEWCOMPONENT -------- */
+.deal-sections .switch-view{
+    color: rgba(29, 29, 29, 0.65);
+    cursor: pointer;
+    float: left;
+    padding: 5px 10px 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.deal-sections .switch-view small{
+    display: inline-block;
+    font-size: 12px;
+    line-height: normal;
+    padding-top: 8px;
+    vertical-align: middle;
+}
+
+.deal-sections .switch-view span{
+    display: inline-block;
+    font-size: 20px;
+    line-height: normal;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+/* -------- END DEALSWITCHVIEWCOMPONENT -------- */
+/* -------- DEALTABSCOMPONENT -------- */
+.deal-sections .sidebar-list{
+    float: left;
+    margin: 0px;
+    padding: 8px 10px;
+    width: 100%;
+}
+/* -------- END DEALTABSCOMPONENT -------- */
 /* -------- RIGHTSIDEBARCOMPONENT -------- */
 .sidebar-content {
     display: block;
@@ -259,17 +319,6 @@
     float: left;
     margin-right: 10px;
 }
-/* -------- END RIGHTSIDEBARCOMPONENT -------- */
-/* -------- TREECOMPONENT -------- */
-.sidebar-content .panel button{
-    color: #1d769f;
-    cursor: pointer;
-    float: right;
-}
-.sidebar-content .panel.child{
-    margin-left: 30px;
-}
-/* -------- END TREECOMPONENT -------- */
 
 .sidebar-content form .row{
     margin-bottom: 15px;
@@ -287,26 +336,18 @@
     text-decoration: none;
     width: 100%;
 }
-
-.deal-content .alert{
-    left: 0;
-    position: fixed;
-    text-align: center;
-    top: 140px;
-    width: 100%;
-    z-index: 9999;
-    opacity:1;
-    transition: opacity 3s;     
+/* -------- END RIGHTSIDEBARCOMPONENT -------- */
+/* -------- TREECOMPONENT -------- */
+.sidebar-content .panel button{
+    color: #1d769f;
+    cursor: pointer;
+    float: right;
 }
-
-.deal-content .alert.fade {
-    opacity:0;
+.sidebar-content .panel.child{
+    margin-left: 30px;
 }
-
-.deal-content .alert-success{
-    background: rgba(169,202,104,0.95);    
-}
-
+/* -------- END TREECOMPONENT -------- */
+/* -------- DEALHEADERINFORMATIONCOMPONENT -------- */
 .dealInformationForm small{
     float: left;
     margin-top: 24px;
@@ -315,3 +356,4 @@
 .dealInformationForm textarea{
     height: 120px;
 }
+/* -------- END DEALHEADERINFORMATIONCOMPONENT -------- */
