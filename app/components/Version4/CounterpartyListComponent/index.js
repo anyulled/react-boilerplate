@@ -7,12 +7,12 @@
 import React, { PropTypes } from 'react';
 import CounterpartyListItemComponent from '../../../components/Version4/CounterpartyListItemComponent';
 
-function CounterpartyListComponent({ hideSidebar }) {
+function CounterpartyListComponent({ viewCounterparty }) {
   const indents = [];
   for (let i = 1; i <= 5; i += 1) {
     indents.push(
       <CounterpartyListItemComponent
-        hideSidebar={hideSidebar}
+        viewCounterparty={viewCounterparty}
         title={`00${i} - Lorem ipsum dolor sit amet`}
       />
     );
@@ -26,7 +26,7 @@ function CounterpartyListComponent({ hideSidebar }) {
 }
 
 CounterpartyListComponent.propTypes = {
-  hideSidebar: PropTypes.func.isRequired,
+  viewCounterparty: PropTypes.func.isRequired,
 };
 
 export default CounterpartyListComponent;

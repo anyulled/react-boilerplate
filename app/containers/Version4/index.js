@@ -20,7 +20,7 @@ import CounterpartyComponent from '../../components/Version4/CounterpartyCompone
 import BookingComponent from '../../components/Version4/BookingComponent';
 import CollateralComponent from '../../components/Version4/CollateralComponent';
 import ContactComponent from '../../components/Version4/ContactComponent';
-import RightSidebarComponent from '../../components/Version4/RightSidebarComponent';
+import RightSidebarContainer from '../../containers/Version4/RightSidebarContainer';
 import AddSubLimitComponent from '../../components/Version4/AddSubLimitComponent';
 
 export class Version4 extends React.Component { // eslint-disable-line react/prefer-stateless-function
@@ -32,6 +32,15 @@ export class Version4 extends React.Component { // eslint-disable-line react/pre
       sublimit: false,
       sidebarComponent: '',
     };
+  }
+
+  componentDidUpdate= () => {
+    if (this.state.sublimit === true) {
+      const component = this.hello;
+      setTimeout(() => {
+        component.className += ' fade';
+      }, 5000);
+    }
   }
 
   showSidebar = (component) => {
@@ -57,7 +66,7 @@ export class Version4 extends React.Component { // eslint-disable-line react/pre
     return (
       <div>
 
-        <RightSidebarComponent
+        <RightSidebarContainer
           visible={this.state.visible}
           hideSidebar={this.hideSidebar}
           newSubLimit={this.newSubLimit}
@@ -81,6 +90,11 @@ export class Version4 extends React.Component { // eslint-disable-line react/pre
         </div>
 
         <Grid fluid className="deal-content">
+          {this.state.sublimit &&
+            <div className="alert alert-success" role="alert" ref={(c) => { this.hello = c; }}>
+              New sub-limit was created in the deal. <a>UNDO</a>
+            </div>
+          }
           <Row className="row-stretch">
             <DealSectionsContainer />
             <Col md={3} className="content-pane pane-2 left-pane">

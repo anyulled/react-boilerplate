@@ -21,7 +21,7 @@ function CounterpartyComponent({ title, showSidebar }) {
 }
 
 CounterpartyComponent.propTypes = {
-  showSidebar: PropTypes.func.isRequired,
+  showSidebar: PropTypes.func,
   title: PropTypes.string.isRequired,
 };
 

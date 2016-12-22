@@ -30,6 +30,7 @@ export class AddCounterpartyContainer extends React.Component { // eslint-disabl
         hideSidebar={this.props.hideSidebar}
         searchItems={(e) => this.searchItems(e)}
         showItems={this.state.showItems}
+        viewCounterparty={this.props.viewCounterparty}
       />
     );
   }
@@ -37,6 +38,7 @@ export class AddCounterpartyContainer extends React.Component { // eslint-disabl
 
 AddCounterpartyContainer.propTypes = {
   hideSidebar: PropTypes.func.isRequired,
+  viewCounterparty: PropTypes.func.isRequired,
 };
 
 function mapDispatchToProps(dispatch) {

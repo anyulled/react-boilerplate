@@ -196,6 +196,10 @@
     text-align: center;
 }
 
+.text-center button{
+    margin-left: 5px;
+}
+
 /* -------- RIGHTSIDEBARCOMPONENT -------- */
 .sidebar-content {
     display: block;
@@ -284,4 +288,23 @@
     margin-bottom: 15px;
     text-decoration: none;
     width: 100%;
+}
+
+.deal-content .alert{
+    left: 0;
+    position: fixed;
+    text-align: center;
+    top: 140px;
+    width: 100%;
+    z-index: 9999;
+    opacity:1;
+    transition: opacity 3s;     
+}
+
+.deal-content .alert.fade {
+    opacity:0;
+}
+
+.deal-content .alert-success{
+    background: rgba(169,202,104,0.95);    
 }

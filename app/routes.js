@@ -19,10 +19,10 @@ export default function createRoutes(store) {
   return [
     {
       path: '/',
-      name: 'home',
+      name: 'deals',
       getComponent(nextState, cb) {
         const importModules = Promise.all([
-          System.import('containers/App'),
+          System.import('containers/Version4'),
         ]);
 
         const renderRoute = loadModule(cb);

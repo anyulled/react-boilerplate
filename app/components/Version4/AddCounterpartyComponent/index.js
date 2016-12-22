@@ -8,7 +8,7 @@ import React, { PropTypes } from 'react';
 import { Glyphicon, Button, Row, ControlLabel, Col, InputGroup, FormControl, ButtonGroup } from 'react-bootstrap';
 import CounterpartyListComponent from '../../../components/Version4/CounterpartyListComponent';
 
-function AddCounterpartyComponent({ hideSidebar, searchItems, showItems }) {
+function AddCounterpartyComponent({ hideSidebar, searchItems, showItems, viewCounterparty }) {
   return (
     <div className="content-block">
       <h3>
@@ -42,7 +42,7 @@ function AddCounterpartyComponent({ hideSidebar, searchItems, showItems }) {
           <p className="text-center">
             Coincidence found:
           </p>
-          <CounterpartyListComponent hideSidebar={hideSidebar} />
+          <CounterpartyListComponent viewCounterparty={viewCounterparty} />
         </div>
       }
     </div>
@@ -53,6 +53,7 @@ AddCounterpartyComponent.propTypes = {
   hideSidebar: PropTypes.func.isRequired,
   searchItems: PropTypes.func.isRequired,
   showItems: PropTypes.bool.isRequired,
+  viewCounterparty: PropTypes.func.isRequired,
 };
 
 export default AddCounterpartyComponent;

@@ -5,32 +5,33 @@
 */
 
 import React, { PropTypes } from 'react';
-import { Glyphicon, Button } from 'react-bootstrap';
-import TreeComponent from '../../../components/Version4/TreeComponent';
-import AddCounterpartyContainer from '../../../containers/Version4/AddCounterpartyContainer';
+import { Button } from 'react-bootstrap';
 
-function RightSidebarComponent({ hideSidebar, visible, newSubLimit, sidebarComponent }) {
+import AddCounterpartyContainer from '../../../containers/Version4/AddCounterpartyContainer';
+import ChooseSubLimitComponent from '../../../components/Version4/ChooseSubLimitComponent';
+import CounterpartyDetailComponent from '../../../components/Version4/CounterpartyDetailComponent';
+
+function RightSidebarComponent({ hideSidebar, visible, newSubLimit, sidebarComponent, counterpartyDetail, backCounterpartyList, viewCounterparty }) {
   return (
     <div className={`sidebar-content ${visible}`}>
       <div className="mask"></div>
       <div className="right">
         {sidebarComponent === 'sublimit' &&
-          <div className="content-block">
-            <h3>
-              <Glyphicon glyph="remove" onClick={hideSidebar} />
-              Add sub-limit to restrict the deal
-            </h3>
-            <p>Please, select a deal or sub-limit from where you want to restrict the deal:</p>
-            <TreeComponent newSubLimit={newSubLimit} />
-          </div>
+          <ChooseSubLimitComponent newSubLimit={newSubLimit} hideSidebar={hideSidebar} />
         }
 
-        {sidebarComponent === 'counterparty' &&
-          <AddCounterpartyContainer hideSidebar={hideSidebar} />
+        {(sidebarComponent === 'counterparty') && !counterpartyDetail &&
+          <AddCounterpartyContainer hideSidebar={hideSidebar} viewCounterparty={viewCounterparty} />
+        }
+
+        {counterpartyDetail &&
+          <CounterpartyDetailComponent />
         }
 
         <p className="text-center">
-          <Button bsStyle="default" onClick={hideSidebar}>Cancel</Button>
+          {counterpartyDetail && <Button bsStyle="default" onClick={backCounterpartyList}>Back</Button>}
+          <Button bsStyle="default" onClick={() => { hideSidebar(); backCounterpartyList(); }}>Cancel</Button>
+          {counterpartyDetail && <Button bsStyle="primary" onClick={() => { hideSidebar(); backCounterpartyList(); }}>Add</Button>}
         </p>
       </div>
     </div>
@@ -38,9 +39,12 @@ function RightSidebarComponent({ hideSidebar, visible, newSubLimit, sidebarCompo
 }
 
 RightSidebarComponent.propTypes = {
+  backCounterpartyList: PropTypes.func.isRequired,
+  counterpartyDetail: PropTypes.bool.isRequired,
   hideSidebar: PropTypes.func.isRequired,
   newSubLimit: PropTypes.func.isRequired,
   sidebarComponent: PropTypes.string.isRequired,
+  viewCounterparty: PropTypes.func.isRequired,
   visible: PropTypes.string,
 };
 
