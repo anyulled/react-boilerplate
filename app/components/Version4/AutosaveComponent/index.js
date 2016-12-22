@@ -4,22 +4,26 @@
 *
 */
 
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { Button, Glyphicon } from 'react-bootstrap';
 
-class AutosaveComponent extends React.Component { // eslint-disable-line react/prefer-stateless-function
-  render() {
-    return (
-      <div className="autosave">
+function AutosaveComponent({ showSidebar }) {
+  return (
+    <div className="autosave">
+      <button onClick={showSidebar}>
         <Glyphicon glyph="align-justify" />
-        <Button bsStyle="primary">Send to approval</Button>
-        <small>
-          Autosaved:<br />
-          14:10 01. Dic. 2016
-        </small>
-      </div>
-    );
-  }
+      </button>
+      <Button bsStyle="primary">Send to approval</Button>
+      <small>
+        Autosaved:<br />
+        14:10 01. Dic. 2016
+      </small>
+    </div>
+  );
 }
+
+AutosaveComponent.propTypes = {
+  showSidebar: PropTypes.func,
+};
 
 export default AutosaveComponent;

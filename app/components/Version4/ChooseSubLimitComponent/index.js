@@ -25,6 +25,6 @@ function ChooseSubLimitComponent({ hideSidebar, newSubLimit }) {
 ChooseSubLimitComponent.propTypes = {
   hideSidebar: PropTypes.func.isRequired,
   newSubLimit: PropTypes.func.isRequired,
-}
+};
 
 export default ChooseSubLimitComponent;

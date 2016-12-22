@@ -40,8 +40,6 @@
     color: rgba(0, 0, 0, 0.4);
     float: right;
     font-size: 20px;
-    margin-left: 10px;
-    margin-top: 3px;
 }
 
 .deal-header .autosave button{
@@ -227,7 +225,7 @@
     padding-top: 140px;
     position: fixed;
     top: 0;
-    width: 400px;
+    width: 500px;
     z-index: 2;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -245,15 +243,15 @@
 
 .sidebar-content > div.right {
     background: #ffffff;
-    right: -400px;
+    right: -500px;
 }
 
 .sidebar-content.visible > .right {
-    transform: translate3d(-400px, 0, 0);
-    -ms-transform: translate3d(-400px, 0, 0);
-    -webkit-transform: translate3d(-400px, 0, 0);
-    -o-transform: translate3d(-400px, 0, 0);
-    -moz-transform: translate3d(-400px, 0, 0);
+    transform: translate3d(-500px, 0, 0);
+    -ms-transform: translate3d(-500px, 0, 0);
+    -webkit-transform: translate3d(-500px, 0, 0);
+    -o-transform: translate3d(-500px, 0, 0);
+    -moz-transform: translate3d(-500px, 0, 0);
 }
 
 .sidebar-content h3 span{
@@ -307,4 +305,13 @@
 
 .deal-content .alert-success{
     background: rgba(169,202,104,0.95);    
+}
+
+.dealInformationForm small{
+    float: left;
+    margin-top: 24px;
+}
+
+.dealInformationForm textarea{
+    height: 120px;
 }

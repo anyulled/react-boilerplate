@@ -5,7 +5,7 @@
 */
 
 import React from 'react';
-import { Navbar, Nav, NavDropdown, NavItem, Glyphicon, MenuItem } from 'react-bootstrap';
+import { Navbar, Nav, NavDropdown, NavItem, Glyphicon } from 'react-bootstrap';
 
 class HeaderComponent extends React.Component { // eslint-disable-line react/prefer-stateless-function
 

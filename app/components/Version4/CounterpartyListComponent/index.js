@@ -12,6 +12,7 @@ function CounterpartyListComponent({ viewCounterparty }) {
   for (let i = 1; i <= 5; i += 1) {
     indents.push(
       <CounterpartyListItemComponent
+        key={i}
         viewCounterparty={viewCounterparty}
         title={`00${i} - Lorem ipsum dolor sit amet`}
       />

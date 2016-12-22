@@ -121,8 +121,8 @@ function CounterpartyDetailComponent({ hideSidebar, backCounterpartyList }) {
 }
 
 CounterpartyDetailComponent.propTypes = {
-  backCounterpartyList: PropTypes.func.isRequired,
-  hideSidebar: PropTypes.func.isRequired,
+  backCounterpartyList: PropTypes.func,
+  hideSidebar: PropTypes.func,
 };
 
 export default CounterpartyDetailComponent;

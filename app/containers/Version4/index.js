@@ -77,7 +77,7 @@ export class Version4 extends React.Component { // eslint-disable-line react/pre
           <Grid fluid>
             <Row className="page-header-block">
               <Col md={12}>
-                <AutosaveComponent />
+                <AutosaveComponent showSidebar={() => this.showSidebar('dealInformation')} />
                 <h1>
                   <Glyphicon glyph="circle-arrow-left" />
                   Deal 1234567890
