@@ -5,7 +5,6 @@
 */
 
 import React, { PropTypes } from 'react';
-import { Button } from 'react-bootstrap';
 
 import AddCounterpartyContainer from '../../../containers/Version4/AddCounterpartyContainer';
 import AddProductContainer from '../../../containers/Version4/AddProductContainer';
@@ -14,13 +13,13 @@ import ChooseSubLimitComponent from '../../../components/Version4/ChooseSubLimit
 import CounterpartyDetailComponent from '../../../components/Version4/CounterpartyDetailComponent';
 import DealHeaderInformationComponent from '../../../components/Version4/DealHeaderInformationComponent';
 
-function RightSidebarComponent({ hideSidebar, visible, newSubLimit, sidebarComponent, counterpartyDetail, backCounterpartyList, viewCounterparty, addDealHeaderInformation }) {
+function RightSidebarComponent({ hideSidebar, visible, newSubLimit, sidebarComponent, counterpartyDetail, backCounterpartyList, viewCounterparty, addDealHeaderInformation, sidebarClass, newProduct }) {
   return (
-    <div className={`sidebar-content ${visible}`}>
+    <div className={`sidebar-content ${sidebarClass} ${visible}`}>
       <div className="mask"></div>
       <div className="right">
         {sidebarComponent === 'dealInformation' &&
-          <DealHeaderInformationComponent hideSidebar={hideSidebar} />
+          <DealHeaderInformationComponent hideSidebar={hideSidebar} addDealHeaderInformation={addDealHeaderInformation} />
         }
 
         {sidebarComponent === 'sublimit' &&
@@ -32,24 +31,12 @@ function RightSidebarComponent({ hideSidebar, visible, newSubLimit, sidebarCompo
         }
 
         {counterpartyDetail &&
-          <CounterpartyDetailComponent />
+          <CounterpartyDetailComponent hideSidebar={hideSidebar} backCounterpartyList={backCounterpartyList} />
         }
 
         {(sidebarComponent === 'product') &&
-          <AddProductContainer hideSidebar={hideSidebar} />
+          <AddProductContainer hideSidebar={hideSidebar} newProduct={newProduct} />
         }
-
-        <p className="text-center">
-          {counterpartyDetail && <Button bsStyle="primary" onClick={() => { hideSidebar(); backCounterpartyList(); }}>Add</Button>}
-
-          {sidebarComponent === 'dealInformation' && <Button bsStyle="primary" onClick={() => { hideSidebar(); addDealHeaderInformation(); }}>Apply</Button>}
-
-          <Button bsStyle="default" onClick={() => { hideSidebar(); backCounterpartyList(); }}>Cancel</Button>
-
-          {sidebarComponent === 'dealInformation' && <Button bsStyle="danger" onClick={hideSidebar}>Delete Deal</Button>}
-
-          {counterpartyDetail && <Button bsStyle="default" onClick={backCounterpartyList}>Back</Button>}
-        </p>
       </div>
     </div>
   );
@@ -60,7 +47,9 @@ RightSidebarComponent.propTypes = {
   backCounterpartyList: PropTypes.func.isRequired,
   counterpartyDetail: PropTypes.bool.isRequired,
   hideSidebar: PropTypes.func.isRequired,
+  newProduct: PropTypes.func.isRequired,
   newSubLimit: PropTypes.func.isRequired,
+  sidebarClass: PropTypes.string.isRequired,
   sidebarComponent: PropTypes.string.isRequired,
   viewCounterparty: PropTypes.func.isRequired,
   visible: PropTypes.string,

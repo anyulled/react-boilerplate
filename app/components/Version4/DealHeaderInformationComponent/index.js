@@ -5,9 +5,9 @@
 */
 
 import React, { PropTypes } from 'react';
-import { Glyphicon, Row, Col, ControlLabel, FormControl } from 'react-bootstrap';
+import { Glyphicon, Row, Col, ControlLabel, FormControl, Button } from 'react-bootstrap';
 
-function DealHeaderInformationComponent({ hideSidebar }) {
+function DealHeaderInformationComponent({ hideSidebar, addDealHeaderInformation }) {
   return (
     <div className="content-block">
       <h3>
@@ -47,11 +47,17 @@ function DealHeaderInformationComponent({ hideSidebar }) {
           </Col>
         </Row>
       </form>
+      <p className="text-center">
+        <Button bsStyle="primary" onClick={() => { hideSidebar(); addDealHeaderInformation(); }}>Apply</Button>
+        <Button bsStyle="default" onClick={hideSidebar}>Cancel</Button>
+        <Button bsStyle="danger" onClick={hideSidebar}>Delete Deal</Button>
+      </p>
     </div>
   );
 }
 
 DealHeaderInformationComponent.propTypes = {
+  addDealHeaderInformation: PropTypes.func.isRequired,
   hideSidebar: PropTypes.func.isRequired,
 };
 

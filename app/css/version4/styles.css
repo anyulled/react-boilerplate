@@ -264,7 +264,7 @@
     z-index: 2;
 }
 
-.sidebar-content .mask{
+.sidebar-content .mask, .sidebar-content.product .mask{
     background: rgba(0, 0, 0, 0.5);
     display: none;
     float: left;
@@ -280,10 +280,12 @@
     display: block;
 }
 
-.sidebar-content > div {
+.sidebar-content > div.right {
+    background: #ffffff;
     min-height: 100%;
     padding-top: 140px;
     position: fixed;
+    right: -500px;
     top: 0;
     width: 500px;
     z-index: 2;
@@ -301,17 +303,25 @@
     transition: transform ease 250ms;
 }
 
-.sidebar-content > div.right {
-    background: #ffffff;
-    right: -500px;
-}
-
 .sidebar-content.visible > .right {
     transform: translate3d(-500px, 0, 0);
     -ms-transform: translate3d(-500px, 0, 0);
     -webkit-transform: translate3d(-500px, 0, 0);
     -o-transform: translate3d(-500px, 0, 0);
     -moz-transform: translate3d(-500px, 0, 0);
+}
+
+.sidebar-content.product > div.right {
+    right: -800px;
+    width: 800px;
+}
+
+.sidebar-content.visible.product > .right {
+    transform: translate3d(-800px, 0, 0);
+    -ms-transform: translate3d(-800px, 0, 0);
+    -webkit-transform: translate3d(-800px, 0, 0);
+    -o-transform: translate3d(-800px, 0, 0);
+    -moz-transform: translate3d(-800px, 0, 0);
 }
 
 .sidebar-content h3 span{
@@ -362,12 +372,119 @@
     padding: 10px;
 }
 
-.addProducts b{
+.addProducts h4{
     font-size: 14px;
-    margin-bottom: 20px;
+    min-height: 20px;
+}
+
+.addProducts h4 .label{
+    float: left;
+    margin-right: 10px;
+}
+
+.addProducts h4 b{
+    float: left;
+    margin-right: 10px;
+}
+
+.addProducts h4 button{
+    margin-top: -6px;
+}
+
+.row-eq-height{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; 
 }
 
 .addProducts .content-pane{
-    margin-top: 15px;
+    position: relative;
+}
+
+.addProducts .empty-list{
+    color: #999;
+    font-size: 14px;
+    left: 50%;
+    margin-left: -180px;
+    margin-top: -24px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: 360px;
+}
+
+.addProducts .content-block{
+    padding: 10px;
+}
+
+.addProducts .panel{
+    margin-bottom: 5px;
+}
+
+.addProducts .panel-body{
+    padding: 10px;
+}
+
+.addProducts .panel ul{
+    float: left;
+    list-style: none;
+    margin: 5px 0px 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+.addProducts .panel ul li{
+    color: #999999;
+    float: left;  
+    text-align: left;      
+    width: 40%;
+}
+
+.addProducts .panel ul li:last-child{
+    color: #d43f3a;
+    cursor: pointer;
+    display: none;
+    text-align: right;
+    width: 20%;
+}
+
+.addProducts .panel:hover ul li:last-child{
+    display: block;
+}
+
+.addProducts .products-list{
+    float: left;
+    margin-bottom: 10px;
+    max-height: 390px;
+    overflow-y: auto; 
+    width: 100%;
+}
+
+.addProducts .step2{
+    margin: 10px 0px;
+}
+
+.addProducts .form-group .form-group{
+    margin-bottom: 0px;
+}
+
+.addProducts .step2 input[type="checkbox"]{
+    margin-top: 22px;
+}
+
+.addProducts .selected-products{
+    margin-bottom: -15px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.addProducts .step2 .checkbox-inline{
+    position: relative;
+}
+
+.addProducts .step2 .box-label i{
+    color: #999999;
+    margin-left: 20px;
 }
 /* -------- END ADDPRODUCTCOMPONENT -------- */

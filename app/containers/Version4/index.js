@@ -31,12 +31,13 @@ export class Version4 extends React.Component { // eslint-disable-line react/pre
       visible: '',
       sublimit: false,
       sidebarComponent: '',
+      sidebarClass: '',
     };
   }
 
   componentDidUpdate= () => {
     if (this.state.sublimit === true) {
-      const component = this.hello;
+      const component = this.successMessage;
       setTimeout(() => {
         component.className += ' fade';
       }, 5000);
@@ -48,18 +49,28 @@ export class Version4 extends React.Component { // eslint-disable-line react/pre
       visible: 'visible',
       sidebarComponent: component,
     });
+    if (component === 'product') {
+      this.setState({
+        sidebarClass: 'product',
+      });
+    }
   }
 
   hideSidebar = () => {
     this.setState({
       visible: '',
       sidebarComponent: '',
+      sidebarClass: '',
     });
   }
 
   newSubLimit = () => {
     this.setState({ sublimit: true });
     this.hideSidebar();
+  }
+
+  newProduct = () => {
+    this.newSubLimit();
   }
 
   addDealHeaderInformation = () => {
@@ -75,7 +86,9 @@ export class Version4 extends React.Component { // eslint-disable-line react/pre
           hideSidebar={this.hideSidebar}
           newSubLimit={this.newSubLimit}
           sidebarComponent={this.state.sidebarComponent}
+          sidebarClass={this.state.sidebarClass}
           addDealHeaderInformation={this.addDealHeaderInformation}
+          newProduct={this.newProduct}
         />
 
         <div className="navbar-fixed-top deal-header">
@@ -100,7 +113,7 @@ export class Version4 extends React.Component { // eslint-disable-line react/pre
         <Grid fluid className="deal-content">
 
           {this.state.sublimit &&
-            <div className="alert alert-success" role="alert" ref={(c) => { this.hello = c; }}>
+            <div className="alert alert-success" role="alert" ref={(c) => { this.successMessage = c; }}>
               New sub-limit was created in the deal. <a>UNDO</a>
             </div>
           }
@@ -129,7 +142,10 @@ export class Version4 extends React.Component { // eslint-disable-line react/pre
               <Col md={3} className="content-pane">
                 <DealLimitsComponent title="Sub-limit name" draft />
                 <LimitsComponent title="Limits" />
-                <ProductContainer title="Products" />
+                <ProductContainer
+                  title="Products"
+                  showSidebar={() => this.showSidebar('product')}
+                />
                 <CounterpartyComponent title="Counterparty" />
                 <BookingComponent title="Booking" />
                 <CollateralComponent title="Collateral" />

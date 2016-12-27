@@ -115,6 +115,11 @@ function CounterpartyDetailComponent({ hideSidebar, backCounterpartyList }) {
             </ButtonGroup>
           </Col>
         </Row>
+        <p className="text-center">
+          <Button bsStyle="primary" onClick={() => { hideSidebar(); backCounterpartyList(); }}>Add</Button>
+          <Button bsStyle="default" onClick={() => { hideSidebar(); backCounterpartyList(); }}>Cancel</Button>
+          <Button bsStyle="default" onClick={backCounterpartyList}>Back</Button>
+        </p>
       </form>
     </div>
   );

@@ -5,7 +5,7 @@
 */
 
 import React, { PropTypes } from 'react';
-import { Glyphicon } from 'react-bootstrap';
+import { Glyphicon, Button } from 'react-bootstrap';
 
 import TreeComponent from '../../../components/Version4/TreeComponent';
 
@@ -18,6 +18,9 @@ function ChooseSubLimitComponent({ hideSidebar, newSubLimit }) {
       </h3>
       <p>Please, select a deal or sub-limit from where you want to restrict the deal:</p>
       <TreeComponent newSubLimit={newSubLimit} />
+      <p className="text-center">
+        <Button bsStyle="default" onClick={hideSidebar}>Cancel</Button>
+      </p>
     </div>
   );
 }

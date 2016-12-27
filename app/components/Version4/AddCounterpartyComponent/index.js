@@ -45,6 +45,9 @@ function AddCounterpartyComponent({ hideSidebar, searchItems, showItems, viewCou
           <CounterpartyListComponent viewCounterparty={viewCounterparty} />
         </div>
       }
+      <p className="text-center">
+        <Button bsStyle="default" onClick={hideSidebar}>Cancel</Button>
+      </p>
     </div>
   );
 }

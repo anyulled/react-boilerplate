@@ -8,9 +8,9 @@ import React, { PropTypes } from 'react';
 import CounterpartyListItemComponent from '../../../components/Version4/CounterpartyListItemComponent';
 
 function CounterpartyListComponent({ viewCounterparty }) {
-  const indents = [];
+  const counterpartyItems = [];
   for (let i = 1; i <= 5; i += 1) {
-    indents.push(
+    counterpartyItems.push(
       <CounterpartyListItemComponent
         key={i}
         viewCounterparty={viewCounterparty}
@@ -20,7 +20,7 @@ function CounterpartyListComponent({ viewCounterparty }) {
   }
   return (
     <div className="tree">
-      {indents}
+      {counterpartyItems}
       <a className="text-center load-more">Load (05) more</a>
     </div>
   );
