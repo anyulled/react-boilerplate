@@ -4,21 +4,23 @@
 *
 */
 
-import React from 'react';
-import { Nav, NavItem } from 'react-bootstrap';
+import React, { PropTypes } from 'react';
+import { Nav, NavItem, Badge } from 'react-bootstrap';
 
-class DealTabsComponent extends React.Component { // eslint-disable-line react/prefer-stateless-function
-  render() {
-    return (
-      <Nav bsStyle="pills" activeKey={2}>
-        <NavItem eventKey={1} href="#">Dashboard</NavItem>
-        <NavItem eventKey={2} href="#">Limits</NavItem>
-        <NavItem eventKey={3} href="#">Counterparties</NavItem>
-        <NavItem eventKey={4} href="#">Collaterals</NavItem>
-        <NavItem eventKey={5} href="#">Contacts</NavItem>
-      </Nav>
-    );
-  }
+function DealTabsComponent({ sublimit }) {
+  return (
+    <Nav bsStyle="pills" activeKey={2}>
+      <NavItem eventKey={1} href="#">Dashboard</NavItem>
+      <NavItem eventKey={2} href="#">Limits {sublimit && <Badge>2</Badge>}</NavItem>
+      <NavItem eventKey={3} href="#">Counterparties</NavItem>
+      <NavItem eventKey={4} href="#">Collaterals</NavItem>
+      <NavItem eventKey={5} href="#">Contacts</NavItem>
+    </Nav>
+  );
 }
+
+DealTabsComponent.propTypes = {
+  sublimit: PropTypes.bool.isRequired,
+};
 
 export default DealTabsComponent;

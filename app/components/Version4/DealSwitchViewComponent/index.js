@@ -4,24 +4,24 @@
 *
 */
 
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { Glyphicon } from 'react-bootstrap';
 
-class DealSwitchViewComponent extends React.Component { // eslint-disable-line react/prefer-stateless-function
-  render() {
-    return (
-      <div>
-        <div className="switch-view">
-          <small>Switch to tree</small>
-          <Glyphicon glyph="align-left" />
-        </div>
-        <div className="switch-view hide">
-          <small>Switch to list</small>
-          <Glyphicon glyph="list" />
-        </div>
-      </div>
-    );
-  }
+function DealSwitchViewComponent({ title, icon, switchView }) {
+  return (
+    <div>
+      <button className="switch-view" onClick={switchView}>
+        <small>{title}</small>
+        <Glyphicon glyph={icon} />
+      </button>
+    </div>
+  );
 }
+
+DealSwitchViewComponent.propTypes = {
+  icon: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  switchView: PropTypes.func.isRequired,
+};
 
 export default DealSwitchViewComponent;

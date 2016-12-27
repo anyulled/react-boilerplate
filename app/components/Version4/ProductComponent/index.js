@@ -5,19 +5,22 @@
 */
 
 import React, { PropTypes } from 'react';
-import NewDealForm from '../../../components/Version4/NewDealForm';
+import { Button } from 'react-bootstrap';
 
-
-function ProductComponent({ title }) {
+function ProductComponent({ title, showSidebar }) {
   return (
     <div className="content-block">
       <h3>{title}</h3>
-      <NewDealForm />
+      <p className="text-center">No products were added yet.</p>
+      <p className="text-center">
+        <Button bsStyle="primary" onClick={showSidebar}>Add product(s)</Button>
+      </p>
     </div>
   );
 }
 
 ProductComponent.propTypes = {
+  showSidebar: PropTypes.func,
   title: PropTypes.string.isRequired,
 };
 

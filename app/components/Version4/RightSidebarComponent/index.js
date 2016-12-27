@@ -8,6 +8,8 @@ import React, { PropTypes } from 'react';
 import { Button } from 'react-bootstrap';
 
 import AddCounterpartyContainer from '../../../containers/Version4/AddCounterpartyContainer';
+import AddProductContainer from '../../../containers/Version4/AddProductContainer';
+
 import ChooseSubLimitComponent from '../../../components/Version4/ChooseSubLimitComponent';
 import CounterpartyDetailComponent from '../../../components/Version4/CounterpartyDetailComponent';
 import DealHeaderInformationComponent from '../../../components/Version4/DealHeaderInformationComponent';
@@ -31,6 +33,10 @@ function RightSidebarComponent({ hideSidebar, visible, newSubLimit, sidebarCompo
 
         {counterpartyDetail &&
           <CounterpartyDetailComponent />
+        }
+
+        {(sidebarComponent === 'product') &&
+          <AddProductContainer hideSidebar={hideSidebar} />
         }
 
         <p className="text-center">

@@ -13,7 +13,6 @@
 
 import React from 'react';
 import HeaderContainer from '../HeaderContainer';
-import FooterContainer from '../FooterContainer';
 
 export default class App extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 
@@ -26,7 +25,6 @@ export default class App extends React.PureComponent { // eslint-disable-line re
       <div>
         <HeaderContainer />
         {React.Children.toArray(this.props.children)}
-        <FooterContainer />
       </div>
     );
   }
