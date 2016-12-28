@@ -12,6 +12,7 @@ import AddProductContainer from '../../../containers/Version4/AddProductContaine
 import ChooseSubLimitComponent from '../../../components/Version4/ChooseSubLimitComponent';
 import CounterpartyDetailComponent from '../../../components/Version4/CounterpartyDetailComponent';
 import DealHeaderInformationComponent from '../../../components/Version4/DealHeaderInformationComponent';
+import ProductDetailsComponent from '../../../components/Version4/ProductDetailsComponent';
 
 function RightSidebarComponent({ hideSidebar, visible, newSubLimit, sidebarComponent, counterpartyDetail, backCounterpartyList, viewCounterparty, addDealHeaderInformation, sidebarClass, newProduct }) {
   return (
@@ -36,6 +37,10 @@ function RightSidebarComponent({ hideSidebar, visible, newSubLimit, sidebarCompo
 
         {(sidebarComponent === 'product') &&
           <AddProductContainer hideSidebar={hideSidebar} newProduct={newProduct} />
+        }
+
+        {(sidebarComponent === 'productDetails') &&
+          <ProductDetailsComponent hideSidebar={hideSidebar} />
         }
       </div>
     </div>

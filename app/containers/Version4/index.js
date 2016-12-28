@@ -32,6 +32,7 @@ export class Version4 extends React.Component { // eslint-disable-line react/pre
       sublimit: false,
       sidebarComponent: '',
       sidebarClass: '',
+      productsAdded: false,
     };
   }
 
@@ -71,6 +72,9 @@ export class Version4 extends React.Component { // eslint-disable-line react/pre
 
   newProduct = () => {
     this.newSubLimit();
+    this.setState({
+      productsAdded: true,
+    });
   }
 
   addDealHeaderInformation = () => {
@@ -128,6 +132,8 @@ export class Version4 extends React.Component { // eslint-disable-line react/pre
               <ProductContainer
                 title="Products"
                 showSidebar={() => this.showSidebar('product')}
+                productsAdded={this.state.productsAdded}
+                showProductDetails={() => this.showSidebar('productDetails')}
               />
               <CounterpartyComponent
                 showSidebar={() => this.showSidebar('counterparty')}
@@ -145,6 +151,7 @@ export class Version4 extends React.Component { // eslint-disable-line react/pre
                 <ProductContainer
                   title="Products"
                   showSidebar={() => this.showSidebar('product')}
+                  productsAdded={this.state.productsAdded}
                 />
                 <CounterpartyComponent title="Counterparty" />
                 <BookingComponent title="Booking" />

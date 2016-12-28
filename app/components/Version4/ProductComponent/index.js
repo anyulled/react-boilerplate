@@ -7,11 +7,21 @@
 import React, { PropTypes } from 'react';
 import { Button } from 'react-bootstrap';
 
-function ProductComponent({ title, showSidebar }) {
+import NewProductComponent from '../../../components/Version4/NewProductComponent';
+
+function ProductComponent({ title, showSidebar, productsAdded, showProductDetails }) {
   return (
     <div className="content-block">
       <h3>{title}</h3>
-      <p className="text-center">No products were added yet.</p>
+
+      {!productsAdded &&
+        <p className="text-center">No products were added yet.</p>
+      }
+
+      {productsAdded &&
+        <NewProductComponent showProductDetails={showProductDetails} />
+      }
+
       <p className="text-center">
         <Button bsStyle="primary" onClick={showSidebar}>Add product(s)</Button>
       </p>
@@ -20,6 +30,8 @@ function ProductComponent({ title, showSidebar }) {
 }
 
 ProductComponent.propTypes = {
+  productsAdded: PropTypes.bool.isRequired,
+  showProductDetails: PropTypes.func,
   showSidebar: PropTypes.func,
   title: PropTypes.string.isRequired,
 };

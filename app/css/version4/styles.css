@@ -98,7 +98,7 @@
 .deal-content .answer{
     float: left;
     font-weight: 600;
-    padding: 9px 0px;
+    padding: 9px 0px 3px;
 }
 
 .deal-content .edit-field:hover button{
@@ -119,7 +119,7 @@
     text-align: center;
     top: 140px;
     width: 100%;
-    z-index: 9999;
+    z-index: 2;
     opacity:1;
     transition: opacity 3s;     
 }
@@ -288,7 +288,7 @@
     right: -500px;
     top: 0;
     width: 500px;
-    z-index: 2;
+    z-index: 3;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-transition: -webkit-transform ease 250ms;
@@ -461,6 +461,11 @@
     width: 100%;
 }
 
+.addProducts .products-list .panel button{    
+    display: none;
+    float: right;
+}
+
 .addProducts .step2{
     margin: 10px 0px;
 }
@@ -488,3 +493,54 @@
     margin-left: 20px;
 }
 /* -------- END ADDPRODUCTCOMPONENT -------- */
+/* -------- NEWPRODUCTCOMPONENT -------- */
+.new-products-list{
+    margin-bottom: 10px;
+}
+
+.new-products-list .panel{
+    margin-bottom: 5px;
+}
+
+.new-products-list .panel-body{
+    padding: 10px;
+}
+
+.new-products-list .panel button{
+    color:#1d769f;
+    display: none;
+    float: right;
+    padding: 0px;
+}
+
+.new-products-list .panel:hover button{
+    display: block;
+}
+
+.new-products-list .panel ul{
+    float: left;
+    list-style: none;
+    margin: 5px 0px 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+.new-products-list .panel ul li{
+    color: #999999;
+    float: left;  
+    text-align: left;      
+    width: 40%;
+}
+
+.new-products-list .panel ul li:last-child{
+    color: #d43f3a;
+    cursor: pointer;
+    display: none;
+    text-align: right;
+    width: 20%;
+}
+
+.new-products-list .panel:hover ul li:last-child{
+    display: block;
+}
+/* -------- END NEWPRODUCTCOMPONENT -------- */
