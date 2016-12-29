@@ -1,4 +1,32 @@
 /* -------- COMMOM -------- */
+html, body{
+    margin: 0;
+    padding: 0;		   
+    min-height:100%;
+}
+
+.flex-container {
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-flow:row;
+    min-height:100%;
+    position:absolute;
+    padding: 140px 0px 0px 200px !important;
+    top: 0;
+    width:100%;
+}
+
+.box {
+    flex:1;
+    -webkit-flex:1;
+    min-width:400px;
+    max-width:400px;
+}
+
 .deal-header{
     padding-top: 40px;
 }
@@ -30,26 +58,6 @@
 
 .navbar-fixed-top + .deal-content{
     padding-top: 60px;
-}
-
-.deal-content .row-stretch{
-    float: left;
-    width: 100%;
-    min-height: 100vh;
-    padding: 140px 0px 0px !important;
-    position: absolute;
-    top: 0;
-    z-index: 1;
-}
-
-.deal-content .deal-sections{
-    float: left;
-    width: 200px;    
-}
-
-.deal-content .deal-sections .fixed{
-    position: fixed;
-    width: 200px;
 }
 
 .deal-content .top-toolbar, .deal-content .content-block{
@@ -119,7 +127,7 @@
     text-align: center;
     top: 140px;
     width: 100%;
-    z-index: 2;
+    z-index: 3;
     opacity:1;
     transition: opacity 3s;     
 }
@@ -133,10 +141,14 @@
 }
 
 .deal-content .new-sub-limit{
-    left: 200px;
+    left: 600px;
     transform: translateY(-50%);
     position: fixed;
     top: 50%;
+}
+
+.deal-content .new-sub-limit.extra-space{
+    left: 1000px;    
 }
 /* -------- END COMMOM -------- */
 /* -------- AUTOSAVECOMPONENT -------- */
@@ -231,6 +243,16 @@
     font-weight: normal;
 }
 /* -------- END DEALDETAILSCOMPONENT -------- */
+/* -------- DEALSECTIONCONTAINER -------- */
+.deal-sections{
+    height: 100%;
+    padding-top: 140px !important;
+    position: fixed;
+    top: 0;
+    width: 200px;
+    z-index: 3;
+}
+/* -------- END DEALSECTIONCONTAINER -------- */
 /* -------- DEALSWITCHVIEWCOMPONENT -------- */
 .deal-sections .switch-view{
     color: rgba(29, 29, 29, 0.65);
@@ -268,7 +290,7 @@
 /* -------- RIGHTSIDEBARCOMPONENT -------- */
 .sidebar-content {
     display: block;
-    z-index: 2;
+    z-index: 4;
 }
 
 .sidebar-content .mask, .sidebar-content.product .mask{
@@ -280,7 +302,7 @@
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 2;
+    z-index: 4;
 }
 
 .sidebar-content.visible .mask{
@@ -295,7 +317,7 @@
     right: -500px;
     top: 0;
     width: 500px;
-    z-index: 3;
+    z-index: 4;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-transition: -webkit-transform ease 250ms;
@@ -356,9 +378,14 @@
 
 .sidebar-content .fixedButtons{
     bottom: 10px;
-    left: 50%;
+    right: 0;
     position: fixed;
-    transform: translateX(-50%);
+    width: 500px;
+    z-index: 5;
+}
+
+.sidebar-content.product .fixedButtons{   
+    width: 800px;
 }
 
 .sidebar-content .scroll{

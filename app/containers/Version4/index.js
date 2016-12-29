@@ -114,7 +114,9 @@ export class Version4 extends React.Component { // eslint-disable-line react/pre
           </Grid>
         </div>
 
-        <Grid fluid className="deal-content">
+        <DealSectionsContainer />
+
+        <div className="flex-container deal-content">
 
           {this.state.sublimit &&
             <div className="alert alert-success" role="alert" ref={(c) => { this.successMessage = c; }}>
@@ -122,50 +124,44 @@ export class Version4 extends React.Component { // eslint-disable-line react/pre
             </div>
           }
 
-          <Row className="row-stretch">
+          <div className="box content-pane pane-2 left-pane">
+            <DealLimitsComponent title="Deal Limits" />
+            <LimitsComponent title="Limits" />
+            <ProductContainer
+              title="Products"
+              showSidebar={() => this.showSidebar('product')}
+              productsAdded={this.state.productsAdded}
+              showProductDetails={() => this.showSidebar('productDetails')}
+            />
+            <CounterpartyComponent
+              showSidebar={() => this.showSidebar('counterparty')}
+              title="Counterparty"
+            />
+            <BookingComponent title="Booking" />
+            <CollateralComponent title="Collateral" />
+            <ContactComponent title="Contact" />
+          </div>
 
-            <DealSectionsContainer />
-
-            <Col md={3} className="content-pane pane-2 left-pane">
-              <DealLimitsComponent title="Deal Limits" />
+          {this.state.sublimit &&
+            <div className="content-pane pane-3 box">
+              <DealLimitsComponent title="Sub-limit name" draft />
               <LimitsComponent title="Limits" />
               <ProductContainer
                 title="Products"
                 showSidebar={() => this.showSidebar('product')}
                 productsAdded={this.state.productsAdded}
-                showProductDetails={() => this.showSidebar('productDetails')}
               />
-              <CounterpartyComponent
-                showSidebar={() => this.showSidebar('counterparty')}
-                title="Counterparty"
-              />
+              <CounterpartyComponent title="Counterparty" />
               <BookingComponent title="Booking" />
               <CollateralComponent title="Collateral" />
               <ContactComponent title="Contact" />
-            </Col>
-
-            {this.state.sublimit &&
-              <Col md={3} className="content-pane pane-3">
-                <DealLimitsComponent title="Sub-limit name" draft />
-                <LimitsComponent title="Limits" />
-                <ProductContainer
-                  title="Products"
-                  showSidebar={() => this.showSidebar('product')}
-                  productsAdded={this.state.productsAdded}
-                />
-                <CounterpartyComponent title="Counterparty" />
-                <BookingComponent title="Booking" />
-                <CollateralComponent title="Collateral" />
-                <ContactComponent title="Contact" />
-              </Col>
-            }
-
-            <AddSubLimitComponent
-              showSidebar={() => this.showSidebar('sublimit')}
-              sublimit={this.state.sublimit}
-            />
-          </Row>
-        </Grid>
+            </div>
+          }
+          <AddSubLimitComponent
+            showSidebar={() => this.showSidebar('sublimit')}
+            sublimit={this.state.sublimit}
+          />
+        </div>
       </div>
     );
   }
