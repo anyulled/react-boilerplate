@@ -15,37 +15,39 @@ function AddCounterpartyComponent({ hideSidebar, searchItems, showItems, viewCou
         <Glyphicon glyph="remove" onClick={hideSidebar} />
         Add counterparty
       </h3>
-      <form>
-        <Row>
-          <Col md={12}>
-            <ControlLabel>Paragon ID - Name</ControlLabel>
-            <InputGroup>
-              <FormControl type="text" onChange={searchItems} />
-              <InputGroup.Addon>
-                <Glyphicon glyph="search" />
-              </InputGroup.Addon>
-            </InputGroup>
-          </Col>
-        </Row>
-        <Row>
-          <Col md={12}>
-            <ControlLabel>Client is the Obligor</ControlLabel>
-            <ButtonGroup>
-              <Button>No</Button>
-              <Button bsStyle="success">Yes</Button>
-            </ButtonGroup>
-          </Col>
-        </Row>
-      </form>
-      {showItems &&
-        <div>
-          <p className="text-center">
-            Coincidence found:
-          </p>
-          <CounterpartyListComponent viewCounterparty={viewCounterparty} />
-        </div>
-      }
-      <p className="text-center">
+      <div className="scroll">
+        <form>
+          <Row>
+            <Col md={12}>
+              <ControlLabel>Paragon ID - Name</ControlLabel>
+              <InputGroup>
+                <FormControl type="text" onChange={searchItems} />
+                <InputGroup.Addon>
+                  <Glyphicon glyph="search" />
+                </InputGroup.Addon>
+              </InputGroup>
+            </Col>
+          </Row>
+          <Row>
+            <Col md={12}>
+              <ControlLabel>Client is the Obligor</ControlLabel>
+              <ButtonGroup>
+                <Button>No</Button>
+                <Button bsStyle="success">Yes</Button>
+              </ButtonGroup>
+            </Col>
+          </Row>
+        </form>
+        {showItems &&
+          <div>
+            <p className="text-center">
+              Coincidence found:
+            </p>
+            <CounterpartyListComponent viewCounterparty={viewCounterparty} />
+          </div>
+        }
+      </div>
+      <p className="text-center fixedButtons">
         <Button bsStyle="default" onClick={hideSidebar}>Cancel</Button>
       </p>
     </div>

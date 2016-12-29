@@ -17,17 +17,17 @@ function AddProductComponent({ hideSidebar, showList, addToList, goStep2, showSt
         <Glyphicon glyph="remove" onClick={hideSidebar} />
         Add TF allowed products to the deal
       </h3>
+      <div className="scroll">
+        <AddProductStep1Container
+          showList={showList}
+          addToList={addToList}
+          showStep2={showStep2}
+          goBackStep1={goBackStep1}
+        />
 
-      <AddProductStep1Container
-        showList={showList}
-        addToList={addToList}
-        showStep2={showStep2}
-        goBackStep1={goBackStep1}
-      />
-
-      <AddProductStep2Container showStep2={showStep2} />
-
-      <p className="text-center">
+        <AddProductStep2Container showStep2={showStep2} />
+      </div>
+      <p className="text-center fixedButtons">
         {!showStep2 &&
           <Button bsStyle="primary" disabled={!showList} onClick={goStep2}>
             Continue

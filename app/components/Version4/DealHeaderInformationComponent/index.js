@@ -14,40 +14,42 @@ function DealHeaderInformationComponent({ hideSidebar, addDealHeaderInformation 
         <Glyphicon glyph="remove" onClick={hideSidebar} />
         Deal header information
       </h3>
-      <form className="dealInformationForm">
-        <Row>
-          <Col md={7}>
-            <ControlLabel>Nickname</ControlLabel>
-            <FormControl type="text" />
-          </Col>
-          <Col md={5}>
-            <small>(optional)</small>
-          </Col>
-        </Row>
+      <div className="scroll">
+        <form className="dealInformationForm">
+          <Row>
+            <Col md={7}>
+              <ControlLabel>Nickname</ControlLabel>
+              <FormControl type="text" />
+            </Col>
+            <Col md={5}>
+              <small>(optional)</small>
+            </Col>
+          </Row>
 
-        <Row>
-          <Col md={9}>
-            <ControlLabel>Description</ControlLabel>
-            <FormControl componentClass="textarea" bsSize="lg" />
-          </Col>
+          <Row>
+            <Col md={9}>
+              <ControlLabel>Description</ControlLabel>
+              <FormControl componentClass="textarea" bsSize="lg" />
+            </Col>
 
-          <Col md={3}>
-            <small>(optional)</small>
-          </Col>
-        </Row>
+            <Col md={3}>
+              <small>(optional)</small>
+            </Col>
+          </Row>
 
-        <Row>
-          <Col md={7}>
-            <ControlLabel>Documents</ControlLabel>
-            <FormControl type="text" />
-          </Col>
+          <Row>
+            <Col md={7}>
+              <ControlLabel>Documents</ControlLabel>
+              <FormControl type="text" />
+            </Col>
 
-          <Col md={5}>
-            <small>(optional)</small>
-          </Col>
-        </Row>
-      </form>
-      <p className="text-center">
+            <Col md={5}>
+              <small>(optional)</small>
+            </Col>
+          </Row>
+        </form>
+      </div>
+      <p className="text-center fixedButtons">
         <Button bsStyle="primary" onClick={() => { hideSidebar(); addDealHeaderInformation(); }}>Apply</Button>
         <Button bsStyle="default" onClick={hideSidebar}>Cancel</Button>
         <Button bsStyle="danger" onClick={hideSidebar}>Delete Deal</Button>

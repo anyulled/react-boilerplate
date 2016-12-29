@@ -131,6 +131,13 @@
 .deal-content .alert-success{
     background: rgba(169,202,104,0.95);    
 }
+
+.deal-content .new-sub-limit{
+    left: 200px;
+    transform: translateY(-50%);
+    position: fixed;
+    top: 50%;
+}
 /* -------- END COMMOM -------- */
 /* -------- AUTOSAVECOMPONENT -------- */
 .deal-header .autosave{
@@ -345,6 +352,27 @@
     margin-bottom: 15px;
     text-decoration: none;
     width: 100%;
+}
+
+.sidebar-content .fixedButtons{
+    bottom: 10px;
+    left: 50%;
+    position: fixed;
+    transform: translateX(-50%);
+}
+
+.sidebar-content .scroll{
+    max-height: calc(100% - 260px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: absolute;
+    width: 460px;
+}
+
+.sidebar-content.product .scroll{
+    margin-left: -10px;
+    padding: 10px;
+    width: 800px;
 }
 /* -------- END RIGHTSIDEBARCOMPONENT -------- */
 /* -------- TREECOMPONENT -------- */

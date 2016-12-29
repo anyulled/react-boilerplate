@@ -145,7 +145,7 @@ export class Version4 extends React.Component { // eslint-disable-line react/pre
             </Col>
 
             {this.state.sublimit &&
-              <Col md={3} className="content-pane">
+              <Col md={3} className="content-pane pane-3">
                 <DealLimitsComponent title="Sub-limit name" draft />
                 <LimitsComponent title="Limits" />
                 <ProductContainer

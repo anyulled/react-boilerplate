@@ -5,7 +5,7 @@
 */
 
 import React, { PropTypes } from 'react';
-import { Glyphicon, Row, Col, ControlLabel, Button } from 'react-bootstrap';
+import { Glyphicon, Button } from 'react-bootstrap';
 import KeyValueComponent from '../../../components/Version4/KeyValueComponent';
 
 function ProductDetailsComponent({ hideSidebar }) {
@@ -15,36 +15,38 @@ function ProductDetailsComponent({ hideSidebar }) {
         <Glyphicon glyph="remove" onClick={hideSidebar} />
         TF product details
       </h3>
-      <form>
-        <KeyValueComponent
-          label="Level 3: Sub-product"
-          value="Export Letter of Transfer"
-        />
-        <KeyValueComponent
-          label="Level 2: Product"
-          value="Export LC"
-        />
-        <KeyValueComponent
-          label="Client type"
-          value="CORPORATE"
-        />
-        <KeyValueComponent
-          label="Level 1: Client product"
-          value="Documentary Trade & Services"
-        />
-        <KeyValueComponent
-          label="Product description:"
-          value="Transfer of Export LC from the first beneficiary to second beneficiary."
-        />
-      </form>
-      <h4 className="text-center">
-        Do you need to create<br />
-        additional restriction on this product?
-      </h4>
-      <p className="text-center">
-        <Button bsStyle="primary" onClick={hideSidebar}>Add sub-limit</Button>
-      </p>
-      <p className="text-center">
+      <div className="scroll">
+        <form>
+          <KeyValueComponent
+            label="Level 3: Sub-product"
+            value="Export Letter of Transfer"
+          />
+          <KeyValueComponent
+            label="Level 2: Product"
+            value="Export LC"
+          />
+          <KeyValueComponent
+            label="Client type"
+            value="CORPORATE"
+          />
+          <KeyValueComponent
+            label="Level 1: Client product"
+            value="Documentary Trade & Services"
+          />
+          <KeyValueComponent
+            label="Product description:"
+            value="Transfer of Export LC from the first beneficiary to second beneficiary."
+          />
+        </form>
+        <h4 className="text-center">
+          Do you need to create<br />
+          additional restriction on this product?
+        </h4>
+        <p className="text-center">
+          <Button bsStyle="primary" onClick={hideSidebar}>Add sub-limit</Button>
+        </p>
+      </div>
+      <p className="text-center fixedButtons">
         <Button bsStyle="danger" onClick={hideSidebar}>Remove product from the deal</Button>
       </p>
     </div>

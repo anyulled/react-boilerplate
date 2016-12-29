@@ -18,7 +18,7 @@ function ChooseSubLimitComponent({ hideSidebar, newSubLimit }) {
       </h3>
       <p>Please, select a deal or sub-limit from where you want to restrict the deal:</p>
       <TreeComponent newSubLimit={newSubLimit} />
-      <p className="text-center">
+      <p className="text-center fixedButtons">
         <Button bsStyle="default" onClick={hideSidebar}>Cancel</Button>
       </p>
     </div>
