@@ -50,7 +50,7 @@ export class Version4 extends React.Component { // eslint-disable-line react/pre
       visible: 'visible',
       sidebarComponent: component,
     });
-    if (component === 'product') {
+    if (component === 'product' || component === 'counterparty') {
       this.setState({
         sidebarClass: 'product',
       });

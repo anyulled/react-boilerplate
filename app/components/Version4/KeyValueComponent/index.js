@@ -5,20 +5,23 @@
 */
 
 import React, { PropTypes } from 'react';
-import { Row, Col, ControlLabel } from 'react-bootstrap';
+import { FormGroup, ControlLabel } from 'react-bootstrap';
 
-function KeyValueComponent({ label, value }) {
+function KeyValueComponent({ label, value, colSize }) {
   return (
-    <Row>
-      <Col md={12}>
-        <ControlLabel>{label}</ControlLabel>
-        <b>{value}</b>
-      </Col>
-    </Row>
+    <FormGroup className={`col-md-${colSize}`}>
+      <ControlLabel>{label}</ControlLabel>
+      <b>{value}</b>
+    </FormGroup>
   );
 }
 
+KeyValueComponent.defaultProps = {
+  colSize: 12,
+};
+
 KeyValueComponent.propTypes = {
+  colSize: PropTypes.number,
   label: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
 };

@@ -5,131 +5,172 @@
 */
 
 import React, { PropTypes } from 'react';
-import { Button, ControlLabel, Glyphicon, Row, Col, ButtonGroup } from 'react-bootstrap';
+import { Button, Row, Col, Tab, Nav, NavItem, FormGroup, ControlLabel, ButtonGroup, FormControl } from 'react-bootstrap';
 
+import KeyValueComponent from '../../../components/Version4/KeyValueComponent';
 
-function CounterpartyDetailComponent({ hideSidebar, backCounterpartyList }) {
+function CounterpartyDetailComponent({ expand, expandDetails }) {
+  let expandButtonLabel;
+  if (expand) {
+    expandButtonLabel = 'Collapse details';
+  } else {
+    expandButtonLabel = 'Expand details';
+  }
   return (
-    <div className="content-block">
-      <h3>
-        <Glyphicon glyph="remove" onClick={() => { hideSidebar(); backCounterpartyList(); }} />
-        Add counterparty
-      </h3>
-      <div className="scroll">
-        <form>
-          <Row>
-            <Col md={12}>
-              <ControlLabel>CRM Responsible</ControlLabel>
-              <b>Peter Mustermann</b>
-            </Col>
-          </Row>
-          <Row>
-            <Col md={4}>
-              <ControlLabel>Credit rating</ControlLabel>
-              <b>iA</b>
-            </Col>
-            <Col md={8}>
-              <ControlLabel>Score card</ControlLabel>
-              <b>SIEMENS AKTIENGESELLSCHAFT</b>
-            </Col>
-          </Row>
-          <Row>
-            <Col md={12}>
-              <ControlLabel>Client type</ControlLabel>
-              <b>CORPORATE</b>
-            </Col>
-          </Row>
-          <Row>
-            <Col md={12}>
-              <ControlLabel>Country of domicile</ControlLabel>
-              <b>GERMANY</b>
-            </Col>
-          </Row>
-          <Row>
-            <Col md={12}>
-              <ControlLabel>Industry sector (NACE)</ControlLabel>
-              <b>Industry description</b>
-            </Col>
-          </Row>
-          <h3>
-            <small>LEGAL ENTITY</small>
-          </h3>
-          <Row>
-            <Col md={4}>
-              <ControlLabel>Paragon ID</ControlLabel>
-              <b>1234567890</b>
-            </Col>
-            <Col md={8}>
-              <ControlLabel>Name</ControlLabel>
-              <b>SIEMENS AKTIENGESELLSCHAFT</b>
-            </Col>
-          </Row>
-          <h3>
-            <small>PARENT</small>
-          </h3>
-          <Row>
-            <Col md={4}>
-              <ControlLabel>Paragon ID</ControlLabel>
-              <b>1234567890</b>
-            </Col>
-            <Col md={8}>
-              <ControlLabel>Name</ControlLabel>
-              <b>SIEMENS AKTIENGESELLSCHAFT</b>
-            </Col>
-          </Row>
-          <Row>
-            <Col md={12}>
-              <ControlLabel>Credit rating</ControlLabel>
-              <b>iA</b>
-            </Col>
-          </Row>
-          <h3>
-            <small>GUARANTOR</small>
-          </h3>
-          <Row>
-            <Col md={4}>
-              <ControlLabel>Paragon ID</ControlLabel>
-              <b>1234567890</b>
-            </Col>
-            <Col md={8}>
-              <ControlLabel>Name</ControlLabel>
-              <b>SIEMENS AKTIENGESELLSCHAFT</b>
-            </Col>
-          </Row>
-          <Row>
-            <Col md={12}>
-              <ControlLabel>Credit rating</ControlLabel>
-              <b>iA</b>
-            </Col>
-          </Row>
-          <Row>
-            <Col md={12}>
-              <a>Add Guarantor for this client</a>
-            </Col>
-          </Row>
-          <Row>
-            <Col md={12}>
-              <ControlLabel>Client is the Obligor</ControlLabel>
-              <ButtonGroup>
-                <Button>No</Button>
-                <Button bsStyle="success">Yes</Button>
-              </ButtonGroup>
-            </Col>
-          </Row>
-        </form>
+    <div className={(expand) ? 'expanded' : ''}>
+      <div className="no-padding counterparty-detail">
+        <KeyValueComponent
+          label="CRM Responsible"
+          value="Peter Mustermann"
+        />
+
+        <KeyValueComponent
+          label="Credit rating"
+          value="iA"
+          colSize={5}
+        />
+
+        <KeyValueComponent
+          label="Score card"
+          value="1101"
+          colSize={7}
+        />
+
+        <KeyValueComponent
+          label="Counterparty type"
+          value="CORPORATE"
+        />
+
+        <KeyValueComponent
+          label="Country of domicile"
+          value="GERMANY"
+        />
+
+        <KeyValueComponent
+          label="Industry sector (NACE)"
+          value="Industry description"
+        />
+
+        <h3>
+          <small>LEGAL ENTITY</small>
+        </h3>
+
+        <KeyValueComponent
+          label="Paragon ID"
+          value="1234567890"
+          colSize={5}
+        />
+
+        <KeyValueComponent
+          label="Name"
+          value="SIEMENS AKTIENGESELLSCHAFT"
+          colSize={7}
+        />
+
+        <h3>
+          <small>PARENT</small>
+        </h3>
+
+        <KeyValueComponent
+          label="Paragon ID"
+          value="1234567890"
+          colSize={5}
+        />
+
+        <KeyValueComponent
+          label="Name"
+          value="SIEMENS AKTIENGESELLSCHAFT"
+          colSize={7}
+        />
+
+        <KeyValueComponent
+          label="Credit rating"
+          value="iA"
+        />
       </div>
-      <p className="text-center fixedButtons">
-        <Button bsStyle="primary" onClick={() => { hideSidebar(); backCounterpartyList(); }}>Add</Button>
-        <Button bsStyle="default" onClick={() => { hideSidebar(); backCounterpartyList(); }}>Cancel</Button>
-        <Button bsStyle="default" onClick={backCounterpartyList}>Back</Button>
+      <p className="text-center">
+        <Button bsStyle="info" onClick={expandDetails}>
+          {expandButtonLabel}
+        </Button>
+      </p>
+      <hr />
+      <div className="counterparty-role">
+        <p>Counterparty role in the deal</p>
+        <Tab.Container id="roles" defaultActiveKey="clientObligor">
+          <div>
+            <Row>
+              <Col sm={12}>
+                <Nav bsStyle="pills">
+                  <NavItem eventKey="clientObligor">
+                    Client & Obligor
+                  </NavItem>
+                  <NavItem eventKey="client">
+                    Client
+                  </NavItem>
+                  <NavItem eventKey="obligor">
+                    Obligor
+                  </NavItem>
+                  <NavItem eventKey="guarantor">
+                    Guarantor
+                  </NavItem>
+                </Nav>
+              </Col>
+            </Row>
+            <Row>
+              <Col sm={12}>
+                <Tab.Content animation>
+                  <Tab.Pane eventKey="clientObligor">
+                    <FormGroup>
+                      <ControlLabel>Joint and several liability</ControlLabel>
+                      <ButtonGroup>
+                        <Button bsStyle="default">No</Button>
+                        <Button bsStyle="success">Yes</Button>
+                      </ButtonGroup>
+                    </FormGroup>
+                  </Tab.Pane>
+
+                  <Tab.Pane eventKey="client">
+                  </Tab.Pane>
+
+                  <Tab.Pane eventKey="obligor">
+                    <FormGroup>
+                      <ControlLabel>Joint and several liability</ControlLabel>
+                      <ButtonGroup>
+                        <Button bsStyle="default">No</Button>
+                        <Button bsStyle="success">Yes</Button>
+                      </ButtonGroup>
+                    </FormGroup>
+
+                    <FormGroup>
+                      <ControlLabel>Linked to client</ControlLabel>
+                      <FormControl componentClass="select" placeholder="select">
+                      </FormControl>
+                    </FormGroup>
+                  </Tab.Pane>
+
+                  <Tab.Pane eventKey="guarantor">
+                    <FormGroup>
+                      <ControlLabel>Linked to counterparty</ControlLabel>
+                      <FormControl componentClass="select" placeholder="select">
+                      </FormControl>
+                    </FormGroup>
+                  </Tab.Pane>
+                </Tab.Content>
+              </Col>
+            </Row>
+          </div>
+        </Tab.Container>
+      </div>
+      <p className="text-center">
+        <Button bsStyle="primary">Add to the list</Button>
       </p>
     </div>
   );
 }
 
 CounterpartyDetailComponent.propTypes = {
-  backCounterpartyList: PropTypes.func,
-  hideSidebar: PropTypes.func,
+  expand: PropTypes.bool,
+  expandDetails: PropTypes.func,
 };
 
 export default CounterpartyDetailComponent;

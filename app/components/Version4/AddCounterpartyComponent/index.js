@@ -5,48 +5,22 @@
 */
 
 import React, { PropTypes } from 'react';
-import { Glyphicon, Button, Row, ControlLabel, Col, InputGroup, FormControl, ButtonGroup } from 'react-bootstrap';
-import CounterpartyListComponent from '../../../components/Version4/CounterpartyListComponent';
+import { Button } from 'react-bootstrap';
 
-function AddCounterpartyComponent({ hideSidebar, searchItems, showItems, viewCounterparty }) {
+import AddCounterpartyStep1Container from '../../../containers/Version4/AddCounterpartyStep1Container';
+
+import SidebarHeaderComponent from '../../../components/Version4/SidebarHeaderComponent';
+
+function AddCounterpartyComponent({ hideSidebar }) {
   return (
-    <div className="content-block">
-      <h3>
-        <Glyphicon glyph="remove" onClick={hideSidebar} />
-        Add counterparty
-      </h3>
+    <div className="content-block steps">
+
+      <SidebarHeaderComponent title="Add counterparties to the deal" hideSidebar={hideSidebar} />
+
       <div className="scroll">
-        <form>
-          <Row>
-            <Col md={12}>
-              <ControlLabel>Paragon ID - Name</ControlLabel>
-              <InputGroup>
-                <FormControl type="text" onChange={searchItems} />
-                <InputGroup.Addon>
-                  <Glyphicon glyph="search" />
-                </InputGroup.Addon>
-              </InputGroup>
-            </Col>
-          </Row>
-          <Row>
-            <Col md={12}>
-              <ControlLabel>Client is the Obligor</ControlLabel>
-              <ButtonGroup>
-                <Button>No</Button>
-                <Button bsStyle="success">Yes</Button>
-              </ButtonGroup>
-            </Col>
-          </Row>
-        </form>
-        {showItems &&
-          <div>
-            <p className="text-center">
-              Coincidence found:
-            </p>
-            <CounterpartyListComponent viewCounterparty={viewCounterparty} />
-          </div>
-        }
+        <AddCounterpartyStep1Container />
       </div>
+
       <p className="text-center fixedButtons">
         <Button bsStyle="default" onClick={hideSidebar}>Cancel</Button>
       </p>
@@ -56,9 +30,6 @@ function AddCounterpartyComponent({ hideSidebar, searchItems, showItems, viewCou
 
 AddCounterpartyComponent.propTypes = {
   hideSidebar: PropTypes.func.isRequired,
-  searchItems: PropTypes.func.isRequired,
-  showItems: PropTypes.bool.isRequired,
-  viewCounterparty: PropTypes.func.isRequired,
 };
 
 export default AddCounterpartyComponent;

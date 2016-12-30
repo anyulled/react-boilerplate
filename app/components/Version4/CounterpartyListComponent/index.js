@@ -5,22 +5,25 @@
 */
 
 import React, { PropTypes } from 'react';
-import CounterpartyListItemComponent from '../../../components/Version4/CounterpartyListItemComponent';
+import { Glyphicon } from 'react-bootstrap';
 
 function CounterpartyListComponent({ viewCounterparty }) {
   const counterpartyItems = [];
   for (let i = 1; i <= 5; i += 1) {
     counterpartyItems.push(
-      <CounterpartyListItemComponent
-        key={i}
-        viewCounterparty={viewCounterparty}
-        title={`00${i} - Lorem ipsum dolor sit amet`}
-      />
+      <li key={i}>
+        {`00${i} - Lorem ipsum dolor sit amet`}
+        <button>
+          <Glyphicon glyph="chevron-right" onClick={viewCounterparty} />
+        </button>
+      </li>
     );
   }
   return (
-    <div className="tree">
-      {counterpartyItems}
+    <div>
+      <ul className="list">
+        {counterpartyItems}
+      </ul>
       <a className="text-center load-more">Load (05) more</a>
     </div>
   );

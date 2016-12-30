@@ -150,6 +150,11 @@ html, body{
 .deal-content .new-sub-limit.extra-space{
     left: 1000px;    
 }
+
+.no-padding{
+    margin-left: -10px;
+    margin-right: -10px;
+}
 /* -------- END COMMOM -------- */
 /* -------- AUTOSAVECOMPONENT -------- */
 .deal-header .autosave{
@@ -423,26 +428,26 @@ html, body{
 }
 /* -------- END DEALHEADERINFORMATIONCOMPONENT -------- */
 /* -------- ADDPRODUCTCOMPONENT -------- */
-.addProducts{
+.steps{
     padding: 10px;
 }
 
-.addProducts h4{
+.steps h4{
     font-size: 14px;
     min-height: 20px;
 }
 
-.addProducts h4 .label{
+.steps h4 .label{
     float: left;
     margin-right: 10px;
 }
 
-.addProducts h4 b{
+.steps h4 b{
     float: left;
     margin-right: 10px;
 }
 
-.addProducts h4 button{
+.steps h4 button{
     margin-top: -6px;
 }
 
@@ -453,35 +458,35 @@ html, body{
     display: flex; 
 }
 
-.addProducts .content-pane{
+.steps .content-pane{
     position: relative;
 }
 
-.addProducts .empty-list{
+.steps .empty-list{
     color: #999;
     font-size: 14px;
     left: 50%;
     margin-left: -180px;
-    margin-top: -24px;
+    margin-top: -16px;
     position: absolute;
     text-align: center;
     top: 50%;
     width: 360px;
 }
 
-.addProducts .content-block{
+.steps .content-block{
     padding: 10px;
 }
 
-.addProducts .panel{
+.steps .panel{
     margin-bottom: 5px;
 }
 
-.addProducts .panel-body{
+.steps .panel-body{
     padding: 10px;
 }
 
-.addProducts .panel ul{
+.steps .panel ul{
     float: left;
     list-style: none;
     margin: 5px 0px 0px;
@@ -489,14 +494,14 @@ html, body{
     width: 100%;
 }
 
-.addProducts .panel ul li{
+.steps .panel ul li{
     color: #999999;
     float: left;  
     text-align: left;      
     width: 40%;
 }
 
-.addProducts .panel ul li:last-child{
+.steps .panel ul li:last-child{
     color: #d43f3a;
     cursor: pointer;
     display: none;
@@ -504,11 +509,11 @@ html, body{
     width: 20%;
 }
 
-.addProducts .panel:hover ul li:last-child{
+.steps .panel:hover ul li:last-child{
     display: block;
 }
 
-.addProducts .products-list{
+.steps .products-list{
     float: left;
     margin-bottom: 10px;
     max-height: 390px;
@@ -516,34 +521,34 @@ html, body{
     width: 100%;
 }
 
-.addProducts .products-list .panel button{    
+.steps .products-list .panel button{    
     display: none;
     float: right;
 }
 
-.addProducts .step2{
+.steps .step2{
     margin: 10px 0px;
 }
 
-.addProducts .form-group .form-group{
+.steps .form-group .form-group{
     margin-bottom: 0px;
 }
 
-.addProducts .step2 input[type="checkbox"]{
+.steps .step2 input[type="checkbox"]{
     margin-top: 22px;
 }
 
-.addProducts .selected-products{
+.steps .selected-products{
     margin-bottom: -15px;
     max-height: 300px;
     overflow-y: auto;
 }
 
-.addProducts .step2 .checkbox-inline{
+.steps .step2 .checkbox-inline{
     position: relative;
 }
 
-.addProducts .step2 .box-label i{
+.steps .step2 .box-label i{
     color: #999999;
     margin-left: 20px;
 }
@@ -599,3 +604,136 @@ html, body{
     display: block;
 }
 /* -------- END NEWPRODUCTCOMPONENT -------- */
+/* -------- ADDCOUNTERPARTYSTEP1COMPONENT -------- */
+.counterparties{
+    min-height: 300px;
+}
+
+.counterparties .list{
+    float: left;
+    list-style: none;
+    margin: 0px 0px 10px;
+    padding: 0px;
+    width: 100%;
+}
+
+.counterparties .list li{
+    float: left;    
+    margin: 5px 0px 10px;
+    width: 100%;
+}
+
+.counterparties .list li button{
+    color:#1d769f;
+    float: right;
+    padding: 0px;
+}
+/* -------- END ADDCOUNTERPARTYSTEP1COMPONENT -------- */
+/* -------- NOTFOUNDCOMPONENT -------- */
+.not-found{
+    color: #999999;
+    margin-top: 15px;
+}
+
+.not-found p:first-child{
+    color: #333333;
+}
+/* -------- END NOTFOUNDCOMPONENT -------- */
+/* -------- COUNTERPARTYDETAILCOMPONENT -------- */
+.expanded{
+    max-height: 400px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.counterparty-detail{
+    margin-bottom: 15px;
+    max-height: 180px;
+    overflow: hidden;
+}
+
+.expanded .counterparty-detail{
+    max-height: none;
+}
+
+.counterparty-detail b{
+    float: left;
+    width: 100%;
+}
+
+.counterparty-detail h3{
+    float: left;
+    margin: 5px 0px;
+    padding: 0px 10px;
+    width: 100%;
+}
+
+.counterparty-detail h3 small{
+    font-weight: 600;    
+}
+
+.counterparty-role .tab-content{
+    margin-top: 10px;
+}
+
+.counterparty-role .tab-content .btn-group{
+    width: 100%;
+}
+/* -------- END COUNTERPARTYDETAILCOMPONENT -------- */
+/* -------- COUNTERPARTYSELECTEDCOMPONENT -------- */
+.counterparty-list{
+    max-height: 490px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.counterparty-list .category {
+    float: left;
+    margin: 5px 0px;
+    width: 100%;
+}
+
+.counterparty-list .category p{
+    margin-bottom: 3px;
+}
+
+.counterparty-list .category .category{
+    margin-bottom: 0px;
+    padding-left: 20px;    
+}
+
+.counterparties .counterparty-list .panel.empty{
+    background: #F2F2F2;
+    border-color: #e2e2e2;
+    color: #999999;
+    text-align: center;
+}
+
+.counterparties .counterparty-list .panel ul{
+    margin-top: 10px;
+}
+
+.counterparties .counterparty-list .panel li{
+    padding-right: 20px;
+    width: auto;
+}
+
+.counterparties .counterparty-list .panel li:last-child{
+    float: right;
+    padding-right: 0px;
+    width: auto;
+}
+
+.counterparties .counterparty-list .panel li .btn-group{
+    margin: -6px 0px -3px;
+} 
+
+.counterparties .counterparty-list .panel li .btn{
+    color: #1d1d1d;
+    float: left;
+}
+
+.counterparties .counterparty-list .panel li .btn-success{
+    color: #ffffff;
+}
+/* -------- END COUNTERPARTYSELECTEDCOMPONENT -------- */

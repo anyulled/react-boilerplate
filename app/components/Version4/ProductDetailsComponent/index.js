@@ -5,18 +5,19 @@
 */
 
 import React, { PropTypes } from 'react';
-import { Glyphicon, Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
+
 import KeyValueComponent from '../../../components/Version4/KeyValueComponent';
+import SidebarHeaderComponent from '../../../components/Version4/SidebarHeaderComponent';
 
 function ProductDetailsComponent({ hideSidebar }) {
   return (
     <div className="content-block">
-      <h3>
-        <Glyphicon glyph="remove" onClick={hideSidebar} />
-        TF product details
-      </h3>
+
+      <SidebarHeaderComponent title="TF product details" hideSidebar={hideSidebar} />
+
       <div className="scroll">
-        <form>
+        <form className="no-padding">
           <KeyValueComponent
             label="Level 3: Sub-product"
             value="Export Letter of Transfer"

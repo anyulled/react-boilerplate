@@ -5,15 +5,14 @@
 */
 
 import React, { PropTypes } from 'react';
-import { Glyphicon, Row, Col, ControlLabel, FormControl, Button } from 'react-bootstrap';
+import { Row, Col, ControlLabel, FormControl, Button } from 'react-bootstrap';
+
+import SidebarHeaderComponent from '../../../components/Version4/SidebarHeaderComponent';
 
 function DealHeaderInformationComponent({ hideSidebar, addDealHeaderInformation }) {
   return (
     <div className="content-block">
-      <h3>
-        <Glyphicon glyph="remove" onClick={hideSidebar} />
-        Deal header information
-      </h3>
+      <SidebarHeaderComponent title="Deal header information" hideSidebar={hideSidebar} />
       <div className="scroll">
         <form className="dealInformationForm">
           <Row>

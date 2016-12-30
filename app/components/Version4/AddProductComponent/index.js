@@ -5,18 +5,19 @@
 */
 
 import React, { PropTypes } from 'react';
-import { Glyphicon, Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 import AddProductStep1Container from '../../../containers/Version4/AddProductStep1Container';
 import AddProductStep2Container from '../../../containers/Version4/AddProductStep2Container';
 
+import SidebarHeaderComponent from '../../../components/Version4/SidebarHeaderComponent';
+
 function AddProductComponent({ hideSidebar, showList, addToList, goStep2, showStep2, goBackStep1, newProduct }) {
   return (
-    <div className="content-block addProducts">
-      <h3>
-        <Glyphicon glyph="remove" onClick={hideSidebar} />
-        Add TF allowed products to the deal
-      </h3>
+    <div className="content-block steps">
+
+      <SidebarHeaderComponent title="Add TF allowed products to the deal" hideSidebar={hideSidebar} />
+
       <div className="scroll">
         <AddProductStep1Container
           showList={showList}
