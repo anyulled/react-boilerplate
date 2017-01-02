@@ -9,7 +9,7 @@ import { Button, Row, Col, Tab, Nav, NavItem, FormGroup, ControlLabel, ButtonGro
 
 import KeyValueComponent from '../../../components/Version4/KeyValueComponent';
 
-function CounterpartyDetailComponent({ expand, expandDetails }) {
+function CounterpartyDetailComponent({ expand, expandDetails, showSelectedProducts }) {
   let expandButtonLabel;
   if (expand) {
     expandButtonLabel = 'Collapse details';
@@ -162,7 +162,7 @@ function CounterpartyDetailComponent({ expand, expandDetails }) {
         </Tab.Container>
       </div>
       <p className="text-center">
-        <Button bsStyle="primary">Add to the list</Button>
+        <Button bsStyle="primary" onClick={showSelectedProducts}>Add to the list</Button>
       </p>
     </div>
   );
@@ -171,6 +171,7 @@ function CounterpartyDetailComponent({ expand, expandDetails }) {
 CounterpartyDetailComponent.propTypes = {
   expand: PropTypes.bool,
   expandDetails: PropTypes.func,
+  showSelectedProducts: PropTypes.func.isRequired,
 };
 
 export default CounterpartyDetailComponent;

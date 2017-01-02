@@ -530,6 +530,10 @@ html, body{
     margin: 10px 0px;
 }
 
+.sidebar-content .step2 .panel button{
+    display: none;
+}
+
 .steps .form-group .form-group{
     margin-bottom: 0px;
 }
@@ -686,54 +690,96 @@ html, body{
     overflow-x: hidden;
     overflow-y: auto;
 }
+/* -------- END COUNTERPARTYSELECTEDCOMPONENT -------- */
+/* -------- ADDCOUNTERPARTYSTEP2COMPONENT -------- */
+.steps .step2 .counterparty-list input[type="checkbox"] {
+    margin-top: -4px;
+    position: absolute;
+    top: 50%;
+}
 
-.counterparty-list .category {
+.sidebar-content .step2 .counterparty-list .form-group .form-group {
+    margin-top: -10px;
+    padding-left: 20px;
+}
+
+.sidebar-content .step2 .counterparty-list .panel button {
+    float: left;
+    display: block;
+}
+/* -------- END ADDCOUNTERPARTYSTEP2COMPONENT -------- */
+/* -------- COUNTERPARTYITEMCOMPONENT -------- */
+.counterparty-panel{
     float: left;
     margin: 5px 0px;
     width: 100%;
 }
 
-.counterparty-list .category p{
+.counterparty-panel p{
     margin-bottom: 3px;
+    text-transform: uppercase;
 }
 
-.counterparty-list .category .category{
+.counterparty-panel .panel{
+    margin-bottom: 5px;
+}
+
+.counterparty-panel .panel-body{
+    padding: 10px;
+}
+
+.counterparty-panel .panel ul {
+    float: left;
+    list-style: none;
+    margin: 10px 0px 0px;
+    padding: 0px;
+    width: 100%; 
+}
+
+.counterparty-panel .panel ul li{
+    color: #999999;
+    float: left;
+    padding-right: 20px;
+    text-align: left;
+    width: auto; 
+}
+
+.counterparty-panel .panel li .btn-group {
+    margin: -6px 0px -3px;
+}
+
+.counterparty-panel .panel li:last-child {
+    color: #d43f3a;
+    cursor: pointer;
+    display: none;
+    float: right;
+    padding-right: 0px;
+    text-align: right;
+    width: auto;
+}
+
+.counterparty-panel .panel:hover li:last-child {
+    display: block;
+}
+
+.counterparty-panel .category {
     margin-bottom: 0px;
-    padding-left: 20px;    
+    padding-left: 20px;
 }
 
-.counterparties .counterparty-list .panel.empty{
+.counterparty-panel .panel.empty{
     background: #F2F2F2;
     border-color: #e2e2e2;
     color: #999999;
     text-align: center;
 }
 
-.counterparties .counterparty-list .panel ul{
-    margin-top: 10px;
-}
-
-.counterparties .counterparty-list .panel li{
-    padding-right: 20px;
-    width: auto;
-}
-
-.counterparties .counterparty-list .panel li:last-child{
-    float: right;
-    padding-right: 0px;
-    width: auto;
-}
-
-.counterparties .counterparty-list .panel li .btn-group{
-    margin: -6px 0px -3px;
-} 
-
-.counterparties .counterparty-list .panel li .btn{
+.counterparty-panel .panel li .btn{
     color: #1d1d1d;
     float: left;
 }
 
-.counterparties .counterparty-list .panel li .btn-success{
+.counterparty-panel .panel li .btn-success{
     color: #ffffff;
 }
-/* -------- END COUNTERPARTYSELECTEDCOMPONENT -------- */
+/* -------- END COUNTERPARTYITEMCOMPONENT -------- */

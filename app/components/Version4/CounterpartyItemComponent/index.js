@@ -16,8 +16,9 @@ function CounterpartyItemComponent(props) {
   if (props.emptyObligors) {
     message = <span>No Obligors were added to this Client yet. At least one is <u>mandatory</u>.</span>;
   }
+
   return (
-    <div className="category">
+    <div className="category counterparty-panel">
       {props.title &&
         <p>{props.title}</p>
       }
@@ -61,7 +62,10 @@ function CounterpartyItemComponent(props) {
 
 CounterpartyItemComponent.propTypes = {
   btnGroup: PropTypes.bool,
-  children: PropTypes.array,
+  children: PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.object,
+  ]),
   emptyGuarantor: PropTypes.bool,
   emptyObligors: PropTypes.bool,
   title: PropTypes.string,

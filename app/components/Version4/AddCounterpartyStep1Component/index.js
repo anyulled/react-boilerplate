@@ -13,7 +13,7 @@ import NotFoundComponent from '../../../components/Version4/NotFoundComponent';
 import CounterpartyDetailComponent from '../../../components/Version4/CounterpartyDetailComponent';
 import CounterpartySelectedComponent from '../../../components/Version4/CounterpartySelectedComponent';
 
-function AddCounterpartyStep1Component({ searchItems, showItems, viewCounterparty, counterpartyDetail, notFound, expand, expandDetails }) {
+function AddCounterpartyStep1Component({ searchItems, showItems, viewCounterparty, counterpartyDetail, notFound, expand, expandDetails, showSelectedProducts, selectedProducts, showStep2, goBackStep1 }) {
   let view;
   if (showItems) {
     view = <CounterpartyListComponent viewCounterparty={viewCounterparty} />;
@@ -22,8 +22,8 @@ function AddCounterpartyStep1Component({ searchItems, showItems, viewCounterpart
   }
   return (
     <div>
-      <StepsHeaderComponent title="Select counterparties to add to the deal" step1 />
-      <Row className="row-eq-height counterparties">
+      <StepsHeaderComponent title="Select counterparties to add to the deal" step1 step={1} showStep2={showStep2} goBackStep1={goBackStep1} />
+      <Row className={(showStep2) ? 'row-eq-height counterparties hide' : 'row-eq-height counterparties'}>
         <div className="content-pane pane-2 col-md-6">
           <div className="content-block">
             <form>
@@ -51,7 +51,7 @@ function AddCounterpartyStep1Component({ searchItems, showItems, viewCounterpart
               </div>
             }
             {counterpartyDetail && showItems &&
-              <CounterpartyDetailComponent expand={expand} expandDetails={expandDetails} />
+              <CounterpartyDetailComponent expand={expand} expandDetails={expandDetails} showSelectedProducts={showSelectedProducts} />
             }
           </div>
         </div>
@@ -59,11 +59,16 @@ function AddCounterpartyStep1Component({ searchItems, showItems, viewCounterpart
           <div className="content-block">
             <FormGroup>
               <ControlLabel>Selected products:</ControlLabel>
-              <div className="empty-list hide">
-                List is empty.<br />
-                Please, select products you want to add to the deal.
-              </div>
-              <CounterpartySelectedComponent />
+              {!selectedProducts &&
+                <div className="empty-list">
+                  List is empty.<br />
+                  Please, select products you want to add to the deal.
+                </div>
+              }
+
+              {selectedProducts &&
+                <CounterpartySelectedComponent />
+              }
             </FormGroup>
           </div>
         </div>
@@ -76,9 +81,13 @@ AddCounterpartyStep1Component.propTypes = {
   counterpartyDetail: PropTypes.bool.isRequired,
   expand: PropTypes.bool,
   expandDetails: PropTypes.func,
+  goBackStep1: PropTypes.func.isRequired,
   notFound: PropTypes.bool.isRequired,
   searchItems: PropTypes.func,
+  selectedProducts: PropTypes.bool.isRequired,
   showItems: PropTypes.bool,
+  showSelectedProducts: PropTypes.func.isRequired,
+  showStep2: PropTypes.bool.isRequired,
   viewCounterparty: PropTypes.func,
 };
 
