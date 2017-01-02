@@ -33,6 +33,8 @@ export class Version4 extends React.Component { // eslint-disable-line react/pre
       sidebarComponent: '',
       sidebarClass: '',
       productsAdded: false,
+      counterpartyAdded: false,
+      counterpartyAdded2: false,
     };
   }
 
@@ -77,6 +79,14 @@ export class Version4 extends React.Component { // eslint-disable-line react/pre
     });
   }
 
+  newCounterparty = () => {
+    this.newSubLimit();
+    this.setState({
+      counterpartyAdded: true,
+      counterpartyAdded2: true,
+    });
+  }
+
   addDealHeaderInformation = () => {
     this.child.updateHeaderDeal();
   }
@@ -93,6 +103,7 @@ export class Version4 extends React.Component { // eslint-disable-line react/pre
           sidebarClass={this.state.sidebarClass}
           addDealHeaderInformation={this.addDealHeaderInformation}
           newProduct={this.newProduct}
+          newCounterparty={this.newCounterparty}
         />
 
         <div className="navbar-fixed-top deal-header">
@@ -135,6 +146,7 @@ export class Version4 extends React.Component { // eslint-disable-line react/pre
             />
             <CounterpartyComponent
               showSidebar={() => this.showSidebar('counterparty')}
+              counterpartyAdded={this.state.counterpartyAdded}
               title="Counterparty"
             />
             <BookingComponent title="Booking" />
@@ -151,7 +163,10 @@ export class Version4 extends React.Component { // eslint-disable-line react/pre
                 showSidebar={() => this.showSidebar('product')}
                 productsAdded={this.state.productsAdded}
               />
-              <CounterpartyComponent title="Counterparty" />
+              <CounterpartyComponent
+                title="Counterparty"
+                counterpartyAdded2={this.state.counterpartyAdded2}
+              />
               <BookingComponent title="Booking" />
               <CollateralComponent title="Collateral" />
               <ContactComponent title="Contact" />

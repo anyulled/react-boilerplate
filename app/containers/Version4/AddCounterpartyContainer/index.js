@@ -88,6 +88,7 @@ export class AddCounterpartyContainer extends React.Component { // eslint-disabl
         showSelectedProducts={this.showSelectedProducts}
         selectedProducts={this.state.selectedProducts}
         showStep2={this.state.showStep2}
+        newCounterparty={this.props.newCounterparty}
       />
     );
   }
@@ -95,6 +96,7 @@ export class AddCounterpartyContainer extends React.Component { // eslint-disabl
 
 AddCounterpartyContainer.propTypes = {
   hideSidebar: PropTypes.func.isRequired,
+  newCounterparty: PropTypes.func.isRequired,
 };
 
 function mapDispatchToProps(dispatch) {

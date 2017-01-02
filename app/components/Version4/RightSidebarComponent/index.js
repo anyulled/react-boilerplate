@@ -10,11 +10,10 @@ import AddCounterpartyContainer from '../../../containers/Version4/AddCounterpar
 import AddProductContainer from '../../../containers/Version4/AddProductContainer';
 
 import ChooseSubLimitComponent from '../../../components/Version4/ChooseSubLimitComponent';
-import CounterpartyDetailComponent from '../../../components/Version4/CounterpartyDetailComponent';
 import DealHeaderInformationComponent from '../../../components/Version4/DealHeaderInformationComponent';
 import ProductDetailsComponent from '../../../components/Version4/ProductDetailsComponent';
 
-function RightSidebarComponent({ hideSidebar, visible, newSubLimit, sidebarComponent, counterpartyDetail, backCounterpartyList, viewCounterparty, addDealHeaderInformation, sidebarClass, newProduct }) {
+function RightSidebarComponent({ hideSidebar, visible, newSubLimit, sidebarComponent, counterpartyDetail, viewCounterparty, addDealHeaderInformation, sidebarClass, newProduct, newCounterparty }) {
   return (
     <div className={`sidebar-content ${sidebarClass} ${visible}`}>
       <div className="mask"></div>
@@ -28,11 +27,7 @@ function RightSidebarComponent({ hideSidebar, visible, newSubLimit, sidebarCompo
         }
 
         {(sidebarComponent === 'counterparty') && !counterpartyDetail &&
-          <AddCounterpartyContainer hideSidebar={hideSidebar} viewCounterparty={viewCounterparty} />
-        }
-
-        {counterpartyDetail &&
-          <CounterpartyDetailComponent hideSidebar={hideSidebar} backCounterpartyList={backCounterpartyList} />
+          <AddCounterpartyContainer hideSidebar={hideSidebar} viewCounterparty={viewCounterparty} newCounterparty={newCounterparty} />
         }
 
         {(sidebarComponent === 'product') &&
@@ -49,9 +44,9 @@ function RightSidebarComponent({ hideSidebar, visible, newSubLimit, sidebarCompo
 
 RightSidebarComponent.propTypes = {
   addDealHeaderInformation: PropTypes.func.isRequired,
-  backCounterpartyList: PropTypes.func.isRequired,
   counterpartyDetail: PropTypes.bool.isRequired,
   hideSidebar: PropTypes.func.isRequired,
+  newCounterparty: PropTypes.func.isRequired,
   newProduct: PropTypes.func.isRequired,
   newSubLimit: PropTypes.func.isRequired,
   sidebarClass: PropTypes.string.isRequired,

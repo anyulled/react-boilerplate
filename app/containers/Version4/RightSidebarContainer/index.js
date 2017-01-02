@@ -37,6 +37,7 @@ export class RightSidebarContainer extends React.Component { // eslint-disable-l
         addDealHeaderInformation={this.props.addDealHeaderInformation}
         sidebarClass={this.props.sidebarClass}
         newProduct={this.props.newProduct}
+        newCounterparty={this.props.newCounterparty}
       />
     );
   }
@@ -45,6 +46,7 @@ export class RightSidebarContainer extends React.Component { // eslint-disable-l
 RightSidebarContainer.propTypes = {
   addDealHeaderInformation: PropTypes.func.isRequired,
   hideSidebar: PropTypes.func.isRequired,
+  newCounterparty: PropTypes.func.isRequired,
   newProduct: PropTypes.func.isRequired,
   newSubLimit: PropTypes.func.isRequired,
   sidebarClass: PropTypes.string.isRequired,

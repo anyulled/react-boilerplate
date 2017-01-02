@@ -12,7 +12,7 @@ import AddCounterpartyStep2Container from '../../../containers/Version4/AddCount
 
 import SidebarHeaderComponent from '../../../components/Version4/SidebarHeaderComponent';
 
-function AddCounterpartyComponent({ hideSidebar, showStep2, goToStep2, searchItems, showItems, viewCounterparty, counterpartyDetail, notFound, expand, expandDetails, showSelectedProducts, selectedProducts, goBackStep1 }) {
+function AddCounterpartyComponent({ newCounterparty, hideSidebar, showStep2, goToStep2, searchItems, showItems, viewCounterparty, counterpartyDetail, notFound, expand, expandDetails, showSelectedProducts, selectedProducts, goBackStep1 }) {
   return (
     <div className="content-block steps">
 
@@ -43,7 +43,7 @@ function AddCounterpartyComponent({ hideSidebar, showStep2, goToStep2, searchIte
         }
 
         {showStep2 &&
-          <Button bsStyle="primary" onClick={goToStep2}>
+          <Button bsStyle="primary" onClick={newCounterparty}>
             Finish
           </Button>
         }
@@ -60,6 +60,7 @@ AddCounterpartyComponent.propTypes = {
   goBackStep1: PropTypes.func.isRequired,
   goToStep2: PropTypes.func.isRequired,
   hideSidebar: PropTypes.func.isRequired,
+  newCounterparty: PropTypes.func.isRequired,
   notFound: PropTypes.bool.isRequired,
   searchItems: PropTypes.func,
   selectedProducts: PropTypes.bool.isRequired,
