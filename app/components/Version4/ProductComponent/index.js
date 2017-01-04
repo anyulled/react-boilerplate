@@ -5,11 +5,12 @@
 */
 
 import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
 import { Button } from 'react-bootstrap';
 
 import NewProductComponent from '../../../components/Version4/NewProductComponent';
 
-function ProductComponent({ title, showSidebar, productsAdded, showProductDetails }) {
+function ProductComponent({ title, productsAdded, showProductDetails }) {
   return (
     <div className="content-block">
       <h3>{title}</h3>
@@ -23,7 +24,9 @@ function ProductComponent({ title, showSidebar, productsAdded, showProductDetail
       }
 
       <p className="text-center">
-        <Button bsStyle="primary" onClick={showSidebar}>Add product(s)</Button>
+        <Link to="/addProduct">
+          <Button bsStyle="primary">Add product(s)</Button>
+        </Link>
       </p>
     </div>
   );
@@ -32,7 +35,6 @@ function ProductComponent({ title, showSidebar, productsAdded, showProductDetail
 ProductComponent.propTypes = {
   productsAdded: PropTypes.bool.isRequired,
   showProductDetails: PropTypes.func,
-  showSidebar: PropTypes.func,
   title: PropTypes.string.isRequired,
 };
 

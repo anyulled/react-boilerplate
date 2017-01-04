@@ -6,6 +6,7 @@
 
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
+
 import AddCounterpartyComponent from '../../../components/Version4/AddCounterpartyComponent';
 
 export class AddCounterpartyContainer extends React.Component { // eslint-disable-line react/prefer-stateless-function
@@ -82,7 +83,6 @@ export class AddCounterpartyContainer extends React.Component { // eslint-disabl
         notFound={this.state.notFound}
         expand={this.state.expand}
         expandDetails={this.expandDetails}
-        hideSidebar={this.props.hideSidebar}
         goBackStep1={this.goBackStep1}
         goToStep2={this.goToStep2}
         showSelectedProducts={this.showSelectedProducts}
@@ -95,7 +95,6 @@ export class AddCounterpartyContainer extends React.Component { // eslint-disabl
 }
 
 AddCounterpartyContainer.propTypes = {
-  hideSidebar: PropTypes.func.isRequired,
   newCounterparty: PropTypes.func.isRequired,
 };
 

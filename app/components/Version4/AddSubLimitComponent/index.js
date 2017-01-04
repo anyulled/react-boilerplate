@@ -5,9 +5,10 @@
 */
 
 import React, { PropTypes } from 'react';
-import { Col, Button } from 'react-bootstrap';
+import { Link } from 'react-router';
+import { Button } from 'react-bootstrap';
 
-function AddSubLimitComponent({ showSidebar, sublimit }) {
+function AddSubLimitComponent({ sublimit }) {
   return (
     <div className={(sublimit) ? 'box new-sub-limit extra-space' : 'box new-sub-limit'}>
       <div className="content-block">
@@ -15,7 +16,9 @@ function AddSubLimitComponent({ showSidebar, sublimit }) {
           Do you need to create <br /> additional restriction on the deal?
         </h3>
         <p className="text-center">
-          <Button bsStyle="primary" onClick={showSidebar}>Add sub-limit</Button>
+          <Link to="/addSubmlimit">
+            <Button bsStyle="primary">Add sub-limit</Button>
+          </Link>
         </p>
       </div>
     </div>
@@ -23,7 +26,6 @@ function AddSubLimitComponent({ showSidebar, sublimit }) {
 }
 
 AddSubLimitComponent.propTypes = {
-  showSidebar: PropTypes.func,
   sublimit: PropTypes.bool,
 };
 

@@ -4,15 +4,16 @@
 *
 */
 
-import React, { PropTypes } from 'react';
+import React from 'react';
+import { Link } from 'react-router';
 import { Button, Glyphicon } from 'react-bootstrap';
 
-function AutosaveComponent({ showSidebar }) {
+function AutosaveComponent() {
   return (
     <div className="autosave">
-      <button onClick={showSidebar}>
+      <Link to="/dealHeader">
         <Glyphicon glyph="align-justify" />
-      </button>
+      </Link>
       <Button bsStyle="primary">Send to approval</Button>
       <small>
         Autosaved:<br />
@@ -21,9 +22,5 @@ function AutosaveComponent({ showSidebar }) {
     </div>
   );
 }
-
-AutosaveComponent.propTypes = {
-  showSidebar: PropTypes.func,
-};
 
 export default AutosaveComponent;

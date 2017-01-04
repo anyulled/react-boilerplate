@@ -5,6 +5,7 @@
 */
 
 import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
 import { Button } from 'react-bootstrap';
 
 import AddCounterpartyStep1Container from '../../../containers/Version4/AddCounterpartyStep1Container';
@@ -12,11 +13,11 @@ import AddCounterpartyStep2Container from '../../../containers/Version4/AddCount
 
 import SidebarHeaderComponent from '../../../components/Version4/SidebarHeaderComponent';
 
-function AddCounterpartyComponent({ newCounterparty, hideSidebar, showStep2, goToStep2, searchItems, showItems, viewCounterparty, counterpartyDetail, notFound, expand, expandDetails, showSelectedProducts, selectedProducts, goBackStep1 }) {
+function AddCounterpartyComponent({ newCounterparty, showStep2, goToStep2, searchItems, showItems, viewCounterparty, counterpartyDetail, notFound, expand, expandDetails, showSelectedProducts, selectedProducts, goBackStep1 }) {
   return (
     <div className="content-block steps">
 
-      <SidebarHeaderComponent title="Add counterparties to the deal" hideSidebar={hideSidebar} />
+      <SidebarHeaderComponent title="Add counterparties to the deal" />
 
       <div className="scroll">
         <AddCounterpartyStep1Container
@@ -47,7 +48,9 @@ function AddCounterpartyComponent({ newCounterparty, hideSidebar, showStep2, goT
             Finish
           </Button>
         }
-        <Button bsStyle="default" onClick={hideSidebar}>Cancel</Button>
+        <Link to="/">
+          <Button bsStyle="default">Cancel</Button>
+        </Link>
       </p>
     </div>
   );
@@ -59,7 +62,6 @@ AddCounterpartyComponent.propTypes = {
   expandDetails: PropTypes.func,
   goBackStep1: PropTypes.func.isRequired,
   goToStep2: PropTypes.func.isRequired,
-  hideSidebar: PropTypes.func.isRequired,
   newCounterparty: PropTypes.func.isRequired,
   notFound: PropTypes.bool.isRequired,
   searchItems: PropTypes.func,

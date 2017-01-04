@@ -4,17 +4,18 @@
 *
 */
 
-import React, { PropTypes } from 'react';
+import React from 'react';
+import { Link } from 'react-router';
 import { Button } from 'react-bootstrap';
 
 import KeyValueComponent from '../../../components/Version4/KeyValueComponent';
 import SidebarHeaderComponent from '../../../components/Version4/SidebarHeaderComponent';
 
-function ProductDetailsComponent({ hideSidebar }) {
+function ProductDetailsComponent() {
   return (
     <div className="content-block">
 
-      <SidebarHeaderComponent title="TF product details" hideSidebar={hideSidebar} />
+      <SidebarHeaderComponent title="TF product details" />
 
       <div className="scroll">
         <form className="no-padding">
@@ -44,18 +45,18 @@ function ProductDetailsComponent({ hideSidebar }) {
           additional restriction on this product?
         </h4>
         <p className="text-center">
-          <Button bsStyle="primary" onClick={hideSidebar}>Add sub-limit</Button>
+          <Link to="/">
+            <Button bsStyle="primary">Add sub-limit</Button>
+          </Link>
         </p>
       </div>
       <p className="text-center fixedButtons">
-        <Button bsStyle="danger" onClick={hideSidebar}>Remove product from the deal</Button>
+        <Link to="/">
+          <Button bsStyle="danger">Remove product from the deal</Button>
+        </Link>
       </p>
     </div>
   );
 }
-
-ProductDetailsComponent.propTypes = {
-  hideSidebar: PropTypes.func.isRequired,
-};
 
 export default ProductDetailsComponent;

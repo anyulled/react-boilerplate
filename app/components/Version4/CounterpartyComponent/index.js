@@ -5,11 +5,12 @@
 */
 
 import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
 import { Button } from 'react-bootstrap';
 
 import CounterpartyItemComponent from '../../../components/Version4/CounterpartyItemComponent';
 
-function CounterpartyComponent({ title, showSidebar, counterpartyAdded, counterpartyAdded2 }) {
+function CounterpartyComponent({ title, counterpartyAdded, counterpartyAdded2 }) {
   return (
     <div className="content-block">
       <h3>{title}</h3>
@@ -42,7 +43,9 @@ function CounterpartyComponent({ title, showSidebar, counterpartyAdded, counterp
       }
 
       <p className="text-center">
-        <Button bsStyle="primary" onClick={showSidebar}>Add Client</Button>
+        <Link to="/addCounterparty">
+          <Button bsStyle="primary">Add Client</Button>
+        </Link>
       </p>
     </div>
   );
@@ -51,7 +54,6 @@ function CounterpartyComponent({ title, showSidebar, counterpartyAdded, counterp
 CounterpartyComponent.propTypes = {
   counterpartyAdded: PropTypes.bool,
   counterpartyAdded2: PropTypes.bool,
-  showSidebar: PropTypes.func,
   title: PropTypes.string.isRequired,
 };
 

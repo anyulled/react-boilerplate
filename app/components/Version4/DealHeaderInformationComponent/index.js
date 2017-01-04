@@ -6,13 +6,14 @@
 
 import React, { PropTypes } from 'react';
 import { Row, Col, ControlLabel, FormControl, Button } from 'react-bootstrap';
+import { Link } from 'react-router';
 
 import SidebarHeaderComponent from '../../../components/Version4/SidebarHeaderComponent';
 
-function DealHeaderInformationComponent({ hideSidebar, addDealHeaderInformation }) {
+function DealHeaderInformationComponent({ addDealHeaderInformation }) {
   return (
     <div className="content-block">
-      <SidebarHeaderComponent title="Deal header information" hideSidebar={hideSidebar} />
+      <SidebarHeaderComponent title="Deal header information" />
       <div className="scroll">
         <form className="dealInformationForm">
           <Row>
@@ -49,17 +50,21 @@ function DealHeaderInformationComponent({ hideSidebar, addDealHeaderInformation 
         </form>
       </div>
       <p className="text-center fixedButtons">
-        <Button bsStyle="primary" onClick={() => { hideSidebar(); addDealHeaderInformation(); }}>Apply</Button>
-        <Button bsStyle="default" onClick={hideSidebar}>Cancel</Button>
-        <Button bsStyle="danger" onClick={hideSidebar}>Delete Deal</Button>
+        <Button bsStyle="primary" onClick={addDealHeaderInformation}>Apply</Button>
+        <Link to="/">
+          <Button bsStyle="default">Cancel</Button>
+        </Link>
+
+        <Link to="/">
+          <Button bsStyle="danger">Delete Deal</Button>
+        </Link>
       </p>
     </div>
   );
 }
 
 DealHeaderInformationComponent.propTypes = {
-  addDealHeaderInformation: PropTypes.func.isRequired,
-  hideSidebar: PropTypes.func.isRequired,
+  addDealHeaderInformation: PropTypes.func,
 };
 
 export default DealHeaderInformationComponent;

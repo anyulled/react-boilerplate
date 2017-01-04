@@ -35,41 +35,51 @@ export default function createRoutes(store) {
       },
       childRoutes: [
         {
-          path: '/deals_v2',
-          name: 'deals_v2',
+          path: '/dealHeader',
+          name: 'deal header',
           getComponent(nextState, cb) {
-            System.import('containers/Version2')
+            System.import('components/Version4/DealHeaderInformationComponent')
               .then(loadModule(cb))
               .catch(errorLoading);
           },
         },
         {
-          path: '/deals_v3',
-          name: 'deals_v3',
+          path: '/addSubmlimit',
+          name: 'add sub-limit',
           getComponent(location, cb) {
-            System.import('components/GridLayout')
+            System.import('components/Version4/ChooseSubLimitComponent')
               .then(loadModule(cb))
               .catch(errorLoading);
           },
         },
         {
-          path: '/deals_v4',
-          name: 'version4',
+          path: '/addProduct',
+          name: 'add product',
           getComponent(location, cb) {
-            System.import('containers/Version4')
+            System.import('containers/Version4/AddProductContainer')
+              .then(loadModule(cb))
+              .catch(errorLoading);
+          },
+        },
+        {
+          path: '/productDetail',
+          name: 'product detail',
+          getComponent(location, cb) {
+            System.import('components/Version4/ProductDetailsComponent')
+              .then(loadModule(cb))
+              .catch(errorLoading);
+          },
+        },
+        {
+          path: '/addCounterparty',
+          name: 'add counterparty',
+          getComponent(location, cb) {
+            System.import('containers/Version4/AddCounterpartyContainer')
               .then(loadModule(cb))
               .catch(errorLoading);
           },
         },
       ],
-    }, {
-      path: '/distribute',
-      name: 'distributePage',
-      getComponent(location, cb) {
-        System.import('containers/DistributePage')
-          .then(loadModule(cb))
-          .catch(errorLoading);
-      },
     }, {
       path: '*',
       name: 'notfound',

@@ -4,13 +4,14 @@
 *
 */
 
-import React, { PropTypes } from 'react';
+import React from 'react';
+import { Link } from 'react-router';
 import { Panel } from 'react-bootstrap';
 
-function ProductListItemComponent({ showProductDetails }) {
+function ProductListItemComponent() {
   return (
     <Panel>
-      Level 3 product <button onClick={showProductDetails}>Details</button>
+      Level 3 product <Link to="/productDetail">Details</Link>
       <ul>
         <li>
           Level 2 product
@@ -25,9 +26,5 @@ function ProductListItemComponent({ showProductDetails }) {
     </Panel>
   );
 }
-
-ProductListItemComponent.propTypes = {
-  showProductDetails: PropTypes.func,
-};
 
 export default ProductListItemComponent;

@@ -44,7 +44,6 @@ export class DealDetailsContainer extends React.Component { // eslint-disable-li
   render() {
     return (
       <DealDetailsComponent
-        showSidebar={this.props.showSidebar}
         nickname={this.state.nickname}
         nicknameHover={this.state.nicknameHover}
         description={this.state.description}
@@ -58,7 +57,6 @@ export class DealDetailsContainer extends React.Component { // eslint-disable-li
 }
 
 DealDetailsContainer.propTypes = {
-  showSidebar: PropTypes.func.isRequired,
   onRef: PropTypes.func,
 };
 

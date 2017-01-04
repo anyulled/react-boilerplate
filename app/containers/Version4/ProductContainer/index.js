@@ -14,7 +14,6 @@ export class ProductContainer extends React.Component { // eslint-disable-line r
     return (
       <ProductComponent
         title={this.props.title}
-        showSidebar={this.props.showSidebar}
         productsAdded={this.props.productsAdded}
         showProductDetails={this.props.showProductDetails}
       />
@@ -25,7 +24,6 @@ export class ProductContainer extends React.Component { // eslint-disable-line r
 ProductContainer.propTypes = {
   productsAdded: PropTypes.bool.isRequired,
   showProductDetails: PropTypes.func,
-  showSidebar: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
 };
 

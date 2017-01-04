@@ -39,7 +39,6 @@ export class AddProductContainer extends React.Component { // eslint-disable-lin
   render() {
     return (
       <AddProductComponent
-        hideSidebar={this.props.hideSidebar}
         showList={this.state.showList}
         showStep2={this.state.showStep2}
         addToList={this.addToList}
@@ -52,7 +51,6 @@ export class AddProductContainer extends React.Component { // eslint-disable-lin
 }
 
 AddProductContainer.propTypes = {
-  hideSidebar: PropTypes.func.isRequired,
   newProduct: PropTypes.func.isRequired,
 };
 

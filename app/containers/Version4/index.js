@@ -4,9 +4,10 @@
  *
  */
 
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Grid, Row, Col, Glyphicon } from 'react-bootstrap';
+import { browserHistory } from 'react-router';
 
 import DealTabsContainer from '../../containers/Version4/DealTabsContainer';
 import DealDetailsContainer from '../../containers/Version4/DealDetailsContainer';
@@ -28,10 +29,7 @@ export class Version4 extends React.Component { // eslint-disable-line react/pre
   constructor(props) {
     super(props);
     this.state = {
-      visible: '',
       sublimit: false,
-      sidebarComponent: '',
-      sidebarClass: '',
       productsAdded: false,
       counterpartyAdded: false,
       counterpartyAdded2: false,
@@ -47,24 +45,8 @@ export class Version4 extends React.Component { // eslint-disable-line react/pre
     }
   }
 
-  showSidebar = (component) => {
-    this.setState({
-      visible: 'visible',
-      sidebarComponent: component,
-    });
-    if (component === 'product' || component === 'counterparty') {
-      this.setState({
-        sidebarClass: 'product',
-      });
-    }
-  }
-
   hideSidebar = () => {
-    this.setState({
-      visible: '',
-      sidebarComponent: '',
-      sidebarClass: '',
-    });
+    browserHistory.push('/');
   }
 
   newSubLimit = () => {
@@ -89,6 +71,7 @@ export class Version4 extends React.Component { // eslint-disable-line react/pre
 
   addDealHeaderInformation = () => {
     this.child.updateHeaderDeal();
+    this.hideSidebar();
   }
 
   render() {
@@ -96,15 +79,16 @@ export class Version4 extends React.Component { // eslint-disable-line react/pre
       <div>
 
         <RightSidebarContainer
-          visible={this.state.visible}
-          hideSidebar={this.hideSidebar}
+          url={this.props.location.pathname}
           newSubLimit={this.newSubLimit}
-          sidebarComponent={this.state.sidebarComponent}
-          sidebarClass={this.state.sidebarClass}
           addDealHeaderInformation={this.addDealHeaderInformation}
           newProduct={this.newProduct}
           newCounterparty={this.newCounterparty}
-        />
+        >
+          {this.props.children && React.cloneElement(this.props.children, {
+            url: this.props.location.pathname,
+          })}
+        </RightSidebarContainer>
 
         <div className="navbar-fixed-top deal-header">
           <Grid fluid>
@@ -140,12 +124,10 @@ export class Version4 extends React.Component { // eslint-disable-line react/pre
             <LimitsComponent title="Limits" />
             <ProductContainer
               title="Products"
-              showSidebar={() => this.showSidebar('product')}
               productsAdded={this.state.productsAdded}
               showProductDetails={() => this.showSidebar('productDetails')}
             />
             <CounterpartyComponent
-              showSidebar={() => this.showSidebar('counterparty')}
               counterpartyAdded={this.state.counterpartyAdded}
               title="Counterparty"
             />
@@ -181,6 +163,11 @@ export class Version4 extends React.Component { // eslint-disable-line react/pre
     );
   }
 }
+
+Version4.propTypes = {
+  children: PropTypes.object,
+  location: PropTypes.object,
+};
 
 function mapDispatchToProps(dispatch) {
   return {

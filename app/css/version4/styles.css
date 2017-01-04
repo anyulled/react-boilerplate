@@ -176,7 +176,7 @@ html, body{
     font-size: 20px;
 }
 
-.deal-header .autosave button{
+.deal-header .autosave button, .deal-header .autosave a{
     float: right;
     margin-left: 10px;
     margin-top: 2px;
@@ -228,11 +228,12 @@ html, body{
     vertical-align: middle;
 }
 
-.deal-header .deal-details li button{
+.deal-header .deal-details li a{
     color: #1d769f;
     cursor: pointer;
     display: none;
     line-height: normal;
+    text-decoration: none;
     vertical-align: middle;
 }
 
@@ -240,11 +241,11 @@ html, body{
     display: none;
 }
 
-.deal-header .deal-details li:hover button{
+.deal-header .deal-details li:hover a{
     display: inline-block;
 }
 
-.deal-header .deal-details li.edit button{
+.deal-header .deal-details li.edit a{
     font-weight: normal;
 }
 /* -------- END DEALDETAILSCOMPONENT -------- */
@@ -358,11 +359,11 @@ html, body{
     -moz-transform: translate3d(-800px, 0, 0);
 }
 
-.sidebar-content h3 span{
+/*.sidebar-content h3 span{
     cursor: pointer;
     float: left;
     margin-right: 10px;
-}
+}*/
 
 .sidebar-content form .row{
     margin-bottom: 15px;
@@ -521,7 +522,7 @@ html, body{
     width: 100%;
 }
 
-.steps .products-list .panel button{    
+.steps .products-list .panel a{    
     display: none;
     float: right;
 }
@@ -530,7 +531,7 @@ html, body{
     margin: 10px 0px;
 }
 
-.sidebar-content .step2 .panel button{
+.sidebar-content .step2 .panel a{
     display: none;
 }
 
@@ -570,14 +571,14 @@ html, body{
     padding: 10px;
 }
 
-.new-products-list .panel button{
+.new-products-list .panel a{
     color:#1d769f;
     display: none;
     float: right;
     padding: 0px;
 }
 
-.new-products-list .panel:hover button{
+.new-products-list .panel:hover a{
     display: block;
 }
 
@@ -783,3 +784,11 @@ html, body{
     color: #ffffff;
 }
 /* -------- END COUNTERPARTYITEMCOMPONENT -------- */
+/* -------- SIDEBARHEADERCOMPONENT -------- */
+.sidebar-header a{
+    color: #1d1d1d;
+    float: left;
+    margin-right: 10px;
+    margin-top: -1px;
+}
+/* -------- END SIDEBARHEADERCOMPONENT -------- */

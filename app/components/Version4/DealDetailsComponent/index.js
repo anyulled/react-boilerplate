@@ -5,11 +5,9 @@
 */
 
 import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
 
-function DealDetailsComponent({ showSidebar, nickname, nicknameHover, description, descriptionHover, documents, documentsHover, editFields }) {
-  // const shortNickname = `${nickname.substring(0, 5)}, ...`;
-  // const shortDescription = '';
-
+function DealDetailsComponent({ nickname, nicknameHover, description, descriptionHover, documents, documentsHover, editFields }) {
   let shortNickname = '';
   if (nickname.length > 20) {
     shortNickname = `${nickname.substring(0, 20)} ...`;
@@ -28,22 +26,21 @@ function DealDetailsComponent({ showSidebar, nickname, nicknameHover, descriptio
     <ul className="deal-details">
       <li className={(editFields ? 'edit' : '')}>
         <span>{shortNickname}</span>
-        <button onClick={showSidebar}>{nicknameHover}</button>
+        <Link to="/dealHeader">{nicknameHover}</Link>
       </li>
       <li className={(editFields ? 'edit' : '')}>
         <span>{shortDescription}</span>
-        <button onClick={showSidebar}>{descriptionHover}</button>
+        <Link to="/dealHeader">{descriptionHover}</Link>
       </li>
       <li className={(editFields ? 'edit' : '')}>
         <span>{documents}</span>
-        <button onClick={showSidebar}>{documentsHover}</button>
+        <Link to="/dealHeader">{documentsHover}</Link>
       </li>
     </ul>
   );
 }
 
 DealDetailsComponent.propTypes = {
-  showSidebar: PropTypes.func.isRequired,
   nickname: PropTypes.string.isRequired,
   nicknameHover: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
