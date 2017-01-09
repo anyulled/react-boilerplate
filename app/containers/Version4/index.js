@@ -12,17 +12,12 @@ import { browserHistory } from 'react-router';
 import DealTabsContainer from '../../containers/Version4/DealTabsContainer';
 import DealDetailsContainer from '../../containers/Version4/DealDetailsContainer';
 import DealSectionsContainer from '../../containers/Version4/DealSectionsContainer';
-import ProductContainer from '../../containers/Version4/ProductContainer';
 
 import AutosaveComponent from '../../components/Version4/AutosaveComponent';
-import DealLimitsComponent from '../../components/Version4/DealLimitsComponent';
-import LimitsComponent from '../../components/Version4/LimitsComponent';
-import CounterpartyComponent from '../../components/Version4/CounterpartyComponent';
-import BookingComponent from '../../components/Version4/BookingComponent';
-import CollateralComponent from '../../components/Version4/CollateralComponent';
-import ContactComponent from '../../components/Version4/ContactComponent';
 import RightSidebarContainer from '../../containers/Version4/RightSidebarContainer';
 import AddSubLimitComponent from '../../components/Version4/AddSubLimitComponent';
+
+import DealColumnComponent from '../../components/Version4/DealColumnComponent';
 
 export class Version4 extends React.Component { // eslint-disable-line react/prefer-stateless-function
 
@@ -33,6 +28,7 @@ export class Version4 extends React.Component { // eslint-disable-line react/pre
       productsAdded: false,
       counterpartyAdded: false,
       counterpartyAdded2: false,
+      dealColumns: 0,
     };
   }
 
@@ -49,9 +45,20 @@ export class Version4 extends React.Component { // eslint-disable-line react/pre
     browserHistory.push('/');
   }
 
-  newSubLimit = () => {
-    this.setState({ sublimit: true });
+  addColumn = () => {
+    this.setState({
+      dealColumns: this.state.dealColumns + 1,
+    });
+
     this.hideSidebar();
+  }
+
+  newSubLimit = () => {
+    this.setState({
+      sublimit: true,
+    });
+
+    this.addColumn();
   }
 
   newProduct = () => {
@@ -75,6 +82,18 @@ export class Version4 extends React.Component { // eslint-disable-line react/pre
   }
 
   render() {
+    const columns = [];
+    for (let i = 1; i <= this.state.dealColumns; i += 1) {
+      columns.push(
+        <DealColumnComponent
+          key={i}
+          title="Sub-limit name"
+          productsAdded={this.state.productsAdded}
+          showProductDetails={() => this.showSidebar('productDetails')}
+          counterpartyAdded={this.state.counterpartyAdded}
+        />
+      );
+    }
     return (
       <div>
 
@@ -119,41 +138,15 @@ export class Version4 extends React.Component { // eslint-disable-line react/pre
             </div>
           }
 
-          <div className="box content-pane pane-2 left-pane">
-            <DealLimitsComponent title="Deal Limits" />
-            <LimitsComponent title="Limits" />
-            <ProductContainer
-              title="Products"
-              productsAdded={this.state.productsAdded}
-              showProductDetails={() => this.showSidebar('productDetails')}
-            />
-            <CounterpartyComponent
-              counterpartyAdded={this.state.counterpartyAdded}
-              title="Counterparty"
-            />
-            <BookingComponent title="Booking" />
-            <CollateralComponent title="Collateral" />
-            <ContactComponent title="Contact" />
-          </div>
+          <DealColumnComponent
+            title="Deal Limits"
+            productsAdded={this.state.productsAdded}
+            showProductDetails={() => this.showSidebar('productDetails')}
+            counterpartyAdded={this.state.counterpartyAdded}
+          />
 
-          {this.state.sublimit &&
-            <div className="content-pane pane-3 box">
-              <DealLimitsComponent title="Sub-limit name" draft />
-              <LimitsComponent title="Limits" />
-              <ProductContainer
-                title="Products"
-                showSidebar={() => this.showSidebar('product')}
-                productsAdded={this.state.productsAdded}
-              />
-              <CounterpartyComponent
-                title="Counterparty"
-                counterpartyAdded2={this.state.counterpartyAdded2}
-              />
-              <BookingComponent title="Booking" />
-              <CollateralComponent title="Collateral" />
-              <ContactComponent title="Contact" />
-            </div>
-          }
+          {columns}
+
           <AddSubLimitComponent
             showSidebar={() => this.showSidebar('sublimit')}
             sublimit={this.state.sublimit}

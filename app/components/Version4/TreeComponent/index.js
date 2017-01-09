@@ -7,21 +7,30 @@
 import React, { PropTypes } from 'react';
 import TreeItemComponent from '../../../components/Version4/TreeItemComponent';
 
-function TreeComponent({ newSubLimit }) {
+
+function TreeComponent({ data, newSubLimit }) {
   return (
     <div className="tree">
-      <TreeItemComponent title="Deal limit" newSubLimit={newSubLimit} />
-      <TreeItemComponent
-        title="Name of one existing sub-limit"
-        child
-        newSubLimit={newSubLimit}
-      />
+      {
+        data.getAll().map((category) => {
+          const sublimit = category.items.map((item) =>
+            <TreeItemComponent key={item.id} title={item.name} newSubLimit={newSubLimit} child />
+          );
+          return (
+            <div key={category.id}>
+              <TreeItemComponent title={category.name} newSubLimit={newSubLimit} />
+              {sublimit}
+            </div>
+          );
+        })
+      }
     </div>
   );
 }
 
 TreeComponent.propTypes = {
-  newSubLimit: PropTypes.func.isRequired,
+  data: PropTypes.object.isRequired,
+  newSubLimit: PropTypes.func.isRequired, // eslint-disable-line react/no-unused-prop-types
 };
 
 export default TreeComponent;
