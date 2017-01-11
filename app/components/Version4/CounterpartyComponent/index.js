@@ -10,19 +10,19 @@ import { Button } from 'react-bootstrap';
 
 import CounterpartyItemComponent from '../../../components/Version4/CounterpartyItemComponent';
 
-function CounterpartyComponent({ title, counterpartyAdded, counterpartyAdded2 }) {
+function CounterpartyComponent({ title, counterpartyAdded }) {
   return (
     <div className="content-block">
-      <h3>{title}</h3>
+      <h3 className="hide">{title}</h3>
 
-      {!counterpartyAdded && !counterpartyAdded2 &&
+      {counterpartyAdded &&
         <div>
           <p className="text-center">No counterparties were added yet</p>
           <p className="text-center">Please start adding a client</p>
         </div>
       }
 
-      {counterpartyAdded &&
+      {!counterpartyAdded &&
         <CounterpartyItemComponent title="CLIENTS">
           <CounterpartyItemComponent title="GUARANTOR" />
           <CounterpartyItemComponent title="OBLIGORS" btnGroup />
@@ -32,19 +32,9 @@ function CounterpartyComponent({ title, counterpartyAdded, counterpartyAdded2 })
         </CounterpartyItemComponent>
       }
 
-      {counterpartyAdded2 &&
-        <div>
-          <CounterpartyItemComponent title="CLIENTS & OBLIGORS" btnGroup>
-            <CounterpartyItemComponent title="GUARANTOR" />
-          </CounterpartyItemComponent>
-
-          <CounterpartyItemComponent title="CLIENTS" />
-        </div>
-      }
-
       <p className="text-center">
         <Link to="/addCounterparty">
-          <Button bsStyle="primary">Add Client</Button>
+          <Button bsStyle="primary">Add counterparty</Button>
         </Link>
       </p>
     </div>
@@ -53,7 +43,6 @@ function CounterpartyComponent({ title, counterpartyAdded, counterpartyAdded2 })
 
 CounterpartyComponent.propTypes = {
   counterpartyAdded: PropTypes.bool,
-  counterpartyAdded2: PropTypes.bool,
   title: PropTypes.string.isRequired,
 };
 

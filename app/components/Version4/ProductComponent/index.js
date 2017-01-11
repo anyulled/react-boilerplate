@@ -13,13 +13,13 @@ import NewProductComponent from '../../../components/Version4/NewProductComponen
 function ProductComponent({ title, productsAdded, showProductDetails }) {
   return (
     <div className="content-block">
-      <h3>{title}</h3>
+      <h3 className="hide">{title}</h3>
 
-      {!productsAdded &&
+      {productsAdded &&
         <p className="text-center">No products were added yet.</p>
       }
 
-      {productsAdded &&
+      {!productsAdded &&
         <NewProductComponent showProductDetails={showProductDetails} />
       }
 
@@ -33,7 +33,7 @@ function ProductComponent({ title, productsAdded, showProductDetails }) {
 }
 
 ProductComponent.propTypes = {
-  productsAdded: PropTypes.bool.isRequired,
+  productsAdded: PropTypes.bool,
   showProductDetails: PropTypes.func,
   title: PropTypes.string.isRequired,
 };

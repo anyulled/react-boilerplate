@@ -12,12 +12,12 @@ import { browserHistory } from 'react-router';
 import DealTabsContainer from '../../containers/Version4/DealTabsContainer';
 import DealDetailsContainer from '../../containers/Version4/DealDetailsContainer';
 import DealSectionsContainer from '../../containers/Version4/DealSectionsContainer';
+import RightSidebarContainer from '../../containers/Version4/RightSidebarContainer';
 
 import AutosaveComponent from '../../components/Version4/AutosaveComponent';
-import RightSidebarContainer from '../../containers/Version4/RightSidebarContainer';
 import AddSubLimitComponent from '../../components/Version4/AddSubLimitComponent';
-
 import DealColumnComponent from '../../components/Version4/DealColumnComponent';
+import DealsTableComponent from '../../components/Version4/DealsTableComponent';
 
 export class Version4 extends React.Component { // eslint-disable-line react/prefer-stateless-function
 
@@ -131,26 +131,7 @@ export class Version4 extends React.Component { // eslint-disable-line react/pre
         <DealSectionsContainer />
 
         <div className="flex-container deal-content">
-
-          {this.state.sublimit &&
-            <div className="alert alert-success" role="alert" ref={(c) => { this.successMessage = c; }}>
-              New sub-limit was created in the deal. <a>UNDO</a>
-            </div>
-          }
-
-          <DealColumnComponent
-            title="Deal Limits"
-            productsAdded={this.state.productsAdded}
-            showProductDetails={() => this.showSidebar('productDetails')}
-            counterpartyAdded={this.state.counterpartyAdded}
-          />
-
-          {columns}
-
-          <AddSubLimitComponent
-            showSidebar={() => this.showSidebar('sublimit')}
-            sublimit={this.state.sublimit}
-          />
+          <DealsTableComponent />
         </div>
       </div>
     );

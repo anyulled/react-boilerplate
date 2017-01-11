@@ -22,7 +22,7 @@ export class ProductContainer extends React.Component { // eslint-disable-line r
 }
 
 ProductContainer.propTypes = {
-  productsAdded: PropTypes.bool.isRequired,
+  productsAdded: PropTypes.bool,
   showProductDetails: PropTypes.func,
   title: PropTypes.string.isRequired,
 };
