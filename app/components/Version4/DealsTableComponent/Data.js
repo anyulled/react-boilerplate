@@ -26,9 +26,9 @@ Data.COLUMNS = [
   },
   {
     headerName: 'Deal Sub-Limits',
-    field: 'type',
+    field: 'type2',
     suppressMovable: true,
-    cellRendererFramework: FieldsCellRenderer,
+    // cellRendererFramework: FieldsCellRenderer,
     width: 400,
     cellClassRules: {
       'rag-title': (params) => params.data.type === 'section',
@@ -36,9 +36,9 @@ Data.COLUMNS = [
   },
   {
     headerName: 'Deal Sub-Limits 2',
-    field: 'type',
+    field: 'type3',
     suppressMovable: true,
-    cellRendererFramework: FieldsCellRenderer,
+    // cellRendererFramework: FieldsCellRenderer,
     width: 400,
     cellClassRules: {
       'rag-title': (params) => params.data.type === 'section',

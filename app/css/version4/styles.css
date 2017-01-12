@@ -792,6 +792,7 @@ html, body{
     margin-top: -1px;
 }
 /* -------- END SIDEBARHEADERCOMPONENT -------- */
+/* -------- AGGRIDREACT -------- */
 .ag-cell{
     outline: none;
     padding: 5px 10px;
@@ -812,12 +813,30 @@ html, body{
     width: 100%;
 }
 
-.ag-header-container .ag-header-row .ag-header-cell, .ag-pinned-left-header .ag-header-row .ag-header-cell{
+.ag-header-container .ag-header-row .ag-header-cell, 
+.ag-pinned-left-header .ag-header-row .ag-header-cell{
     border-bottom: 1px solid #d1d9de;
     font-size: 16px;
     font-weight: 600;
     padding: 11px 10px 0px;
     text-align: left;
+}
+
+.ag-header-container .ag-header-row .ag-header-cell .glyphicon, 
+.ag-pinned-left-header .ag-header-row .ag-header-cell .glyphicon{
+    float: right;
+}
+
+.ag-pinned-left-header .ag-header-row .ag-header-cell:first-child .glyphicon{
+    display: none;
+}
+
+.ag-pinned-left-header #pinn{
+    display: none;
+}
+
+.ag-header-container #unpinn{
+    display: none;
 }
 
 .ag-header-container .ag-header-row .ag-header-cell:nth-child(odd),
@@ -858,15 +877,7 @@ html, body{
     padding-top: 32px;
 }
 
-.ag-header .ag-pinned-left-header {
-    
-}
-
-/*.ag-pinned-left-cols-viewport, .ag-header .ag-pinned-left-header{
-    background: #fff;
-    border-right: 1px solid #d1d9de;
-}*/
-
 .ag-fresh .ag-cell, .ag-fresh .ag-cell-focus{
     border: none;
 }
+/* -------- END AGGRIDREACT -------- */

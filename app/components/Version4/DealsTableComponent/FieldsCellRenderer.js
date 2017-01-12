@@ -7,7 +7,6 @@ import CounterpartyComponent from '../../../components/Version4/CounterpartyComp
 export default class FieldsCellRenderer extends React.Component { // eslint-disable-line react/prefer-stateless-function
 
   render() {
-    console.log('data', this.props.data);
     return (
       <Row>
         <Col md={this.props.data.colSize}>
@@ -17,7 +16,7 @@ export default class FieldsCellRenderer extends React.Component { // eslint-disa
             </FormControl>
           }
 
-          { (this.props.data.type === 'text' || this.props.data.type2 === 'text') &&
+          { this.props.data.type === 'text' &&
             <FormControl type="text" />
           }
 

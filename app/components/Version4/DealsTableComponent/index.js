@@ -13,9 +13,6 @@ class DealsTableComponent extends React.Component { // eslint-disable-line react
   constructor() {
     super();
     this.state = {
-      quickFilterText: null,
-      showGrid: true,
-      showToolPanel: false,
       columnDefs: Data.COLUMNS,
       rowData: Data.ROWS,
     };
@@ -27,7 +24,6 @@ class DealsTableComponent extends React.Component { // eslint-disable-line react
       },
 
       getRowHeight: (params) => {
-        console.log('params', params.data.type);
         switch (params.data.type) {
           case 'section':
             return 60;
@@ -40,54 +36,51 @@ class DealsTableComponent extends React.Component { // eslint-disable-line react
         }
       },
 
-      getRows: (params) => {
-        console.log('getRows ', params);
+      headerCellRenderer: (params) => {
+        const eHeader = document.createElement('span');
+
+        eHeader.innerHTML =
+          `<div> ${params.colDef.headerName}` +
+          ' <span id="pinn" class="glyphicon glyphicon-pushpin"></span>' +
+          ' <span id="unpinn" class="glyphicon glyphicon-new-window"></span>' +
+          '</div>';
+
+        const pinnButton = eHeader.querySelector('#pinn');
+        const unpinnButton = eHeader.querySelector('#unpinn');
+
+        pinnButton.addEventListener('click', () => {
+          this.columnApi.setColumnPinned(params.colDef.field, 'left');
+        });
+
+        unpinnButton.addEventListener('click', () => {
+          this.columnApi.setColumnPinned(params.colDef.field, null);
+        });
+        return eHeader;
       },
     };
   }
 
-  onShowGrid(show) {
-    this.setState({
-      showGrid: show,
-    });
-  }
-
   onGridReady(params) {
-    this.api = params.api;
     this.columnApi = params.columnApi;
+    this.api = params.api;
   }
 
   onRefreshData() {
     console.log('refresh');
   }
 
-  selectAll() {
-    this.api.selectAll();
-  }
-
-  deselectAll() {
-    this.api.deselectAll();
-  }
-
   render() {
-    let gridTemplate;
-    if (this.state.showGrid) {
-      gridTemplate = (
-        <div style={{ height: '100%', width: '100%' }}>
-          <AgGridReact
-            gridOptions={this.gridOptions}
-            // listening for events
-            // onGridReady={this.onGridReady.bind(this)}
-            onGridReady={() => this.onGridReady(this)}
-            // binding to array properties
-            columnDefs={this.state.columnDefs}
-            rowData={this.state.rowData}
-            // rowHeight="33"
-            headerHeight={40}
-          />
-        </div>
-      );
-    }
+    const gridTemplate = (
+      <div style={{ height: '100%', width: '100%' }}>
+        <AgGridReact
+          gridOptions={this.gridOptions}
+          onGridReady={this.onGridReady.bind(this)}
+          columnDefs={this.state.columnDefs}
+          rowData={this.state.rowData}
+          headerHeight={40}
+        />
+      </div>
+    );
 
     return (
       <div style={{ width: '100%' }}>
