@@ -28,7 +28,7 @@ export class Version4 extends React.Component { // eslint-disable-line react/pre
       productsAdded: false,
       counterpartyAdded: false,
       counterpartyAdded2: false,
-      dealColumns: 0,
+      dealColumns: 14,
     };
   }
 

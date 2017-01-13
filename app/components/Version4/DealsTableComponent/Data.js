@@ -46,6 +46,27 @@ Data.COLUMNS = [
   },
 ];
 
+Data.COLUMNSTOAPPEND = {
+    headerName: 'Deal Sub-Limits 3',
+    field: 'type',
+    suppressMovable: true,
+    cellRendererFramework: FieldsCellRenderer,
+    width: 400,
+    cellClassRules: {
+      'rag-title': (params) => params.data.type === 'section',
+    },
+  },
+  {
+    headerName: 'Deal Sub-Limits 4',
+    field: 'type',
+    suppressMovable: true,
+    cellRendererFramework: FieldsCellRenderer,
+    width: 400,
+    cellClassRules: {
+      'rag-title': (params) => params.data.type === 'section',
+    },
+};
+
 Data.ROWS = [
   {
     label: 'Status',

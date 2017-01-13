@@ -6,6 +6,7 @@
 
 import React from 'react';
 import { AgGridReact } from 'ag-grid-react';
+import { Button } from 'react-bootstrap';
 
 import Data from './Data';
 
@@ -43,6 +44,12 @@ class DealsTableComponent extends React.Component { // eslint-disable-line react
       getRows: (params) => {
         console.log('getRows ', params);
       },
+      setNewColumns: (params) => {
+        var data = Data.COLUMNSTOAPPEND;
+        var columnDefs = this.gridOptions.columnDefs;
+        var newColumnDefs = columnDefs.push(data);
+        this.api.setColumnDefs(columnDefs);
+      },
     };
   }
 
@@ -77,14 +84,17 @@ class DealsTableComponent extends React.Component { // eslint-disable-line react
           <AgGridReact
             gridOptions={this.gridOptions}
             // listening for events
-            // onGridReady={this.onGridReady.bind(this)}
-            onGridReady={() => this.onGridReady(this)}
+            onGridReady={this.onGridReady.bind(this)}
+            //onGridReady={() => this.onGridReady(this)}
             // binding to array properties
             columnDefs={this.state.columnDefs}
             rowData={this.state.rowData}
             // rowHeight="33"
             headerHeight={40}
           />
+           <Button onClick={this.gridOptions.setNewColumns.bind()}>
+            Add Column
+          </Button>
         </div>
       );
     }
