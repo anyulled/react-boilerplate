@@ -86,10 +86,14 @@ class DealsTableComponent extends React.Component { // eslint-disable-line react
 
         pinButton.addEventListener('click', () => {
           this.columnApi.setColumnPinned(params.colDef.field, 'left');
+          params.colDef.pinned = true;
+          //this.api.refreshView();
         });
 
         unpinButton.addEventListener('click', () => {
           this.columnApi.setColumnPinned(params.colDef.field, null);
+          params.colDef.pinned = false;
+          //this.api.refreshView();
         });
         return eHeader;
       },
