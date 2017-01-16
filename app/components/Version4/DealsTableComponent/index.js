@@ -37,23 +37,58 @@ class DealsTableComponent extends React.Component { // eslint-disable-line react
         }
       },
 
+      onColumnPinned: () => {
+        // console.log('params', params);
+        // console.log('this', this.api.columnController.displayedCentreHeaderRows[0][0].colDef);
+        // console.log('this', this);
+        const centerColumns = this.api.columnController.displayedCenterColumns;
+        const LeftColumns = this.api.columnController.displayedLeftColumns;
+        if (centerColumns.length > 0) {
+          for (let i = 0; i < centerColumns.length; i += 1) {
+            if (centerColumns[i].left === 0) {
+              centerColumns[i].colDef.cellStyle = { 'background-color': '#fafafb' };
+            } else if ((centerColumns[i].left / 400) % 2 === 0) {
+              centerColumns[i].colDef.cellStyle = { 'background-color': '#f1f5f8' };
+            } else {
+              centerColumns[i].colDef.cellStyle = { 'background-color': '#fff' };
+            }
+          }
+
+          for (let i = 0; i < LeftColumns.length; i += 1) {
+            if (LeftColumns[i].left === 0) {
+              LeftColumns[i].colDef.cellStyle = { 'background-color': '#f1f5f8' };
+            } else if (LeftColumns[i].left === 200) {
+              LeftColumns[i].colDef.cellStyle = { 'background-color': '#fff' };
+            } else {
+              if (((LeftColumns[i].left - 200) / 400) % 2 === 0) {
+                LeftColumns[i].colDef.cellStyle = { 'background-color': '#fff' };
+              } else {
+                LeftColumns[i].colDef.cellStyle = { 'background-color': '#f1f5f8' };
+              }
+            }
+          }
+
+          this.api.refreshView();
+        }
+      },
+
       headerCellRenderer: (params) => {
         const eHeader = document.createElement('span');
 
         eHeader.innerHTML =
           `<div> ${params.colDef.headerName}` +
-          ' <span id="pinn" class="glyphicon glyphicon-pushpin"></span>' +
-          ' <span id="unpinn" class="glyphicon glyphicon-new-window"></span>' +
+          ' <span id="pin" class="glyphicon glyphicon-pushpin"></span>' +
+          ' <span id="unpin" class="glyphicon glyphicon-new-window"></span>' +
           '</div>';
 
-        const pinnButton = eHeader.querySelector('#pinn');
-        const unpinnButton = eHeader.querySelector('#unpinn');
+        const pinButton = eHeader.querySelector('#pin');
+        const unpinButton = eHeader.querySelector('#unpin');
 
-        pinnButton.addEventListener('click', () => {
+        pinButton.addEventListener('click', () => {
           this.columnApi.setColumnPinned(params.colDef.field, 'left');
         });
 
-        unpinnButton.addEventListener('click', () => {
+        unpinButton.addEventListener('click', () => {
           this.columnApi.setColumnPinned(params.colDef.field, null);
         });
         return eHeader;
@@ -86,9 +121,9 @@ class DealsTableComponent extends React.Component { // eslint-disable-line react
           rowData={this.state.rowData}
           headerHeight={40}
         />
-        <Button onClick={this.gridOptions.setNewColumns.bind()}>
-            Add Column
-          </Button>
+        <Button className="add-column" onClick={this.gridOptions.setNewColumns.bind()}>
+          Add Column
+        </Button>
       </div>
     );
     return (

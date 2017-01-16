@@ -793,9 +793,10 @@ html, body{
 }
 /* -------- END SIDEBARHEADERCOMPONENT -------- */
 /* -------- AGGRIDREACT -------- */
-.ag-cell{
+.ag-cell, .ag-header-cell{
     outline: none;
     padding: 5px 10px;
+    border-right: 1px solid #d1d9de;
 }
 
 .ag-cell small{
@@ -824,39 +825,34 @@ html, body{
 
 .ag-header-container .ag-header-row .ag-header-cell .glyphicon, 
 .ag-pinned-left-header .ag-header-row .ag-header-cell .glyphicon{
+    cursor: pointer;
     float: right;
 }
 
-.ag-pinned-left-header .ag-header-row .ag-header-cell:first-child .glyphicon{
+.ag-pinned-left-header .ag-header-row .ag-header-cell:first-child .glyphicon,
+.ag-pinned-left-header #pin,
+.ag-header-container #unpin{
     display: none;
 }
 
-.ag-pinned-left-header #pinn{
-    display: none;
-}
-
-.ag-header-container #unpinn{
-    display: none;
-}
-
+.ag-pinned-left-header .ag-header-row .ag-header-cell:nth-child(even),
+.ag-pinned-left-cols-container .ag-row .ag-cell:nth-child(even),
 .ag-header-container .ag-header-row .ag-header-cell:nth-child(odd),
 .ag-body-container .ag-row .ag-cell:nth-child(odd){
     background: #f1f5f8;
     border-right: 1px solid #d1d9de;
 }
 
-.ag-header-container .ag-header-row .ag-header-cell:nth-child(even),
 .ag-pinned-left-header .ag-header-row .ag-header-cell:nth-child(odd),
 .ag-pinned-left-cols-container .ag-row .ag-cell:nth-child(odd),
+.ag-header-container .ag-header-row .ag-header-cell:nth-child(even),
 .ag-body-container .ag-row .ag-cell:nth-child(even){
     background: #fff;
     border-right: 1px solid #d1d9de;
 }
 
-.ag-pinned-left-header .ag-header-row .ag-header-cell:nth-child(even),
-.ag-pinned-left-cols-container .ag-row .ag-cell:nth-child(even){
-    background: #e4e9ed;
-    border-right: 1px solid #d1d9de;
+.main-deal{
+    background: #e4e9ed !important;
 }
 
 .rag-title{
@@ -879,5 +875,12 @@ html, body{
 
 .ag-fresh .ag-cell, .ag-fresh .ag-cell-focus{
     border: none;
+}
+
+.add-column {
+    position: fixed;
+    right: 10px;
+    top: 100px;
+    z-index: 9999;
 }
 /* -------- END AGGRIDREACT -------- */

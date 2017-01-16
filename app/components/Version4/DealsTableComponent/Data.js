@@ -17,6 +17,8 @@ Data.COLUMNS = [
   {
     headerName: 'Deal Limits',
     field: 'type',
+    cellClass: 'main-deal',
+    headerClass: 'main-deal',
     suppressMovable: true,
     cellRendererFramework: FieldsCellRenderer,
     width: 400,
@@ -37,6 +39,16 @@ Data.COLUMNS = [
   {
     headerName: 'Deal Sub-Limits 2',
     field: 'type3',
+    suppressMovable: true,
+    // cellRendererFramework: FieldsCellRenderer,
+    width: 400,
+    cellClassRules: {
+      'rag-title': (params) => params.data.type === 'section',
+    },
+  },
+  {
+    headerName: 'Deal Sub-Limits 2',
+    field: 'type4',
     suppressMovable: true,
     // cellRendererFramework: FieldsCellRenderer,
     width: 400,
