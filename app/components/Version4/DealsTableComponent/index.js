@@ -96,7 +96,7 @@ class DealsTableComponent extends React.Component { // eslint-disable-line react
       setNewColumns: (params) => {
         var data = Data.COLUMNSTOAPPEND;
         var columnDefs = this.gridOptions.columnDefs;
-        var newColumnDefs = columnDefs.push(data);
+        columnDefs.push(data);
         this.api.setColumnDefs(columnDefs);
       },
     };
