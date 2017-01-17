@@ -15,14 +15,14 @@ function CounterpartyComponent({ title, counterpartyAdded }) {
     <div className="content-block">
       <h3 className="hide">{title}</h3>
 
-      {counterpartyAdded &&
+      {!counterpartyAdded &&
         <div>
           <p className="text-center">No counterparties were added yet</p>
           <p className="text-center">Please start adding a client</p>
         </div>
       }
 
-      {!counterpartyAdded &&
+      {counterpartyAdded &&
         <CounterpartyItemComponent title="CLIENTS">
           <CounterpartyItemComponent title="GUARANTOR" />
           <CounterpartyItemComponent title="OBLIGORS" btnGroup />

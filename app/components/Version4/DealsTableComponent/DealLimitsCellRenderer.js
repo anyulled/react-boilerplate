@@ -4,23 +4,23 @@ import { Col, Row, FormControl, InputGroup, Glyphicon, ButtonGroup, Button } fro
 import ProductContainer from '../../../containers/Version4/ProductContainer';
 import CounterpartyComponent from '../../../components/Version4/CounterpartyComponent';
 
-export default class FieldsCellRenderer extends React.Component { // eslint-disable-line react/prefer-stateless-function
-
+export default class DealLimitsCellRenderer extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
+    const column = this.props.colDef.field;
     return (
       <Row>
-        <Col md={this.props.data.colSize}>
-          { this.props.data.type === 'select' &&
+        <Col md={this.props.data[column].colSize}>
+          { this.props.data[column].element === 'select' &&
             <FormControl componentClass="select">
               <option value="select"></option>
             </FormControl>
           }
 
-          { this.props.data.type === 'text' &&
+          { this.props.data[column].element === 'text' &&
             <FormControl type="text" />
           }
 
-          { this.props.data.type === 'date' &&
+          { this.props.data[column].element === 'date' &&
             <InputGroup>
               <FormControl type="text" />
               <InputGroup.Addon>
@@ -29,27 +29,29 @@ export default class FieldsCellRenderer extends React.Component { // eslint-disa
             </InputGroup>
           }
 
-          { this.props.data.type === 'toogleButton' &&
+          { this.props.data[column].element === 'toogleButton' &&
             <ButtonGroup>
               <Button>No</Button>
               <Button bsStyle="success">Yes</Button>
             </ButtonGroup>
           }
 
-          { this.props.data.type === 'products' &&
+          { this.props.data[column].element === 'productsComponent' &&
             <ProductContainer
               title="Products"
+              productsAdded={this.props.data[column].productsAdded}
             />
           }
 
-          { this.props.data.type === 'counterparties' &&
+          { this.props.data[column].element === 'counterpartiesComponent' &&
             <CounterpartyComponent
               title="Counterparty"
+              counterpartyAdded={this.props.data[column].counterpartyAdded}
             />
           }
         </Col>
 
-        { this.props.data.optional &&
+        { this.props.data[column].optional &&
           <Col md={12 - this.props.data.colSize}>
             <small>(optional)</small>
           </Col>
@@ -60,8 +62,8 @@ export default class FieldsCellRenderer extends React.Component { // eslint-disa
 
 }
 
-FieldsCellRenderer.propTypes = {
+DealLimitsCellRenderer.propTypes = {
+  colDef: PropTypes.object,
   colSize: PropTypes.number,
   data: PropTypes.object,
-  type: PropTypes.string,
 };

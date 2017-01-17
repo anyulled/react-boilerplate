@@ -15,11 +15,11 @@ function ProductComponent({ title, productsAdded, showProductDetails }) {
     <div className="content-block">
       <h3 className="hide">{title}</h3>
 
-      {productsAdded &&
+      {!productsAdded &&
         <p className="text-center">No products were added yet.</p>
       }
 
-      {!productsAdded &&
+      {productsAdded &&
         <NewProductComponent showProductDetails={showProductDetails} />
       }
 
