@@ -6,6 +6,13 @@ import CounterpartyComponent from '../../../components/Version4/CounterpartyComp
 
 export default class FieldsCellRenderer extends React.Component { // eslint-disable-line react/prefer-stateless-function
 
+
+  componentDidMount() {
+         //console.log('FieldsCellRenderer mounted');
+         //We must calculate the highest column on the row and re-render 
+     };
+
+
   render() {
     return (
       <Row>
@@ -65,3 +72,4 @@ FieldsCellRenderer.propTypes = {
   data: PropTypes.object,
   type: PropTypes.string,
 };
+
