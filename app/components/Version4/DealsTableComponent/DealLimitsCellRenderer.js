@@ -5,6 +5,10 @@ import ProductContainer from '../../../containers/Version4/ProductContainer';
 import CounterpartyComponent from '../../../components/Version4/CounterpartyComponent';
 
 export default class DealLimitsCellRenderer extends React.Component { // eslint-disable-line react/prefer-stateless-function
+  componentDidMount() {
+    // console.log('FieldsCellRenderer mounted');
+    // We must calculate the highest column on the row and re-render
+  }
   render() {
     const column = this.props.colDef.field;
     return (
@@ -67,3 +71,4 @@ DealLimitsCellRenderer.propTypes = {
   colSize: PropTypes.number,
   data: PropTypes.object,
 };
+
