@@ -794,9 +794,10 @@ html, body{
 /* -------- END SIDEBARHEADERCOMPONENT -------- */
 /* -------- AGGRIDREACT -------- */
 .ag-cell, .ag-header-cell{
+    border-right: 1px solid #d1d9de;
     outline: none;
     padding: 5px 10px;
-    border-right: 1px solid #d1d9de;
+    white-space: initial;
 }
 
 .ag-cell small{
@@ -804,10 +805,6 @@ html, body{
     font-style: italic;
     margin-top: 6px;
 }
-
-/*.deal-content .ag-cell .content-block{
-    padding: 0px;
-}*/
 
 .ag-cell .text-center{
     float: left;
@@ -883,4 +880,139 @@ html, body{
     top: 100px;
     z-index: 9999;
 }
+
+.radio-group, .radio-group .radio{
+    float: left;
+    width: 100%;
+}
+
+.radio-group .radio{
+    margin: 5px 0px 15px;
+}
+
+.radio-group .radio label{
+    float: left;
+    position: relative;
+    width: 100%;
+}
+
+.radio-group .radio .text{
+    float: left;
+    margin-right: 3px;
+    margin-top: 5px;
+}
+
+.radio-group .radio input[type=radio]{
+    left: 0;
+    margin-left: 0px;
+    margin-top: -7px;
+    top: 50%;
+}
+
+.radio-group .radio input[type=text]{
+    display: inherit;
+    float: left;
+    margin-right: 3px;
+    width: 60px;
+}
+
+.radio-group .input-group{
+    display: inherit;
+}
+
+.radio-group .radio .input-group .date{
+    width: 120px;
+}
+
+.radio-group .input-group .input-group-addon{
+    float: left;
+    margin-left: -3px;
+    width: 35px;
+}
+
+.ag-cell .readOnly{
+    margin-top: 5px;
+}
+
+.ag-cell hr{
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.ag-cell p{
+    margin-top: 10px;
+}
 /* -------- END AGGRIDREACT -------- */
+/* -------- ALLOWEDCURRENCIESCOMPONENT -------- */
+.allowed-currencies{
+    float: left;
+    width: 100%;
+}
+
+.allowed-currencies .panel{
+    margin-bottom: 5px;
+}
+
+.allowed-currencies .panel .remove{
+    color: #d43f3a;
+    display: none;
+    float: right;
+    padding: 0px;
+}
+
+.allowed-currencies .panel:hover .remove{
+    display: block;
+}
+/* -------- END ALLOWEDCURRENCIESCOMPONENT -------- */
+/* -------- AMOUNTTEXTCOMPONENT -------- */
+.amount-text{
+    float: left;
+    width: 100%;
+}
+
+.amount-text input[type=text]{
+    float: left;
+    width: 45%;
+}
+
+.amount-text b{    
+    float: left;
+    margin-left: 5px;
+    margin-top: 7px;
+}
+
+.amount-text span{    
+    float: right;
+    font-weight: 600;
+    margin-top: 7px;
+}
+/* -------- END AMOUNTTEXTCOMPONENT -------- */
+/* -------- AMORTISATIONDATECOMPONENT -------- */
+.amortisation-date{
+    float: left;
+    width: 100%;
+}
+
+.amortisation-date .input-group{
+    float: left;
+    width: 45%;
+}
+
+.amortisation-date .checkbox{
+    float: left;
+    margin-left: 20px;
+    margin-top: 7px;
+}
+
+.amortisation-date .checkbox input{
+    left: 0px;
+    margin: 0px;
+}
+
+.amortisation-date i{
+    color: #999;
+    float: left;
+    margin-top: 5px;
+    width: 100%;
+}
+/* -------- END AMORTISATIONDATECOMPONENT -------- */

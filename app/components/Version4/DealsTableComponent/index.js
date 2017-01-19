@@ -25,6 +25,7 @@ class DealsTableComponent extends React.Component { // eslint-disable-line react
       },
 
       getRowHeight: (params) => {
+        // console.log('type', params.data.label.type);
         switch (params.data.label.type) {
           case 'section':
             return 60;
@@ -32,6 +33,14 @@ class DealsTableComponent extends React.Component { // eslint-disable-line react
             return 270;
           case 'counterpartiesComponent':
             return 540;
+          case 'radio3Component':
+            return 120;
+          case 'radio2Component':
+            return 100;
+          case 'allowedCurrenciesComponent':
+            return 205;
+          case 'amortisationDateComponent':
+            return 120;
           default:
             return 38;
         }
@@ -52,13 +61,11 @@ class DealsTableComponent extends React.Component { // eslint-disable-line react
         pinButton.addEventListener('click', () => {
           this.columnApi.setColumnPinned(params.colDef.field, 'left');
           params.colDef.pinned = true; // eslint-disable-line no-param-reassign
-          // this.api.refreshView();
         });
 
         unpinButton.addEventListener('click', () => {
           this.columnApi.setColumnPinned(params.colDef.field, null);
           params.colDef.pinned = false; // eslint-disable-line no-param-reassign
-          // this.api.refreshView();
         });
 
         return eHeader;

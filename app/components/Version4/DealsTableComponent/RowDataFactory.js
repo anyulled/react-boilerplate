@@ -17,11 +17,13 @@ export default class RowDataFactory {
                 element: RefData.DEAL_LIMITS[i].main[j].element,
                 colSize: RefData.DEAL_LIMITS[i].main[j].colSize,
                 optional: RefData.DEAL_LIMITS[i].main[j].optional,
+                buttonsValues: RefData.DEAL_LIMITS[i].main[j].buttonsValues,
               },
               deal_sublimits: {
                 element: RefData.DEAL_SUBLIMITS[i].main[j].element,
                 colSize: RefData.DEAL_SUBLIMITS[i].main[j].colSize,
                 optional: RefData.DEAL_SUBLIMITS[i].main[j].optional,
+                buttonsValues: RefData.DEAL_LIMITS[i].main[j].buttonsValues,
               },
             });
           }
@@ -36,10 +38,20 @@ export default class RowDataFactory {
               deal_limits: {
                 element: RefData.DEAL_LIMITS[i].limits[j].element,
                 type: RefData.DEAL_LIMITS[i].limits[j].type,
+                colSize: RefData.DEAL_LIMITS[i].limits[j].colSize,
+                value: RefData.DEAL_LIMITS[i].limits[j].value,
+                buttonsValues: RefData.DEAL_LIMITS[i].limits[j].buttonsValues,
+                currencies: RefData.DEAL_LIMITS[i].limits[j].currencies,
+                optional: RefData.DEAL_LIMITS[i].limits[j].optional,
               },
               deal_sublimits: {
                 element: RefData.DEAL_SUBLIMITS[i].limits[j].element,
                 type: RefData.DEAL_SUBLIMITS[i].limits[j].type,
+                colSize: RefData.DEAL_SUBLIMITS[i].limits[j].colSize,
+                value: RefData.DEAL_SUBLIMITS[i].limits[j].value,
+                buttonsValues: RefData.DEAL_SUBLIMITS[i].limits[j].buttonsValues,
+                currencies: RefData.DEAL_SUBLIMITS[i].limits[j].currencies,
+                optional: RefData.DEAL_SUBLIMITS[i].limits[j].optional,
               },
             });
           }
