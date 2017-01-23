@@ -953,6 +953,10 @@ html, body{
     margin-bottom: 5px;
 }
 
+.allowed-currencies .panel-body{
+    padding: 10px 15px;
+}
+
 .allowed-currencies .panel .remove{
     color: #d43f3a;
     display: none;
@@ -1016,3 +1020,51 @@ html, body{
     width: 100%;
 }
 /* -------- END AMORTISATIONDATECOMPONENT -------- */
+/* -------- ADDCURRENCIESCOMPONENT -------- */
+.currencies-list{
+    background: #ffffff;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border: 1px solid #a6a9ac;
+    max-height: 170px;
+    overflow-y: auto;
+    padding: 5px 10px;
+}
+
+.currencies-list .checkbox{
+    margin: 5px;
+}
+
+.currencies-list .checkbox span,
+.selected-currencies .panel span {
+    color: #999;
+}
+
+.currencies-list input[type="checkbox"]{
+    left: 0px;
+    margin: 0px;
+}
+
+.currencies-list hr{
+    margin: 10px 30px;
+}
+
+.selected-currencies {
+    float: left;
+    margin-bottom: 10px;
+    max-height: 350px;
+    overflow-y: auto; 
+    width: 100%;
+}
+
+.selected-currencies .checkbox  label{
+    position: relative;
+}
+
+.selected-currencies .checkbox  input[type=checkbox]{
+    left: 0px;
+    margin: -8px 0px 0px;
+    top: 50%;
+}
+/* -------- END ADDCURRENCIESCOMPONENT -------- */

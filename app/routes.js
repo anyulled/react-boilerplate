@@ -79,6 +79,15 @@ export default function createRoutes(store) {
               .catch(errorLoading);
           },
         },
+        {
+          path: '/addCurrencies',
+          name: 'add currencies',
+          getComponent(location, cb) {
+            System.import('containers/Version4/AddCurrenciesContainer')
+              .then(loadModule(cb))
+              .catch(errorLoading);
+          },
+        },
       ],
     }, {
       path: '*',

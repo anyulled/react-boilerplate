@@ -68,6 +68,12 @@ export class RightSidebarContainer extends React.Component { // eslint-disable-l
           sidebarClass: 'product',
         });
         break;
+      case '/addCurrencies':
+        this.setState({
+          visible: 'visible',
+          sidebarClass: 'product',
+        });
+        break;
       default:
         this.setState({
           visible: '',

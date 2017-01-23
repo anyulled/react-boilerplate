@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
 import { Col, Row, FormControl, InputGroup, Glyphicon, ButtonGroup, Button, Radio, Checkbox } from 'react-bootstrap';
 
 import ProductContainer from '../../../containers/Version4/ProductContainer';
@@ -6,10 +7,6 @@ import CounterpartyComponent from '../../../components/Version4/CounterpartyComp
 import AllowedCurrenciesComponent from '../../../components/Version4/AllowedCurrenciesComponent';
 
 export default class DealLimitsCellRenderer extends React.Component { // eslint-disable-line react/prefer-stateless-function
-  componentDidMount() {
-    // console.log('FieldsCellRenderer mounted');
-    // We must calculate the highest column on the row and re-render
-  }
   render() {
     const column = this.props.colDef.field;
 
@@ -102,7 +99,14 @@ export default class DealLimitsCellRenderer extends React.Component { // eslint-
           }
 
           { this.props.data[column].element === 'allowedCurrenciesComponent' &&
-            <AllowedCurrenciesComponent currencies={this.props.data[column].currencies} />
+            <div>
+              <AllowedCurrenciesComponent currencies={this.props.data[column].currencies} />
+              <p className="text-center">
+                <Link to="/addCurrencies">
+                  <Button bsStyle="primary">Add currencies</Button>
+                </Link>
+              </p>
+            </div>
           }
 
           { this.props.data[column].element === 'amountText' &&

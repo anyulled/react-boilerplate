@@ -11,7 +11,6 @@ import StepsHeaderComponent from '../../../components/Version4/StepsHeaderCompon
 import CounterpartyItemComponent from '../../../components/Version4/CounterpartyItemComponent';
 
 function AddCounterpartyStep2Component({ showStep2 }) {
-  console.log('showStep2', showStep2);
   return (
     <div className="step2">
       <StepsHeaderComponent title="Configure limits for the selected counterparties" step={2} />
@@ -83,21 +82,21 @@ function AddCounterpartyStep2Component({ showStep2 }) {
               <ControlLabel>Choose how to add the selected counterparties to the deal:</ControlLabel>
               <FormGroup>
                 <div className="wadk-tickbox">
-                  <input type="radio" name="teamColors2" value="on" />
+                  <input type="radio" name="currencies" value="on" />
                   <span className="box-label">
                     No additional restrictions <br />
                     <i>All the selected counterparties will be added in the same deal limit.</i>
                   </span>
                 </div>
                 <div className="wadk-tickbox">
-                  <input type="radio" name="teamColors2" value="on" />
+                  <input type="radio" name="currencies" value="on" />
                   <span className="box-label">
                     Create new sub-limit for all marked counterparties <br />
                     <i>All counterparties will be added and the marked will be included in a new sub-limit.</i>
                   </span>
                 </div>
                 <div className="wadk-tickbox">
-                  <input type="radio" name="teamColors2" value="on" />
+                  <input type="radio" name="currencies" value="on" />
                   <span className="box-label">
                     Create individual sub-limits for each marked counterparties <br />
                     <i>All counterparties will be added and the marked will be included in an individual sub-limit.</i>
