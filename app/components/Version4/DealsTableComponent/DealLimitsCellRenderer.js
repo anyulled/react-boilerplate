@@ -1,17 +1,20 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
-import { Col, Row, FormControl, InputGroup, Glyphicon, ButtonGroup, Button, Radio, Checkbox } from 'react-bootstrap';
+import { Col, Row, FormControl, ButtonGroup, Button, Radio, Checkbox } from 'react-bootstrap';
 
-import ProductContainer from '../../../containers/Version4/ProductContainer';
-import CounterpartyComponent from '../../../components/Version4/CounterpartyComponent';
-import BookingComponent from '../../../components/Version4/BookingComponent';
-import PanelItemComponent from '../../../components/Version4/common/PanelItemComponent';
+import ProductComponent from '../products/ProductComponent';
+
+import CounterpartyComponent from '../counterparty/CounterpartyComponent';
+
+import BookingComponent from '../booking/BookingComponent';
+
+import PanelItemComponent from '../common/PanelItemComponent';
+import DateField from '../common/DateField';
 
 export default class DealLimitsCellRenderer extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     const column = this.props.colDef.field;
 
-    // TODO: Create a new component
     let listButton = [];
     if (this.props.data[column].buttonsValues) {
       listButton = this.props.data[column].buttonsValues.map((item, key) =>
@@ -33,26 +36,15 @@ export default class DealLimitsCellRenderer extends React.Component { // eslint-
           }
 
           { this.props.data[column].element === 'date' &&
-            <InputGroup>
-              <FormControl type="text" />
-              <InputGroup.Addon>
-                <Glyphicon glyph="calendar" />
-              </InputGroup.Addon>
-            </InputGroup>
+            <DateField />
           }
 
           { this.props.data[column].element === 'toogleButton' &&
-            // TODO: Create a new component
-            <ButtonGroup>
-              {listButton}
-            </ButtonGroup>
+            <ButtonGroup> {listButton} </ButtonGroup>
           }
 
           { this.props.data[column].element === 'productsComponent' &&
-            <ProductContainer
-              title="Products"
-              productsAdded={this.props.data[column].productsAdded}
-            />
+            <ProductComponent productsAdded={this.props.data[column].productsAdded} />
           }
 
           { this.props.data[column].element === 'counterpartiesComponent' &&
@@ -63,7 +55,6 @@ export default class DealLimitsCellRenderer extends React.Component { // eslint-
           }
 
           { this.props.data[column].element === 'radio3' &&
-            // TODO: Create a new component
             <div className="radio-group">
               <Radio name="termination_notice"> <FormControl type="text" /> <span className="text">days in advance</span></Radio>
               <Radio name="termination_notice">...at DBs discretion</Radio>
@@ -72,7 +63,6 @@ export default class DealLimitsCellRenderer extends React.Component { // eslint-
           }
 
           { this.props.data[column].element === 'radio2' &&
-            // TODO: Create a new component
             <div className="radio-group">
               <Radio name="termination_notice">
                 <span className="text">Max tenor</span>
@@ -82,12 +72,7 @@ export default class DealLimitsCellRenderer extends React.Component { // eslint-
 
               <Radio name="termination_notice">
                 <span className="text">Max / Final maturity</span>
-                <InputGroup>
-                  <FormControl type="text" className="date" />
-                  <InputGroup.Addon>
-                    <Glyphicon glyph="calendar" />
-                  </InputGroup.Addon>
-                </InputGroup>
+                <DateField />
               </Radio>
             </div>
           }
@@ -95,6 +80,7 @@ export default class DealLimitsCellRenderer extends React.Component { // eslint-
           { this.props.data[column].element === 'readOnly' &&
             <b className="col-md-12 readOnly">{this.props.data[column].value}</b>
           }
+
           { this.props.data[column].element === 'splitLine' &&
             <hr />
           }
@@ -111,7 +97,6 @@ export default class DealLimitsCellRenderer extends React.Component { // eslint-
           }
 
           { this.props.data[column].element === 'amountText' &&
-            // TODO: create a new component
             <div className="amount-text">
               <FormControl type="text" /> <b>€</b>
               <span>XX.XXX.XXX,XX €</span>
@@ -119,14 +104,8 @@ export default class DealLimitsCellRenderer extends React.Component { // eslint-
           }
 
           { this.props.data[column].element === 'amortisationDateComponent' &&
-            // TODO: create a new component
             <div className="amortisation-date">
-              <InputGroup>
-                <FormControl type="text" />
-                <InputGroup.Addon>
-                  <Glyphicon glyph="calendar" />
-                </InputGroup.Addon>
-              </InputGroup>
+              <DateField />
               <Checkbox>
                 Not applicable
               </Checkbox>

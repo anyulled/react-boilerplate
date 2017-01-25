@@ -7,7 +7,7 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import AddCounterpartyComponent from '../../../components/Version4/AddCounterpartyComponent';
+import AddCounterpartyComponent from '../../../components/Version4/counterparty/AddCounterpartyComponent';
 
 export class AddCounterpartyContainer extends React.Component { // eslint-disable-line react/prefer-stateless-function
   constructor(props) {

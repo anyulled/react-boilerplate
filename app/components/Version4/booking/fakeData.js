@@ -7,6 +7,17 @@ export default {
     { name: 'Name of the entity truncated if it is too long ...', place: 'City, COUNTRY' },
   ],
 
+  systems: [
+    { id: 'Name of the booking system' },
+    { id: 'Name of the booking system' },
+    { id: 'Name of the booking system' },
+    { id: 'Name of the booking system' },
+    { id: 'Name of the booking system' },
+    { id: 'Name of the booking system' },
+    { id: 'Name of the booking system' },
+    { id: 'Name of the booking system' },
+  ],
+
   facilities: [
     { id: 'ID_1234567' },
     { id: 'ID_1234567' },

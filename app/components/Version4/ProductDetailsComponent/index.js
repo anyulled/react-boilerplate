@@ -9,7 +9,7 @@ import { Link } from 'react-router';
 import { Button } from 'react-bootstrap';
 
 import KeyValueComponent from '../../../components/Version4/KeyValueComponent';
-import SidebarHeaderComponent from '../../../components/Version4/SidebarHeaderComponent';
+import SidebarHeaderComponent from '../common/SidebarHeaderComponent';
 
 function ProductDetailsComponent() {
   return (

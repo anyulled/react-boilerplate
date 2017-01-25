@@ -15,13 +15,13 @@ class DealItemsComponent extends React.Component { // eslint-disable-line react/
           <a href="">Main Data</a>
         </li>
         <li>
-          <a href="">Limit</a>
+          <a href="">Limits</a>
         </li>
         <li>
-          <a href="">Product</a>
+          <a href="">Products</a>
         </li>
         <li>
-          <a href="">Counterparty</a>
+          <a href="">Counterparties</a>
         </li>
         <li>
           <a href="">Booking</a>
@@ -30,7 +30,7 @@ class DealItemsComponent extends React.Component { // eslint-disable-line react/
           <a href="">Collateral</a>
         </li>
         <li>
-          <a href="">Contact</a>
+          <a href="">DE-Risking</a>
         </li>
       </ul>
     );

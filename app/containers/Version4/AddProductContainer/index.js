@@ -7,7 +7,7 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 
-import AddProductComponent from '../../../components/Version4/AddProductComponent';
+import AddProductComponent from '../../../components/Version4/products/AddProductComponent';
 
 export class AddProductContainer extends React.Component { // eslint-disable-line react/prefer-stateless-function
   constructor(props) {

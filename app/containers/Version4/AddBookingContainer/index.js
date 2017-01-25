@@ -7,7 +7,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import AddBookingComponent from '../../../components/Version4/AddBookingComponent';
+import AddBookingComponent from '../../../components/Version4/booking/AddBookingComponent';
 
 export class AddBookingContainer extends React.Component { // eslint-disable-line react/prefer-stateless-function
   constructor(props) {

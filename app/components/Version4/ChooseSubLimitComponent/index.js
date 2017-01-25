@@ -10,7 +10,7 @@ import { Button } from 'react-bootstrap';
 
 import data from './data';
 import TreeComponent from '../../../components/Version4/TreeComponent';
-import SidebarHeaderComponent from '../../../components/Version4/SidebarHeaderComponent';
+import SidebarHeaderComponent from '../common/SidebarHeaderComponent';
 
 function ChooseSubLimitComponent({ newSubLimit }) {
   return (

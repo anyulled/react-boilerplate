@@ -5,13 +5,20 @@
 */
 
 import React, { PropTypes } from 'react';
-import { ControlLabel, FormControl, FormGroup, Checkbox, Button } from 'react-bootstrap';
+import { ControlLabel, FormGroup, Checkbox, Button } from 'react-bootstrap';
 
 import KeyValueComponent from '../../../../components/Version4/KeyValueComponent';
 import PanelItemComponent from '../../../../components/Version4/common/PanelItemComponent';
 import fakeData from '../fakeData';
+import AddEntity from '../AddEntity';
 
 function BookingDetails({ showAccounts, showFacilities, accounts, facilities, addBookingEntity }) {
+  const systemsList = fakeData.systems.map((item, key) =>
+    <FormGroup key={key}>
+      <Checkbox>{item.id}</Checkbox>
+    </FormGroup>
+  );
+
   return (
     <form className="booking-detail">
       <KeyValueComponent
@@ -23,35 +30,23 @@ function BookingDetails({ showAccounts, showFacilities, accounts, facilities, ad
       <FormGroup>
         <ControlLabel>System <i>(Select one or multiple)</i></ControlLabel>
         <div className="system-list">
-          <FormGroup>
-            <Checkbox>Name of the booking system</Checkbox>
-          </FormGroup>
-          <FormGroup>
-            <Checkbox>Name of the booking system</Checkbox>
-          </FormGroup>
+          {systemsList}
         </div>
       </FormGroup>
       <hr />
 
-      <FormGroup>
-        <ControlLabel>Facility ID (booking system)</ControlLabel>
-        <FormControl type="text" className="id-field" />
-        <Button bsStyle="info" onClick={showFacilities}>Add to this entity</Button>
+      <AddEntity label="Facility ID (booking system)" clickFunction={showFacilities}>
         {facilities &&
           <PanelItemComponent arrayList={fakeData.facilities} />
         }
-      </FormGroup>
-      <hr />
+      </AddEntity>
 
-      <FormGroup>
-        <ControlLabel>Account ID (booking system)</ControlLabel>
-        <FormControl type="text" className="id-field" />
-        <Button bsStyle="info" onClick={showAccounts}>Add to this entity</Button>
+      <AddEntity label="Account ID (booking system)" clickFunction={showAccounts}>
         {accounts &&
           <PanelItemComponent arrayList={fakeData.accounts} />
         }
-      </FormGroup>
-      <hr />
+      </AddEntity>
+
       <p className="text-center">
         <Button bsStyle="info" onClick={addBookingEntity}>Add to the list</Button>
       </p>

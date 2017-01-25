@@ -920,7 +920,7 @@ html, body{
     display: inherit;
 }
 
-.radio-group .radio .input-group .date{
+.radio-group .radio .input-group input{
     width: 120px;
 }
 
@@ -1200,7 +1200,7 @@ html, body{
 }
 
 .booking-detail .panel-list{
-    margin-top: 10px;
+    margin: 10px 0px;
 }
 /* -------- END ADDBOOKINGCOMPONENT -------- */
 /* -------- KEYVALUECOMPONENT -------- */

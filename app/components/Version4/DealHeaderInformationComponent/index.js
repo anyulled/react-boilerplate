@@ -8,7 +8,7 @@ import React, { PropTypes } from 'react';
 import { Row, Col, ControlLabel, FormControl, Button } from 'react-bootstrap';
 import { Link } from 'react-router';
 
-import SidebarHeaderComponent from '../../../components/Version4/SidebarHeaderComponent';
+import SidebarHeaderComponent from '../common/SidebarHeaderComponent';
 
 function DealHeaderInformationComponent({ addDealHeaderInformation }) {
   return (

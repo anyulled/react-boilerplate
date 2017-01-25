@@ -10,7 +10,7 @@ import { FormGroup, ControlLabel } from 'react-bootstrap';
 function RadioGroupAddDeal({ data }) {
   const radioList = data.options.map((item, key) =>
     <div className="wadk-tickbox" key={key}>
-      <input type="radio" name="entities" />
+      <input type="radio" name="dealOptions" />
       <span className="box-label">
         {item.value} <br />
         <i>{item.description}</i>

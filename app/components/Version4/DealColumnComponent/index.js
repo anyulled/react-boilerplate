@@ -6,12 +6,12 @@
 
 import React, { PropTypes } from 'react';
 
-import ProductContainer from '../../../containers/Version4/ProductContainer';
+import ProductComponent from '../products/ProductComponent';
 
 import DealLimitsComponent from '../../../components/Version4/DealLimitsComponent';
 import LimitsComponent from '../../../components/Version4/LimitsComponent';
-import CounterpartyComponent from '../../../components/Version4/CounterpartyComponent';
-import BookingComponent from '../../../components/Version4/BookingComponent';
+import CounterpartyComponent from '../counterparty/CounterpartyComponent';
+import BookingComponent from '../../../components/Version4/booking/BookingComponent';
 import CollateralComponent from '../../../components/Version4/CollateralComponent';
 import ContactComponent from '../../../components/Version4/ContactComponent';
 
@@ -20,8 +20,7 @@ function DealColumnComponent({ productsAdded, showProductDetails, counterpartyAd
     <div className="box content-pane pane-2">
       <DealLimitsComponent title={title} />
       <LimitsComponent title="Limits" />
-      <ProductContainer
-        title="Products"
+      <ProductComponent
         productsAdded={productsAdded}
         showProductDetails={showProductDetails}
       />
