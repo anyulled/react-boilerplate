@@ -115,9 +115,9 @@ RefData.DEAL_LIMITS = [
         element: 'allowedCurrenciesComponent',
         colSize: 12,
         currencies: [
-          { currency: '$ - USD' },
-          { currency: '€ - EUR' },
-          { currency: 'Argentina - $ - ARS' },
+          { id: '$ - USD' },
+          { id: '€ - EUR' },
+          { id: 'Argentina - $ - ARS' },
         ],
       },
       { element: 'splitLine', colSize: 12 },
@@ -156,7 +156,16 @@ RefData.DEAL_LIMITS = [
   {
     booking: [
       { element: '', type: 'section' },
-      { element: 'bookingComponent', type: '' },
+      {
+        element: 'bookingComponent',
+        type: '',
+        colSize: 12,
+        booking_list: [
+          { title: 'Name of the entity truncated if it is too long', region: 'Region', systems: 5, facilities: 5, accounts: 5 },
+          { title: 'Name of the entity truncated if it is too long', region: 'Region', systems: 5, facilities: 5, accounts: 5 },
+          { title: 'Name of the entity truncated if it is too long', region: 'Region', systems: 5, facilities: 5, accounts: 5 },
+        ],
+      },
     ],
   },
   {
@@ -216,9 +225,9 @@ RefData.DEAL_SUBLIMITS = [
         element: 'allowedCurrenciesComponent',
         colSize: 12,
         currencies: [
-          { currency: '$ - USD' },
-          { currency: '€ - EUR' },
-          { currency: 'Argentina - $ - ARS' },
+          { id: '$ - USD' },
+          { id: '€ - EUR' },
+          { id: 'Argentina - $ - ARS' },
         ],
       },
       { element: 'splitLine', colSize: 12 },
@@ -257,7 +266,12 @@ RefData.DEAL_SUBLIMITS = [
   {
     booking: [
       { element: '', type: 'section' },
-      { element: 'bookingComponent', type: '' },
+      {
+        element: 'bookingComponent',
+        type: '',
+        colSize: 12,
+        booking_list: [],
+      },
     ],
   },
   {

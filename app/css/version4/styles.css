@@ -479,41 +479,6 @@ html, body{
     padding: 10px;
 }
 
-.steps .panel{
-    margin-bottom: 5px;
-}
-
-.steps .panel-body{
-    padding: 10px;
-}
-
-.steps .panel ul{
-    float: left;
-    list-style: none;
-    margin: 5px 0px 0px;
-    padding: 0px;
-    width: 100%;
-}
-
-.steps .panel ul li{
-    color: #999999;
-    float: left;  
-    text-align: left;      
-    width: 40%;
-}
-
-.steps .panel ul li:last-child{
-    color: #d43f3a;
-    cursor: pointer;
-    display: none;
-    text-align: right;
-    width: 20%;
-}
-
-.steps .panel:hover ul li:last-child{
-    display: block;
-}
-
 .steps .products-list{
     float: left;
     margin-bottom: 10px;
@@ -525,6 +490,41 @@ html, body{
 .steps .products-list .panel a{    
     display: none;
     float: right;
+}
+
+.steps .products-list .panel{
+    margin-bottom: 5px;
+}
+
+.steps .products-list .panel-body{
+    padding: 10px;
+}
+
+.steps .products-list .panel ul{
+    float: left;
+    list-style: none;
+    margin: 5px 0px 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+.steps .products-list .panel ul li{
+    color: #999999;
+    float: left;  
+    text-align: left;      
+    width: 40%;
+}
+
+.steps .products-list .panel ul li:last-child{
+    color: #d43f3a;
+    cursor: pointer;
+    display: none;
+    text-align: right;
+    width: 20%;
+}
+
+.steps .products-list .panel:hover ul li:last-child{
+    display: block;
 }
 
 .steps .step2{
@@ -1068,3 +1068,144 @@ html, body{
     top: 50%;
 }
 /* -------- END ADDCURRENCIESCOMPONENT -------- */
+/* -------- BOOKINGCOMPONENT -------- */
+.booking-component{
+    float: left;
+    width: 100%;
+}
+
+.booking-component .panel{
+    margin-bottom: 5px; 
+}
+
+.booking-component .panel-body {
+    padding: 10px 15px;
+}
+
+.booking-component .panel-body .title{
+    float: left;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.booking-component .panel-body button{
+    display: none;
+    float: right;
+    padding: 0px;
+}
+
+.booking-component .panel-body:hover button{
+    display: block;
+}
+
+.booking-component .panel-body .btn-details{
+    color: #1d769f;
+}
+
+.sidebar-content .booking-component .panel-body .btn-details{
+    display: none;
+}
+
+.booking-component .panel-body .btn-remove{
+    color: #d43f3a;
+}
+
+.booking-component .panel-body .region{
+    color: #999;
+    float: left;
+    margin-right: 10px;
+}
+
+.booking-component .panel-body ul{
+    float: left;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.booking-component .panel-body ul li{
+    color: #999;
+    float: left;
+    margin-right: 5px;
+}
+
+.booking-component .panel-body ul li span{
+    color: #1d769f;
+}
+/* -------- END BOOKINGCOMPONENT -------- */
+/* -------- ADDBOOKINGCOMPONENT -------- */
+.booking-entities-list{
+    float: left;
+    list-style: none;
+    margin: 10px 0px;
+    padding: 0px;
+    width: 100%;
+}
+
+.booking-entities-list li{
+    float: left;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.booking-entities-list li span{
+    color: #999;
+    float: right;
+    margin-right: 10px;
+}
+
+.booking-entities-list li span.glyphicon{
+    color: #1d769f;
+    cursor: pointer;
+}
+
+.booking-detail{
+    float: left;
+    max-height: 430px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.booking-detail hr{
+    float: left;
+    margin: 0px 0px 15px;
+    width: 100%;
+}
+
+.booking-detail .system-list{
+    background: #ffffff;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border: 1px solid #a6a9ac;
+    max-height: 100px;
+    overflow-y: auto;
+    padding: 5px 10px;
+}
+
+.booking-detail .system-list .checkbox{
+    margin: 5px 0px;
+}
+
+.booking-detail .system-list input[type="checkbox"]{
+    left: 0px;
+    margin: 1px 0px 0px;
+}
+
+.booking-detail .id-field{
+    float: left;
+    margin-right: 10px;
+    width: 50%;
+}
+
+.booking-detail .panel-list{
+    margin-top: 10px;
+}
+/* -------- END ADDBOOKINGCOMPONENT -------- */
+/* -------- KEYVALUECOMPONENT -------- */
+.key-value label, .key-value b{
+    float: left;
+    width: 100%;
+}
+/* -------- END KEYVALUECOMPONENT -------- */

@@ -8,19 +8,19 @@ import React, { PropTypes } from 'react';
 import { Row, ControlLabel, FormGroup, Checkbox, Button } from 'react-bootstrap';
 
 import StepsHeaderComponent from '../../../components/Version4/StepsHeaderComponent';
-import AllowedCurrenciesComponent from '../../../components/Version4/AllowedCurrenciesComponent';
+import PanelItemComponent from '../../../components/Version4/common/PanelItemComponent';
 
 
 function AddCurrenciesStep1Component({ showStep2, goBackStep1, showCurrencies, showSelectedCurrencies, commonCurrencies, currencies }) {
   const commonCurrenciesList = commonCurrencies.map((item, key) =>
     <FormGroup key={key}>
-      <Checkbox>{item.currency} <span>{item.description}</span></Checkbox>
+      <Checkbox>{item.id} <span>{item.description}</span></Checkbox>
     </FormGroup>
   );
 
   const currenciesList = currencies.map((item, key) =>
     <FormGroup key={key}>
-      <Checkbox>{item.currency} <span>{item.description}</span></Checkbox>
+      <Checkbox>{item.id} <span>{item.description}</span></Checkbox>
     </FormGroup>
   );
 
@@ -58,8 +58,8 @@ function AddCurrenciesStep1Component({ showStep2, goBackStep1, showCurrencies, s
 
               {showCurrencies &&
                 <div className="selected-currencies">
-                  <AllowedCurrenciesComponent currencies={commonCurrencies} />
-                  <AllowedCurrenciesComponent currencies={currencies} />
+                  <PanelItemComponent arrayList={commonCurrencies} />
+                  <PanelItemComponent arrayList={currencies} />
                 </div>
               }
             </FormGroup>

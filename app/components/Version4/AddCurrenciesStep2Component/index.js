@@ -8,18 +8,18 @@ import React, { PropTypes } from 'react';
 import { Row, FormGroup, ControlLabel, Checkbox } from 'react-bootstrap';
 
 import StepsHeaderComponent from '../../../components/Version4/StepsHeaderComponent';
-import AllowedCurrenciesComponent from '../../../components/Version4/AllowedCurrenciesComponent';
+import PanelItemComponent from '../../../components/Version4/common/PanelItemComponent';
 
 function AddCurrenciesStep2Component({ showStep2, commonCurrencies, currencies }) {
   const currenciesList = currencies.map((item, key) =>
     <Checkbox key={key}>
-      <AllowedCurrenciesComponent currencies={[item]} />
+      <PanelItemComponent arrayList={[item]} />
     </Checkbox>
   );
 
   const commonCurrenciesList = commonCurrencies.map((item, key) =>
     <Checkbox key={key}>
-      <AllowedCurrenciesComponent currencies={[item]} />
+      <PanelItemComponent arrayList={[item]} />
     </Checkbox>
   );
 

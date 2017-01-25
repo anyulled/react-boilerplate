@@ -4,22 +4,27 @@
 *
 */
 
-import React from 'react';
+import React, { PropTypes } from 'react';
 
-function NotFoundComponent() {
+function NotFoundComponent({ text1, text2 }) {
   return (
     <div className="not-found">
       <p className="text-center">
         NO MATCH FOUND
       </p>
       <p>
-        If the counterparty does not exist, you can leave the reference and replace it with the ID later.
+        {text1}
       </p>
       <p>
-        You must replace the reference by a valid ID before sending to approval.
+        {text2}
       </p>
     </div>
   );
 }
+
+NotFoundComponent.propTypes = {
+  text1: PropTypes.string.isRequired,
+  text2: PropTypes.string,
+};
 
 export default NotFoundComponent;

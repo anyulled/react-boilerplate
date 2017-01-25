@@ -106,10 +106,14 @@ export default class RowDataFactory {
               deal_limits: {
                 element: RefData.DEAL_LIMITS[i].booking[j].element,
                 type: RefData.DEAL_LIMITS[i].booking[j].type,
+                colSize: RefData.DEAL_LIMITS[i].booking[j].colSize,
+                booking_list: RefData.DEAL_LIMITS[i].booking[j].booking_list,
               },
               deal_sublimits: {
                 element: RefData.DEAL_SUBLIMITS[i].booking[j].element,
                 type: RefData.DEAL_SUBLIMITS[i].booking[j].type,
+                colSize: RefData.DEAL_SUBLIMITS[i].booking[j].colSize,
+                booking_list: RefData.DEAL_SUBLIMITS[i].booking[j].booking_list,
               },
             });
           }

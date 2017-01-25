@@ -88,6 +88,15 @@ export default function createRoutes(store) {
               .catch(errorLoading);
           },
         },
+        {
+          path: '/addBooking',
+          name: 'add booking',
+          getComponent(location, cb) {
+            System.import('containers/Version4/AddBookingContainer')
+              .then(loadModule(cb))
+              .catch(errorLoading);
+          },
+        },
       ],
     }, {
       path: '*',

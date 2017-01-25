@@ -41,6 +41,8 @@ class DealsTableComponent extends React.Component { // eslint-disable-line react
             return 205;
           case 'amortisationDateComponent':
             return 120;
+          case 'bookingComponent':
+            return 226;
           default:
             return 38;
         }

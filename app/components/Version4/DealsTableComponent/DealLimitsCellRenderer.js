@@ -4,7 +4,8 @@ import { Col, Row, FormControl, InputGroup, Glyphicon, ButtonGroup, Button, Radi
 
 import ProductContainer from '../../../containers/Version4/ProductContainer';
 import CounterpartyComponent from '../../../components/Version4/CounterpartyComponent';
-import AllowedCurrenciesComponent from '../../../components/Version4/AllowedCurrenciesComponent';
+import BookingComponent from '../../../components/Version4/BookingComponent';
+import PanelItemComponent from '../../../components/Version4/common/PanelItemComponent';
 
 export default class DealLimitsCellRenderer extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
@@ -100,7 +101,7 @@ export default class DealLimitsCellRenderer extends React.Component { // eslint-
 
           { this.props.data[column].element === 'allowedCurrenciesComponent' &&
             <div>
-              <AllowedCurrenciesComponent currencies={this.props.data[column].currencies} />
+              <PanelItemComponent arrayList={this.props.data[column].currencies} />
               <p className="text-center">
                 <Link to="/addCurrencies">
                   <Button bsStyle="primary">Add currencies</Button>
@@ -138,6 +139,16 @@ export default class DealLimitsCellRenderer extends React.Component { // eslint-
                 * To add an additional amortisation date will be mandatory to provide new limit amounts. Hence new sub-limit will be created.
               </i>
             </div>
+          }
+
+          { this.props.data[column].element === 'bookingComponent' &&
+            <BookingComponent bookingList={this.props.data[column].booking_list}>
+              <p className="text-center">
+                <Link to="/addBooking">
+                  <Button bsStyle="primary">Add booking entities</Button>
+                </Link>
+              </p>
+            </BookingComponent>
           }
         </Col>
 

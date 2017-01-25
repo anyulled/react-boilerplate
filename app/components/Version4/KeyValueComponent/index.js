@@ -9,7 +9,7 @@ import { FormGroup, ControlLabel } from 'react-bootstrap';
 
 function KeyValueComponent({ label, value, colSize }) {
   return (
-    <FormGroup className={`col-md-${colSize}`}>
+    <FormGroup className={`col-md-${colSize} key-value`}>
       <ControlLabel>{label}</ControlLabel>
       <b>{value}</b>
     </FormGroup>

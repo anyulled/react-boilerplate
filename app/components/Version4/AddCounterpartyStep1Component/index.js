@@ -18,7 +18,12 @@ function AddCounterpartyStep1Component({ searchItems, showItems, viewCounterpart
   if (showItems) {
     view = <CounterpartyListComponent viewCounterparty={viewCounterparty} />;
   } else {
-    view = <NotFoundComponent />;
+    view = (
+      <NotFoundComponent
+        text1="If the counterparty does not exist, you can leave the reference and replace it with the ID later."
+        text2="You must replace the reference by a valid ID before sending to approval."
+      />
+    );
   }
   return (
     <div>

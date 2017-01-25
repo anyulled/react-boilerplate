@@ -1,0 +1,24 @@
+.panel-list{
+    float: left;
+    width: 100%;
+}
+
+.panel-list .panel{
+    margin-bottom: 5px;
+}
+
+.panel-list .panel-body{
+    padding: 10px 15px;
+}
+
+.panel-list .panel .remove{
+    color: #d43f3a;
+    cursor: pointer;
+    display: none;
+    float: right;
+    padding: 0px;
+}
+
+.panel-list .panel:hover .remove{
+    display: block;
+}
