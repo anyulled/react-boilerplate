@@ -5,34 +5,37 @@
 */
 
 import React, { PropTypes } from 'react';
-import { Link } from 'react-router';
-import { Button } from 'react-bootstrap';
 
-import NewProductComponent from '../NewProductComponent';
+import ProductItem from '../ProductItem';
 
-function ProductComponent({ productsAdded, showProductDetails }) {
+function ProductComponent({ children, products }) {
+  if ((products) && (products.length > 0)) {
+    const productsItems = products.map((item, key) =>
+      <ProductItem
+        key={key}
+        level3={item.level3}
+        level2={item.level2}
+        level1={item.level1}
+      />
+    );
+    return (
+      <div className="product-component">
+        {productsItems}
+        {children}
+      </div>
+    );
+  }
   return (
-    <div className="content-block">
-      {!productsAdded &&
-        <p className="text-center">No products were added yet.</p>
-      }
-
-      {productsAdded &&
-        <NewProductComponent showProductDetails={showProductDetails} />
-      }
-
-      <p className="text-center">
-        <Link to="/addProduct">
-          <Button bsStyle="primary">Add product(s)</Button>
-        </Link>
-      </p>
+    <div className="product-component">
+      <p className="text-center">No products were added yet.</p>
+      {children}
     </div>
   );
 }
 
 ProductComponent.propTypes = {
-  productsAdded: PropTypes.bool,
-  showProductDetails: PropTypes.func,
+  children: PropTypes.object,
+  products: PropTypes.array.isRequired,
 };
 
 export default ProductComponent;

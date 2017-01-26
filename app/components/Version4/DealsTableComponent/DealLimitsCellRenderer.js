@@ -44,7 +44,13 @@ export default class DealLimitsCellRenderer extends React.Component { // eslint-
           }
 
           { this.props.data[column].element === 'productsComponent' &&
-            <ProductComponent productsAdded={this.props.data[column].productsAdded} />
+            <ProductComponent products={this.props.data[column].products}>
+              <p className="text-center">
+                <Link to="/addProduct">
+                  <Button bsStyle="primary">Add product(s)</Button>
+                </Link>
+              </p>
+            </ProductComponent>
           }
 
           { this.props.data[column].element === 'counterpartiesComponent' &&

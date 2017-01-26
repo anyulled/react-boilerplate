@@ -66,12 +66,14 @@ export default class RowDataFactory {
               deal_limits: {
                 element: RefData.DEAL_LIMITS[i].products[j].element,
                 type: RefData.DEAL_LIMITS[i].products[j].type,
-                productsAdded: RefData.DEAL_LIMITS[i].products[j].productsAdded,
+                products: RefData.DEAL_LIMITS[i].products[j].products,
+                colSize: RefData.DEAL_LIMITS[i].products[j].colSize,
               },
               deal_sublimits: {
                 element: RefData.DEAL_SUBLIMITS[i].products[j].element,
                 type: RefData.DEAL_SUBLIMITS[i].products[j].type,
-                productsAdded: RefData.DEAL_SUBLIMITS[i].products[j].productsAdded,
+                products: RefData.DEAL_SUBLIMITS[i].products[j].products,
+                colSize: RefData.DEAL_SUBLIMITS[i].products[j].colSize,
               },
             });
           }

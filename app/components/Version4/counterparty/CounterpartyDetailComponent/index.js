@@ -7,7 +7,7 @@
 import React, { PropTypes } from 'react';
 import { Button, Row, Col, Tab, Nav, NavItem, FormGroup, ControlLabel, ButtonGroup, FormControl } from 'react-bootstrap';
 
-import KeyValueComponent from '../../../../components/Version4/KeyValueComponent';
+import KeyValueComponent from '../../common/KeyValueComponent';
 
 function CounterpartyDetailComponent({ expand, expandDetails, showSelectedProducts, data }) {
   let expandButtonLabel;

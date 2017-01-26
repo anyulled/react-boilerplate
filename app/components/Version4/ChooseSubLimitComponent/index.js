@@ -9,7 +9,7 @@ import { Link } from 'react-router';
 import { Button } from 'react-bootstrap';
 
 import data from './data';
-import TreeComponent from '../../../components/Version4/TreeComponent';
+import TreeComponent from '../TreeComponent';
 import SidebarHeaderComponent from '../common/SidebarHeaderComponent';
 
 function ChooseSubLimitComponent({ newSubLimit }) {

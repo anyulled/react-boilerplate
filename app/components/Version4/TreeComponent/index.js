@@ -5,7 +5,7 @@
 */
 
 import React, { PropTypes } from 'react';
-import TreeItemComponent from '../../../components/Version4/TreeItemComponent';
+import TreeItemComponent from '../TreeItemComponent';
 
 
 function TreeComponent({ data, newSubLimit }) {

@@ -144,7 +144,16 @@ RefData.DEAL_LIMITS = [
   {
     products: [
       { element: '', type: 'section' },
-      { element: 'productsComponent', type: '', productsAdded: false },
+      {
+        element: 'productsComponent',
+        type: '',
+        colSize: 12,
+        products: [
+          { level3: 'Level 3 product', level2: 'Level 2 product', level1: 'Level 1 product' },
+          { level3: 'Level 3 product', level2: 'Level 2 product', level1: 'Level 1 product' },
+          { level3: 'Level 3 product', level2: 'Level 2 product', level1: 'Level 1 product' },
+        ],
+      },
     ],
   },
   {
@@ -254,7 +263,16 @@ RefData.DEAL_SUBLIMITS = [
   {
     products: [
       { element: '', type: 'section' },
-      { element: 'productsComponent', type: '', productsAdded: true },
+      {
+        element: 'productsComponent',
+        type: '',
+        colSize: 12,
+        products: [
+          { level3: 'Level 3 product', level2: 'Level 2 product', level1: 'Level 1 product' },
+          { level3: 'Level 3 product', level2: 'Level 2 product', level1: 'Level 1 product' },
+          { level3: 'Level 3 product', level2: 'Level 2 product', level1: 'Level 1 product' },
+        ],
+      },
     ],
   },
   {

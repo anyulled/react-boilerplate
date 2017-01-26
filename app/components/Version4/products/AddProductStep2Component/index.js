@@ -7,21 +7,22 @@
 import React, { PropTypes } from 'react';
 import { Label, Row, FormGroup, ControlLabel, Checkbox } from 'react-bootstrap';
 
-import ProductListItemComponent from '../ProductListItemComponent';
-
 import RadioGroupAddDeal from '../../common/RadioGroupAddDeal';
 
-function AddProductStep2Component({ showStep2, RadioGroupAddDealData }) {
-  const selectedProducts = [];
-  for (let i = 1; i <= 10; i += 1) {
-    selectedProducts.push(
-      <FormGroup key={i}>
-        <Checkbox inline>
-          <ProductListItemComponent />
-        </Checkbox>
-      </FormGroup>
-    );
-  }
+import ProductItem from '../ProductItem';
+
+function AddProductStep2Component({ showStep2, RadioGroupAddDealData, products }) {
+  const productsList = products.map((item, key) =>
+    <FormGroup key={key}>
+      <Checkbox inline>
+        <ProductItem
+          level3={item.level3}
+          level2={item.level2}
+          level1={item.level1}
+        />
+      </Checkbox>
+    </FormGroup>
+  );
   return (
     <div className="step2">
       <Row>
@@ -37,7 +38,7 @@ function AddProductStep2Component({ showStep2, RadioGroupAddDealData }) {
               <form>
                 <FormGroup>
                   <ControlLabel>Selected products (Mark products to restrict)</ControlLabel>
-                  <div className="selected-products">{selectedProducts}</div>
+                  <div className="product-component">{productsList}</div>
                 </FormGroup>
               </form>
             </div>
@@ -53,6 +54,7 @@ function AddProductStep2Component({ showStep2, RadioGroupAddDealData }) {
 }
 
 AddProductStep2Component.propTypes = {
+  products: PropTypes.array.isRequired,
   showStep2: PropTypes.bool.isRequired,
   RadioGroupAddDealData: PropTypes.object.isRequired,
 };

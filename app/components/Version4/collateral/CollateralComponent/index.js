@@ -1,13 +1,13 @@
 /**
 *
-* LimitsComponent
+* CollateralComponent
 *
 */
 
 import React, { PropTypes } from 'react';
-import NewDealForm from '../../../components/Version4/NewDealForm';
+import NewDealForm from '../../NewDealForm';
 
-function LimitsComponent({ title }) {
+function CollateralComponent({ title }) {
   return (
     <div className="content-block">
       <h3>{title}</h3>
@@ -16,8 +16,8 @@ function LimitsComponent({ title }) {
   );
 }
 
-LimitsComponent.propTypes = {
+CollateralComponent.propTypes = {
   title: PropTypes.string.isRequired,
 };
 
-export default LimitsComponent;
+export default CollateralComponent;

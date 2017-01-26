@@ -15,8 +15,6 @@ import DealSectionsContainer from '../../containers/Version4/DealSectionsContain
 import RightSidebarContainer from '../../containers/Version4/RightSidebarContainer';
 
 import AutosaveComponent from '../../components/Version4/AutosaveComponent';
-import AddSubLimitComponent from '../../components/Version4/AddSubLimitComponent';
-import DealColumnComponent from '../../components/Version4/DealColumnComponent';
 import DealsTableComponent from '../../components/Version4/DealsTableComponent';
 
 export class Version4 extends React.Component { // eslint-disable-line react/prefer-stateless-function
@@ -82,21 +80,8 @@ export class Version4 extends React.Component { // eslint-disable-line react/pre
   }
 
   render() {
-    const columns = [];
-    for (let i = 1; i <= this.state.dealColumns; i += 1) {
-      columns.push(
-        <DealColumnComponent
-          key={i}
-          title="Sub-limit name"
-          productsAdded={this.state.productsAdded}
-          showProductDetails={() => this.showSidebar('productDetails')}
-          counterpartyAdded={this.state.counterpartyAdded}
-        />
-      );
-    }
     return (
       <div>
-
         <RightSidebarContainer
           url={this.props.location.pathname}
           newSubLimit={this.newSubLimit}

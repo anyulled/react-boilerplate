@@ -29,7 +29,7 @@ function AddProductComponent({ showList, addToList, goStep2, showStep2, goBackSt
           levelData={fakeData}
         />
 
-        <AddProductStep2Component showStep2={showStep2} RadioGroupAddDealData={fakeData.RadioGroupAddDeal} />
+        <AddProductStep2Component showStep2={showStep2} products={fakeData.products} RadioGroupAddDealData={fakeData.RadioGroupAddDeal} />
       </div>
       <p className="text-center fixedButtons">
         {!showStep2 &&

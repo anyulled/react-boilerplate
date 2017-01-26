@@ -7,18 +7,12 @@
 import React, { PropTypes } from 'react';
 import { Row, FormGroup, ControlLabel, Button } from 'react-bootstrap';
 
-import ProductListItemComponent from '../ProductListItemComponent';
-
 import MultiSelectField from '../../common/MultiSelectField';
 import StepsHeaderComponent from '../../common/StepsHeaderComponent';
 
+import ProductComponent from '../ProductComponent';
+
 function AddProductStep1Component({ showList, addToList, showStep2, goBackStep1, levelData }) {
-  const productItems = [];
-  for (let i = 1; i <= 10; i += 1) {
-    productItems.push(
-      <ProductListItemComponent key={i} />
-    );
-  }
   return (
     <div>
       <StepsHeaderComponent title="Select products to add to the deal" step1 step={1} showStep2={showStep2} goBackStep1={goBackStep1} />
@@ -52,7 +46,7 @@ function AddProductStep1Component({ showList, addToList, showStep2, goBackStep1,
                   }
                   {showList &&
                     <div className="products-list">
-                      {productItems}
+                      <ProductComponent products={levelData.products} />
                     </div>
                   }
                 </FormGroup>

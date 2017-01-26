@@ -7,8 +7,8 @@
 import React, { PropTypes } from 'react';
 import { ControlLabel, FormGroup, Checkbox, Button } from 'react-bootstrap';
 
-import KeyValueComponent from '../../../../components/Version4/KeyValueComponent';
-import PanelItemComponent from '../../../../components/Version4/common/PanelItemComponent';
+import KeyValueComponent from '../../common/KeyValueComponent';
+import PanelItemComponent from '../../common/PanelItemComponent';
 import fakeData from '../fakeData';
 import AddEntity from '../AddEntity';
 

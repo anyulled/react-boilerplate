@@ -1,0 +1,64 @@
+.product-component{
+    float: left;
+    width: 100%;
+}
+
+.product-component .panel{
+    margin-bottom: 5px; 
+}
+
+.product-component .panel-body {
+    padding: 10px 15px;
+}
+
+.product-component .panel-body .title{
+    float: left;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.product-component .panel-body button{
+    display: none;
+    float: right;
+    padding: 0px;
+}
+
+.product-component .panel-body:hover button{
+    display: block;
+}
+
+.product-component .panel-body .btn-details{
+    color: #1d769f;
+}
+
+.sidebar-content .product-component .panel-body .btn-details{
+    display: none;
+}
+
+.product-component .panel-body .btn-remove{
+    color: #d43f3a;
+}
+
+.product-component .panel-body ul{
+    float: left;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.product-component .panel-body ul li{
+    color: #999;
+    float: left;
+    margin-right: 15px;
+}
+
+.product-component .panel-body ul li span{
+    color: #1d769f;
+}
+
+.step2 .product-component {
+    margin-bottom: 15px;
+    max-height: 300px;
+    margin-bottom: 10px;
+    overflow-y: auto;
+}

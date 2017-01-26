@@ -65,7 +65,7 @@ export default function createRoutes(store) {
           path: '/productDetail',
           name: 'product detail',
           getComponent(location, cb) {
-            System.import('components/Version4/ProductDetailsComponent')
+            System.import('components/Version4/products/ProductDetailsComponent')
               .then(loadModule(cb))
               .catch(errorLoading);
           },
