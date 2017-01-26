@@ -14,7 +14,7 @@ import AddProductStep1Component from '../AddProductStep1Component';
 import AddProductStep2Component from '../AddProductStep2Component';
 import fakeData from '../fakeData';
 
-function AddProductComponent({ showList, addToList, goStep2, showStep2, goBackStep1, newProduct }) {
+function AddProductComponent({ showList, addToList, goStep2, showStep2, goBackStep1 }) {
   return (
     <div className="content-block steps">
 
@@ -39,9 +39,11 @@ function AddProductComponent({ showList, addToList, goStep2, showStep2, goBackSt
         }
 
         {showStep2 &&
-          <Button bsStyle="primary" onClick={newProduct}>
-            Finish
-          </Button>
+          <Link to="/">
+            <Button bsStyle="primary">
+              Finish
+            </Button>
+          </Link>
         }
 
         <Link to="/">
@@ -58,7 +60,6 @@ AddProductComponent.propTypes = {
   addToList: PropTypes.func.isRequired,
   goBackStep1: PropTypes.func.isRequired,
   goStep2: PropTypes.func.isRequired,
-  newProduct: PropTypes.func.isRequired,
   showList: PropTypes.bool.isRequired,
   showStep2: PropTypes.bool.isRequired,
 };

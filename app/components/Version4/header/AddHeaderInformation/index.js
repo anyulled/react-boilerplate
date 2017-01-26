@@ -1,6 +1,6 @@
 /**
 *
-* DealHeaderInformationComponent
+* AddHeaderInformation
 *
 */
 
@@ -8,9 +8,9 @@ import React, { PropTypes } from 'react';
 import { Row, Col, ControlLabel, FormControl, Button } from 'react-bootstrap';
 import { Link } from 'react-router';
 
-import SidebarHeaderComponent from '../common/SidebarHeaderComponent';
+import SidebarHeaderComponent from '../../common/SidebarHeaderComponent';
 
-function DealHeaderInformationComponent({ addDealHeaderInformation }) {
+function AddHeaderInformation({ addDealHeaderInformation }) {
   return (
     <div className="content-block">
       <SidebarHeaderComponent title="Deal header information" />
@@ -63,8 +63,8 @@ function DealHeaderInformationComponent({ addDealHeaderInformation }) {
   );
 }
 
-DealHeaderInformationComponent.propTypes = {
+AddHeaderInformation.propTypes = {
   addDealHeaderInformation: PropTypes.func,
 };
 
-export default DealHeaderInformationComponent;
+export default AddHeaderInformation;

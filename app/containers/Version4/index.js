@@ -6,76 +6,33 @@
 
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { Grid, Row, Col, Glyphicon } from 'react-bootstrap';
 import { browserHistory } from 'react-router';
 
-import DealTabsContainer from '../../containers/Version4/DealTabsContainer';
-import DealDetailsContainer from '../../containers/Version4/DealDetailsContainer';
 import DealSectionsContainer from '../../containers/Version4/DealSectionsContainer';
 import RightSidebarContainer from '../../containers/Version4/RightSidebarContainer';
 
-import AutosaveComponent from '../../components/Version4/AutosaveComponent';
 import DealsTableComponent from '../../components/Version4/DealsTableComponent';
+
+import DealHeader from '../../components/Version4/header/DealHeader';
+import fakeData from '../../components/Version4/header/fakeData';
 
 export class Version4 extends React.Component { // eslint-disable-line react/prefer-stateless-function
 
   constructor(props) {
     super(props);
     this.state = {
-      sublimit: false,
-      productsAdded: false,
-      counterpartyAdded: false,
-      counterpartyAdded2: false,
-      dealColumns: 14,
+      dealInformations: fakeData.dealInfomations.initial,
     };
-  }
-
-  componentDidUpdate= () => {
-    if (this.state.sublimit === true) {
-      const component = this.successMessage;
-      setTimeout(() => {
-        component.className += ' fade';
-      }, 5000);
-    }
   }
 
   hideSidebar = () => {
     browserHistory.push('/');
   }
 
-  addColumn = () => {
-    this.setState({
-      dealColumns: this.state.dealColumns + 1,
-    });
-
-    this.hideSidebar();
-  }
-
-  newSubLimit = () => {
-    this.setState({
-      sublimit: true,
-    });
-
-    this.addColumn();
-  }
-
-  newProduct = () => {
-    this.newSubLimit();
-    this.setState({
-      productsAdded: true,
-    });
-  }
-
-  newCounterparty = () => {
-    this.newSubLimit();
-    this.setState({
-      counterpartyAdded: true,
-      counterpartyAdded2: true,
-    });
-  }
-
   addDealHeaderInformation = () => {
-    this.child.updateHeaderDeal();
+    this.setState({
+      dealInformations: fakeData.dealInfomations.randomValues,
+    });
     this.hideSidebar();
   }
 
@@ -84,34 +41,18 @@ export class Version4 extends React.Component { // eslint-disable-line react/pre
       <div>
         <RightSidebarContainer
           url={this.props.location.pathname}
-          newSubLimit={this.newSubLimit}
           addDealHeaderInformation={this.addDealHeaderInformation}
-          newProduct={this.newProduct}
-          newCounterparty={this.newCounterparty}
         >
           {this.props.children && React.cloneElement(this.props.children, {
             url: this.props.location.pathname,
           })}
         </RightSidebarContainer>
 
-        <div className="navbar-fixed-top deal-header">
-          <Grid fluid>
-            <Row className="page-header-block">
-              <Col md={12}>
-                <AutosaveComponent showSidebar={() => this.showSidebar('dealInformation')} />
-                <h1>
-                  <Glyphicon glyph="circle-arrow-left" />
-                  Deal 1234567890
-                </h1>
-                <DealDetailsContainer
-                  onRef={(ref) => (this.child = ref)}
-                  showSidebar={() => this.showSidebar('dealInformation')}
-                />
-                <DealTabsContainer sublimit={this.state.sublimit} />
-              </Col>
-            </Row>
-          </Grid>
-        </div>
+        <DealHeader
+          onRef={(ref) => (this.child = ref)}
+          dealId={1234567890}
+          dealInformations={this.state.dealInformations}
+        />
 
         <DealSectionsContainer />
 

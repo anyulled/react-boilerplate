@@ -12,7 +12,6 @@ export class RightSidebarContainer extends React.Component { // eslint-disable-l
   constructor(props) {
     super(props);
     this.state = {
-      counterpartyDetail: false,
       visible: '',
       sidebarClass: '',
     };
@@ -26,14 +25,6 @@ export class RightSidebarContainer extends React.Component { // eslint-disable-l
     if (nextProps.url !== this.props.url) {
       this.sidebar(nextProps.url);
     }
-  }
-
-  viewCounterparty = () => {
-    this.setState({ counterpartyDetail: true });
-  }
-
-  backCounterpartyList = () => {
-    this.setState({ counterpartyDetail: false });
   }
 
   sidebar = (url) => {
@@ -92,16 +83,10 @@ export class RightSidebarContainer extends React.Component { // eslint-disable-l
     return (
       <RightSidebarComponent
         visible={this.state.visible}
-        counterpartyDetail={this.state.counterpartyDetail}
-        backCounterpartyList={this.backCounterpartyList}
-        viewCounterparty={this.viewCounterparty}
         sidebarClass={this.state.sidebarClass}
       >
         {this.props.children && React.cloneElement(this.props.children, {
           addDealHeaderInformation: this.props.addDealHeaderInformation,
-          newSubLimit: this.props.newSubLimit,
-          newProduct: this.props.newProduct,
-          newCounterparty: this.props.newCounterparty,
         })}
       </RightSidebarComponent>
     );
@@ -111,9 +96,6 @@ export class RightSidebarContainer extends React.Component { // eslint-disable-l
 RightSidebarContainer.propTypes = {
   addDealHeaderInformation: PropTypes.func,
   children: PropTypes.object,
-  newCounterparty: PropTypes.func.isRequired,
-  newProduct: PropTypes.func.isRequired,
-  newSubLimit: PropTypes.func.isRequired,
   url: PropTypes.string.isRequired,
   visible: PropTypes.string, // eslint-disable-line react/no-unused-prop-types
 };

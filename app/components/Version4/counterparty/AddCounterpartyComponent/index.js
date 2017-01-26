@@ -14,7 +14,7 @@ import AddCounterpartyStep1Component from '../AddCounterpartyStep1Component';
 import AddCounterpartyStep2Component from '../AddCounterpartyStep2Component';
 import fakeData from '../fakeData';
 
-function AddCounterpartyComponent({ newCounterparty, showStep2, goToStep2, searchItems, showItems, viewCounterparty, counterpartyDetail, notFound, expand, expandDetails, showSelectedProducts, selectedProducts, goBackStep1 }) {
+function AddCounterpartyComponent({ showStep2, goToStep2, searchItems, showItems, viewCounterparty, counterpartyDetail, notFound, expand, expandDetails, showSelectedProducts, selectedProducts, goBackStep1 }) {
   return (
     <div className="content-block steps">
 
@@ -46,9 +46,9 @@ function AddCounterpartyComponent({ newCounterparty, showStep2, goToStep2, searc
         }
 
         {showStep2 &&
-          <Button bsStyle="primary" onClick={newCounterparty}>
-            Finish
-          </Button>
+          <Link to="/">
+            <Button bsStyle="primary">Finish</Button>
+          </Link>
         }
         <Link to="/">
           <Button bsStyle="default">Cancel</Button>
@@ -64,7 +64,6 @@ AddCounterpartyComponent.propTypes = {
   expandDetails: PropTypes.func,
   goBackStep1: PropTypes.func.isRequired,
   goToStep2: PropTypes.func.isRequired,
-  newCounterparty: PropTypes.func.isRequired,
   notFound: PropTypes.bool.isRequired,
   searchItems: PropTypes.func,
   selectedProducts: PropTypes.bool.isRequired,

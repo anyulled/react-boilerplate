@@ -4,7 +4,7 @@
  *
  */
 
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
 import AddProductComponent from '../../../components/Version4/products/AddProductComponent';
@@ -44,15 +44,10 @@ export class AddProductContainer extends React.Component { // eslint-disable-lin
         addToList={this.addToList}
         goStep2={this.goStep2}
         goBackStep1={this.goBackStep1}
-        newProduct={this.props.newProduct}
       />
     );
   }
 }
-
-AddProductContainer.propTypes = {
-  newProduct: PropTypes.func.isRequired,
-};
 
 function mapDispatchToProps(dispatch) {
   return {

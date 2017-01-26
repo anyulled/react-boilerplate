@@ -38,16 +38,7 @@ export default function createRoutes(store) {
           path: '/dealHeader',
           name: 'deal header',
           getComponent(nextState, cb) {
-            System.import('components/Version4/DealHeaderInformationComponent')
-              .then(loadModule(cb))
-              .catch(errorLoading);
-          },
-        },
-        {
-          path: '/addSubmlimit',
-          name: 'add sub-limit',
-          getComponent(location, cb) {
-            System.import('components/Version4/ChooseSubLimitComponent')
+            System.import('components/Version4/header/AddHeaderInformation')
               .then(loadModule(cb))
               .catch(errorLoading);
           },

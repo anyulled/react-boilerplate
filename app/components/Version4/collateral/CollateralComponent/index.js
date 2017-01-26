@@ -4,20 +4,14 @@
 *
 */
 
-import React, { PropTypes } from 'react';
-import NewDealForm from '../../NewDealForm';
+import React from 'react';
 
-function CollateralComponent({ title }) {
+function CollateralComponent() {
   return (
     <div className="content-block">
-      <h3>{title}</h3>
-      <NewDealForm />
+      collateral
     </div>
   );
 }
-
-CollateralComponent.propTypes = {
-  title: PropTypes.string.isRequired,
-};
 
 export default CollateralComponent;

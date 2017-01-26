@@ -44,13 +44,14 @@ export class DealDetailsContainer extends React.Component { // eslint-disable-li
   render() {
     return (
       <DealDetailsComponent
-        nickname={this.state.nickname}
+        /* nickname={this.state.nickname}
         nicknameHover={this.state.nicknameHover}
         description={this.state.description}
         descriptionHover={this.state.descriptionHover}
         documents={this.state.documents}
         documentsHover={this.state.documentsHover}
-        editFields={this.state.editFields}
+        editFields={this.state.editFields} */
+        dealInformations={this.props.dealInformations}
       />
     );
   }

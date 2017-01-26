@@ -4,7 +4,7 @@
  *
  */
 
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 
 import AddCounterpartyComponent from '../../../components/Version4/counterparty/AddCounterpartyComponent';
@@ -88,15 +88,10 @@ export class AddCounterpartyContainer extends React.Component { // eslint-disabl
         showSelectedProducts={this.showSelectedProducts}
         selectedProducts={this.state.selectedProducts}
         showStep2={this.state.showStep2}
-        newCounterparty={this.props.newCounterparty}
       />
     );
   }
 }
-
-AddCounterpartyContainer.propTypes = {
-  newCounterparty: PropTypes.func.isRequired,
-};
 
 function mapDispatchToProps(dispatch) {
   return {
