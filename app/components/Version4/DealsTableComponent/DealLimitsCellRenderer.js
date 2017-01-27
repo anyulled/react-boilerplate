@@ -8,6 +8,8 @@ import CounterpartyComponent from '../counterparty/CounterpartyComponent';
 
 import BookingComponent from '../booking/BookingComponent';
 
+import CollateralComponent from '../collateral/CollateralComponent';
+
 import PanelItemComponent from '../common/PanelItemComponent';
 import DateField from '../common/DateField';
 
@@ -134,6 +136,16 @@ export default class DealLimitsCellRenderer extends React.Component { // eslint-
                 </Link>
               </p>
             </BookingComponent>
+          }
+
+          { this.props.data[column].element === 'collateralComponent' &&
+            <CollateralComponent collateralList={this.props.data[column].collateral_list}>
+              <p className="text-center">
+                <Link to="/">
+                  <Button bsStyle="primary">Add collateral</Button>
+                </Link>
+              </p>
+            </CollateralComponent>
           }
         </Col>
 

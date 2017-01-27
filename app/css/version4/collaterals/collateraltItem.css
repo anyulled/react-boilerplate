@@ -1,0 +1,66 @@
+.collateral-component{
+    float: left;
+    width: 100%;
+}
+
+.collateral-component .panel{
+    margin-bottom: 5px; 
+}
+
+.collateral-component .panel-body {
+    padding: 10px;
+}
+
+.collateral-component .panel-body .values{
+    float: left;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.collateral-component .panel-body .value1{
+    float: left;
+    font-size: 13px;
+    width: 115px;
+}
+
+.collateral-component .panel-body .value2,
+.collateral-component .panel-body .share{
+    float: left;
+    margin-left: 10px;
+    width: 90px;
+}
+
+.collateral-component .panel-body button{
+    display: none;
+    float: right;
+    padding: 0px;
+}
+
+.collateral-component .panel-body:hover button{
+    display: block;
+}
+
+.collateral-component .panel-body .btn-details{
+    color: #1d769f;
+}
+
+.sidebar-content .collateral-component .panel-body .btn-details{
+    display: none;
+}
+
+.collateral-component .panel-body .description{
+    color: #999;
+    float: left;
+    width: 100%;
+}
+
+.collateral-component .panel-body .btn-remove{
+    color: #d43f3a;
+}
+
+.step2 .collateral-component {
+    margin-bottom: 15px;
+    max-height: 300px;
+    margin-bottom: 10px;
+    overflow-y: auto;
+}

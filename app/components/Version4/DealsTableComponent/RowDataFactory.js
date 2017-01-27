@@ -130,10 +130,14 @@ export default class RowDataFactory {
               deal_limits: {
                 element: RefData.DEAL_LIMITS[i].collateral[j].element,
                 type: RefData.DEAL_LIMITS[i].collateral[j].type,
+                colSize: RefData.DEAL_LIMITS[i].collateral[j].colSize,
+                collateral_list: RefData.DEAL_LIMITS[i].collateral[j].collateral_list,
               },
               deal_sublimits: {
                 element: RefData.DEAL_SUBLIMITS[i].collateral[j].element,
                 type: RefData.DEAL_SUBLIMITS[i].collateral[j].type,
+                colSize: RefData.DEAL_SUBLIMITS[i].collateral[j].colSize,
+                collateral_list: RefData.DEAL_SUBLIMITS[i].collateral[j].collateral_list,
               },
             });
           }

@@ -25,7 +25,6 @@ class DealsTableComponent extends React.Component { // eslint-disable-line react
       },
 
       getRowHeight: (params) => {
-        // console.log('type', params.data.label.type);
         switch (params.data.label.type) {
           case 'section':
             return 60;
@@ -42,6 +41,8 @@ class DealsTableComponent extends React.Component { // eslint-disable-line react
           case 'amortisationDateComponent':
             return 120;
           case 'bookingComponent':
+            return 226;
+          case 'collateralComponent':
             return 226;
           default:
             return 38;

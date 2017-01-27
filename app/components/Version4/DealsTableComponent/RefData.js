@@ -180,7 +180,16 @@ RefData.DEAL_LIMITS = [
   {
     collateral: [
       { element: '', type: 'section' },
-      { element: 'collateralComponent', type: '' },
+      {
+        element: 'collateralComponent',
+        type: '',
+        colSize: 12,
+        collateral_list: [
+          { value1: '00.000.000,00 USD', value2: '00.000.000,00 €', share: '100%', description: 'Details or description of the added collateral, truncated as it ca' },
+          { value1: '00.000.000,00 USD', value2: '00.000.000,00 €', share: '100%', description: 'Details or description of the added collateral, truncated as it ca' },
+          { value1: '00.000.000,00 USD', value2: '00.000.000,00 €', share: '100%', description: 'Details or description of the added collateral, truncated as it ca' },
+        ],
+      },
     ],
   },
   {
@@ -295,7 +304,12 @@ RefData.DEAL_SUBLIMITS = [
   {
     collateral: [
       { element: '', type: 'section' },
-      { element: 'collateralComponent', type: '' },
+      {
+        element: 'collateralComponent',
+        type: '',
+        colSize: 12,
+        collateral_list: [],
+      },
     ],
   },
   {
