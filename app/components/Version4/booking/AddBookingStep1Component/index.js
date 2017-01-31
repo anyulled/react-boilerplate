@@ -5,7 +5,7 @@
 */
 
 import React, { PropTypes } from 'react';
-import { Row, ControlLabel, FormGroup } from 'react-bootstrap';
+import { Row, ControlLabel, FormGroup, Button } from 'react-bootstrap';
 
 import NotFoundComponent from '../../common/NotFoundComponent';
 import StepsHeaderComponent from '../../common/StepsHeaderComponent';
@@ -57,8 +57,11 @@ function AddBookingStep1Component({ bookingEntities, bookingList, showAccounts, 
                 showFacilities={showFacilities}
                 accounts={accounts}
                 facilities={facilities}
-                addBookingEntity={addBookingEntity}
-              />
+              >
+                <p className="text-center">
+                  <Button bsStyle="info" onClick={addBookingEntity}>Add to the list</Button>
+                </p>
+              </BookingDetails>
             }
           </div>
         </div>

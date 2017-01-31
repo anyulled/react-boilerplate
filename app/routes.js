@@ -97,6 +97,15 @@ export default function createRoutes(store) {
               .catch(errorLoading);
           },
         },
+        {
+          path: '/bookingDetail',
+          name: 'booking detail',
+          getComponent(location, cb) {
+            System.import('components/Version4/booking/BookingEditDetails')
+              .then(loadModule(cb))
+              .catch(errorLoading);
+          },
+        },
       ],
     }, {
       path: '*',
