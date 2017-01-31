@@ -1121,10 +1121,13 @@ html, body{
 
 .booking-detail{
     float: left;
+    width: 100%;
+}
+
+.steps .booking-detail{
     max-height: 430px;
     overflow-x: hidden;
     overflow-y: auto;
-    width: 100%;
 }
 
 .booking-detail hr{
