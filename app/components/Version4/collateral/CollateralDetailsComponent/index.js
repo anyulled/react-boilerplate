@@ -19,9 +19,9 @@ function CollateralDetailsComponent() {
 
 			<div className="scroll">
 
-				<br/><p><b>Collateral held at DB</b></p><br/>
+				<p style={{"marginTop": "10px"}}><b>Collateral held at DB</b></p>
 
-				<table>
+				<table style={{"marginTop": "25px"}}>
 					<tbody>
 						<tr>
 							<td>
@@ -32,10 +32,10 @@ function CollateralDetailsComponent() {
 							</td>
 						</tr>
 						<tr>
-							<td style={{"paddingRight": "20px"}}>
-								<FormControl type="text" defaultValue="00.000.000,00" className="text-right"/>
+							<td style={{"paddingRight": "20px", "paddingBottom": "20px"}}>
+								<FormControl type="text" defaultValue="00.000.000,00" className="text-right" style={{"width":"150px"}}/>
 							</td>
-							<td>
+							<td style={{"paddingBottom": "20px"}}>
 								<FormControl componentClass="select">
 									<option value="usd">USD (default)</option>
 									<option value="eur">EUR</option>
@@ -43,11 +43,11 @@ function CollateralDetailsComponent() {
 							</td>
 						</tr>
 						<tr>
-							<td className="text-right" style={{"paddingRight": "20px"}}><p><b>XX.XXX.XXX,XX €</b></p></td>
-							<td></td>
+							<td className="text-right" style={{"paddingRight": "20px", "paddingBottom": "10px"}}><p><b>XX.XXX.XXX,XX €</b></p></td>
+							<td style={{"paddingBottom": "10px"}}></td>
 						</tr>
 						<tr>
-							<td colSpan="2" className="text-right"><p><b>100 %</b> (share of the public hold)</p></td>
+							<td colSpan="2" className="text-right" style={{"paddingBottom": "20px"}}><p><b>100 %</b> (share of the public hold)</p></td>
 						</tr>
 					</tbody>
 				</table>
@@ -56,23 +56,23 @@ function CollateralDetailsComponent() {
 
 				<FormControl componentClass="textarea" style={{"height": "125px"}}/>
 
-				<h4 className="text-center">
-					Do you need to create additional restriction on this collateral?
-				</h4>
+				<h3 className="text-center text-muted" style={{"marginTop": "50px"}}>
+					Do you need to create<br/>additional restriction on this collateral?
+				</h3>
 
-				<p className="text-center">
+				<p className="text-center" style={{"marginTop": "20px"}}>
 					<Link to="/">
-						<Button bsStyle="primary">Add sub-limit</Button>
+						<Button bsStyle="primary" style={{"width": "120px"}}>Add sub-limit</Button>
 					</Link>
 				</p>
 
 				<Link to="/" style={{"textDecoration": "none"}}>
-					<p className="text-center text-danger">Remove collateral from the deal</p>
+					<p className="text-center text-danger" style={{"marginTop": "40px"}}>Remove collateral from the deal</p>
 				</Link>
 
-				<p className="text-center">
-					<Link to="/"><Button bsStyle="primary">Update</Button></Link>
-					<Link to="/"><Button bsStyle="default">Cancel</Button></Link>
+				<p className="text-center" style={{"marginTop": "70px"}}>
+					<Link to="/"><Button bsStyle="primary" style={{"width": "120px"}}>Update</Button></Link>
+					<Link to="/"><Button bsStyle="default" style={{"width": "120px"}}>Cancel</Button></Link>
 				</p>
 
 			</div>
