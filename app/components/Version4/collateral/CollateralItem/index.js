@@ -5,6 +5,7 @@
 */
 
 import React, { PropTypes } from 'react';
+import { Link } from 'react-router';
 import { Panel } from 'react-bootstrap';
 
 function CollateralItem({ value1, value2, share, description }) {
@@ -28,7 +29,9 @@ function CollateralItem({ value1, value2, share, description }) {
         <span className="share">
           {share} of share
         </span>
-        <button className="btn-details">Details</button>
+        <Link to="/collateralDetail">
+          <button className="btn-details">Details</button>
+        </Link>
       </div>
       <div className="description">
         {shortString}
