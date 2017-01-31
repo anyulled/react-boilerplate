@@ -88,6 +88,15 @@ export default function createRoutes(store) {
               .catch(errorLoading);
           },
         },
+        {
+          path: '/collateralDetail',
+          name: 'collateral detail',
+          getComponent(location, cb) {
+            System.import('components/Version4/collateral/CollateralDetailsComponent')
+              .then(loadModule(cb))
+              .catch(errorLoading);
+          },
+        },
       ],
     }, {
       path: '*',
