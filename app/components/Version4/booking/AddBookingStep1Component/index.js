@@ -57,7 +57,6 @@ function AddBookingStep1Component({ bookingEntities, bookingList, showAccounts, 
                 showFacilities={showFacilities}
                 accounts={accounts}
                 facilities={facilities}
-                // addBookingEntity={addBookingEntity}
               >
                 <p className="text-center">
                   <Button bsStyle="info" onClick={addBookingEntity}>Add to the list</Button>
