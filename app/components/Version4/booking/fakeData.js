@@ -21,11 +21,9 @@ export default {
   facilities: [
     { id: 'ID_1234567' },
     { id: 'ID_1234567' },
-    { id: 'ID_1234567' },
   ],
 
   accounts: [
-    { id: 'ID_987654321' },
     { id: 'ID_987654321' },
     { id: 'ID_987654321' },
   ],
@@ -43,5 +41,9 @@ export default {
       { value: 'Create new sub-limit for all marked entities', description: 'All entities will be added and the marked will be included in a new sub-limit.' },
       { value: 'Create individual sub-limits for each marked entities', description: 'All entities will be added and the marked will be included in an individual sub-limit.' },
     ],
+  },
+
+  details: {
+    entity: 'Deutsche Bank AG (Frankfurt, GERMANY)',
   },
 };

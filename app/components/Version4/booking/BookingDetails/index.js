@@ -5,14 +5,14 @@
 */
 
 import React, { PropTypes } from 'react';
-import { ControlLabel, FormGroup, Checkbox, Button } from 'react-bootstrap';
+import { ControlLabel, FormGroup, Checkbox } from 'react-bootstrap';
 
 import KeyValueComponent from '../../common/KeyValueComponent';
 import PanelItemComponent from '../../common/PanelItemComponent';
 import fakeData from '../fakeData';
 import AddEntity from '../AddEntity';
 
-function BookingDetails({ showAccounts, showFacilities, accounts, facilities, addBookingEntity }) {
+function BookingDetails({ showAccounts, showFacilities, accounts, facilities, children }) {
   const systemsList = fakeData.systems.map((item, key) =>
     <FormGroup key={key}>
       <Checkbox>{item.id}</Checkbox>
@@ -21,10 +21,12 @@ function BookingDetails({ showAccounts, showFacilities, accounts, facilities, ad
 
   return (
     <form className="booking-detail">
-      <KeyValueComponent
-        label="Entity region"
-        value="Automatically provided when entity is chosen"
-      />
+      <div className="no-padding">
+        <KeyValueComponent
+          label="Entity region"
+          value="Automatically provided when entity is chosen"
+        />
+      </div>
       <hr />
 
       <FormGroup>
@@ -47,19 +49,17 @@ function BookingDetails({ showAccounts, showFacilities, accounts, facilities, ad
         }
       </AddEntity>
 
-      <p className="text-center">
-        <Button bsStyle="info" onClick={addBookingEntity}>Add to the list</Button>
-      </p>
+      {children}
     </form>
   );
 }
 
 BookingDetails.propTypes = {
   accounts: PropTypes.bool.isRequired,
-  addBookingEntity: PropTypes.func.isRequired,
+  children: PropTypes.object,
   facilities: PropTypes.bool.isRequired,
-  showAccounts: PropTypes.func.isRequired,
-  showFacilities: PropTypes.func.isRequired,
+  showAccounts: PropTypes.func,
+  showFacilities: PropTypes.func,
 };
 
 export default BookingDetails;

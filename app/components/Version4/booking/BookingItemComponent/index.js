@@ -6,13 +6,16 @@
 
 import React, { PropTypes } from 'react';
 import { Panel } from 'react-bootstrap';
+import { Link } from 'react-router';
 
 function BookingItemComponent({ title, region, systems, facilities, accounts }) {
   return (
     <Panel>
       <div className="title">
         {title}
-        <button className="btn-details">Details</button>
+        <Link to="/bookingDetail">
+          <button className="btn-details">Details</button>
+        </Link>
       </div>
       <div className="region">
         {region}
