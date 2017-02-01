@@ -152,18 +152,10 @@ export default class RowDataFactory {
               deal_limits: {
                 element: RefData.DEAL_LIMITS[i].derisking[j].element,
                 type: RefData.DEAL_LIMITS[i].derisking[j].type,
-                colSize: RefData.DEAL_LIMITS[i].derisking[j].colSize,
-                optional: RefData.DEAL_LIMITS[i].derisking[j].optional,
-                buttonsValues: RefData.DEAL_LIMITS[i].derisking[j].buttonsValues,
-                excludedInvestors: RefData.DEAL_LIMITS[i].derisking[j].excludedInvestors,
               },
               deal_sublimits: {
                 element: RefData.DEAL_SUBLIMITS[i].derisking[j].element,
                 type: RefData.DEAL_SUBLIMITS[i].derisking[j].type,
-                colSize: RefData.DEAL_LIMITS[i].derisking[j].colSize,
-                optional: RefData.DEAL_LIMITS[i].derisking[j].optional,
-                buttonsValues: RefData.DEAL_LIMITS[i].derisking[j].buttonsValues,
-                excludedInvestors: RefData.DEAL_LIMITS[i].derisking[j].excludedInvestors,
               },
             });
           }
