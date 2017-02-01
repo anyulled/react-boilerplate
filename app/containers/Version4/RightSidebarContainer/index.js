@@ -83,6 +83,12 @@ export class RightSidebarContainer extends React.Component { // eslint-disable-l
           sidebarClass: '',
         });
         break;
+      case '/excludeInvestor':
+        this.setState({
+          visible: 'visible',
+          sidebarClass: 'product',
+        });
+        break;
       default:
         this.setState({
           visible: '',
