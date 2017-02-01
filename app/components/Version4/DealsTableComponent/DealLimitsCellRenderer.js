@@ -10,7 +10,7 @@ import BookingComponent from '../booking/BookingComponent';
 
 import CollateralComponent from '../collateral/CollateralComponent';
 
-import ExcludedInvestorsComponent from '../derisking/ExcludedInvestorsComponent';
+import DeRiskingComponent from '../derisking/DeRiskingComponent';
 
 import PanelItemComponent from '../common/PanelItemComponent';
 import DateField from '../common/DateField';
@@ -68,13 +68,9 @@ export default class DealLimitsCellRenderer extends React.Component { // eslint-
               counterpartyAdded={this.props.data[column].counterpartyAdded}
             />
           }
-
-          { this.props.data[column].element === 'excludedInvestorsComponent' &&
-            <ExcludedInvestorsComponent excludedInvestors={this.props.data[column].excludedInvestors}>
-              <Link to="/">
-                <Button bsStyle="primary">Exclude investors</Button>
-              </Link>
-            </ExcludedInvestorsComponent>
+          
+          { this.props.data[column].element === 'deRiskingComponent' &&
+            <DeRiskingComponent />
           }
 
           { this.props.data[column].element === 'radio3' &&
