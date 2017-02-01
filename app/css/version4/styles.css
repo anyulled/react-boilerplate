@@ -1235,13 +1235,3 @@ html, body{
 
 
 /* -------- END INVESTORITEMCOMPONENT -------- */
-/* -------- DERISKINGCOMPONENT -------- */
-.derisking-component {
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.derisking-component .title {
-    margin-top: 5px;
-}
-/* -------- END DERISKINGCOMPONENT -------- */
