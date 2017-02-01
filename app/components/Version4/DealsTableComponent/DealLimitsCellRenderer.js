@@ -141,7 +141,7 @@ export default class DealLimitsCellRenderer extends React.Component { // eslint-
           { this.props.data[column].element === 'collateralComponent' &&
             <CollateralComponent collateralList={this.props.data[column].collateral_list}>
               <p className="text-center">
-                <Link to="/">
+                <Link to="/addCollateral">
                   <Button bsStyle="primary">Add collateral</Button>
                 </Link>
               </p>

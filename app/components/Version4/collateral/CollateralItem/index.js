@@ -10,7 +10,7 @@ import { Panel } from 'react-bootstrap';
 function CollateralItem({ value1, value2, share, description }) {
   let shortString = '';
   if (description.length > 55) {
-    shortString = `${description.substring(0, 55)} ...`;
+    shortString = `${description.substring(0, 50)} ...`;
   } else {
     shortString = description;
   }
