@@ -46,8 +46,8 @@ class DealsTableComponent extends React.Component { // eslint-disable-line react
             return 226;
           case 'textarea':
             return 215;
-          case 'deRiskingComponent':
-            return 765;
+          case 'excludedInvestorsComponent':
+            return 360;
           default:
             return 38;
         }
