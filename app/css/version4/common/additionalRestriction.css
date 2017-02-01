@@ -1,0 +1,6 @@
+.remove-btn, .remove-btn:hover{
+    color: #d43f3a;
+    display: block;
+    margin-top: 20px;
+    text-decoration: none;
+}

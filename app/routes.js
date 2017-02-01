@@ -89,10 +89,28 @@ export default function createRoutes(store) {
           },
         },
         {
+          path: '/bookingDetail',
+          name: 'booking detail',
+          getComponent(location, cb) {
+            System.import('components/Version4/booking/BookingEditDetails')
+              .then(loadModule(cb))
+              .catch(errorLoading);
+          },
+        },
+        {
           path: '/addCollateral',
           name: 'add collateral',
           getComponent(location, cb) {
             System.import('containers/Version4/AddCollateralContainer')
+              .then(loadModule(cb))
+              .catch(errorLoading);
+          },
+        },
+        {
+          path: '/collateralDetail',
+          name: 'collateral detail',
+          getComponent(location, cb) {
+            System.import('components/Version4/collateral/CollateralDetailsComponent')
               .then(loadModule(cb))
               .catch(errorLoading);
           },

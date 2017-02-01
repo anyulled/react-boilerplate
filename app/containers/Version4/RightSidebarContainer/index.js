@@ -77,6 +77,18 @@ export class RightSidebarContainer extends React.Component { // eslint-disable-l
           sidebarClass: 'product',
         });
         break;
+      case '/collateralDetail':
+        this.setState({
+          visible: 'visible',
+          sidebarClass: '',
+        });
+        break;
+      case '/bookingDetail':
+        this.setState({
+          visible: 'visible',
+          sidebarClass: '',
+        });
+        break;
       default:
         this.setState({
           visible: '',
