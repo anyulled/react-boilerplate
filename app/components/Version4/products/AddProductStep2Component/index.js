@@ -5,9 +5,10 @@
 */
 
 import React, { PropTypes } from 'react';
-import { Label, Row, FormGroup, ControlLabel, Checkbox } from 'react-bootstrap';
+import { Row, FormGroup, ControlLabel, Checkbox } from 'react-bootstrap';
 
 import RadioGroupAddDeal from '../../common/RadioGroupAddDeal';
+import StepsHeaderComponent from '../../common/StepsHeaderComponent';
 
 import ProductItem from '../ProductItem';
 
@@ -25,12 +26,7 @@ function AddProductStep2Component({ showStep2, RadioGroupAddDealData, products }
   );
   return (
     <div className="step2">
-      <Row>
-        <h4 className="col-md-12">
-          <Label bsStyle="primary">2</Label>
-          <b>Selected products (Mark products to restrict)</b>
-        </h4>
-      </Row>
+      <StepsHeaderComponent title="Selected products (Mark products to restrict)" step={2} />
       {showStep2 &&
         <Row className="row-eq-height">
           <div className="content-pane pane-2 col-md-6">
