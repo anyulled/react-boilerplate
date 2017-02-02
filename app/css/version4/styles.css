@@ -1172,3 +1172,73 @@ html, body{
     width: 100%;
 }
 /* -------- END KEYVALUECOMPONENT -------- */
+/* -------- INVESTORITEMCOMPONENT -------- */
+.investor-panel {
+    text-align: center;
+}
+
+.investor-panel button {
+    margin-top: 10px;
+}
+
+.investor-panel .panel {
+    margin: 5px 0px;
+}
+
+.investor-panel .panel-body {
+    padding: 10px 20px;
+    padding-bottom: 5px;
+    margin: 0px;
+}
+
+.investor-panel .panel-body button {
+    margin-top: 0px;
+}
+
+.investor-panel .row {
+    margin-bottom: 5px;
+    padding: 0px;
+}
+
+.investor-panel .col {
+    margin: 0px;
+    padding: 0px;
+    padding-right: 10px;
+    float: left;
+}
+
+.investor-panel .btns {
+    margin: 0px;
+    padding: 0px;
+    float: right;
+}
+
+.investor-panel .info {
+    color: #999999;
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    padding-right: 20px;
+}
+
+.investor-panel .panel-body a {
+    text-decoration: unset;
+}
+
+.investor-panel .panel-body button {
+    padding: 0px;
+    display: none;
+}
+
+.investor-panel .panel-body:hover button {
+    display: block;
+}
+
+.investor-panel .panel-body .btn-details{
+    color: #1d769f;
+}
+
+.investor-panel .panel-body .btn-remove{
+    color: #d43f3a;
+}
+/* -------- END INVESTORITEMCOMPONENT -------- */
