@@ -14,7 +14,7 @@ function InvestorItem({ id, name, country, cr, sc }) {
         <Col className="col">{id}</Col>
         <Col className="col">{name.substring(0, 34)}</Col>
         <Col className="btns">
-          <Link to="/">
+          <Link to="/excludedInvestorDetail">
             <button className="btn-details">Details</button>
           </Link>
         </Col>
