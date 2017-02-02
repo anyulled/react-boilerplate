@@ -36,15 +36,36 @@ export class ExcludeInvestorContainer extends React.Component { // eslint-disabl
     }
   }
 
+  showSelectedProducts = () => {
+    this.setState({
+      selectedProducts: true,
+      showItems: false,
+      investorDetail: false,
+      notFound: false,
+      expand: false,
+    });
+  }
+
+  expandDetails = () => {
+    this.setState({ expand: !this.state.expand });
+  }
+
+  viewInvestor = () => {
+    this.setState({ investorDetail: true });
+  }
+
   render() {
     return (
       <ExcludeInvestor
         searchItems={(e) => this.searchItems(e)}
         showItems={this.state.showItems}
-        investorDetail={this.state.counterpartyDetail}
+        investorDetail={this.state.investorDetail}
         notFound={this.state.notFound}
         expand={this.state.expand}
         selectedProducts={this.state.selectedProducts}
+        viewInvestor={this.viewInvestor}
+        expandDetails={this.expandDetails}
+        showSelectedProducts={this.showSelectedProducts}
       />
     );
   }
