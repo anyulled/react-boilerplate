@@ -1172,3 +1172,38 @@ html, body{
     width: 100%;
 }
 /* -------- END KEYVALUECOMPONENT -------- */
+/* -------- EXCLUDEDINVESTORDETAILSCOMPONENT -------- */
+.excludedinvestordetails .row {
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.excludedinvestordetails .form-group {
+    margin-bottom: 0px;
+}
+
+.excludedinvestordetails .title {
+    margin-left: 10px;
+    color: #888888;
+    margin-top: 5px;
+}
+
+.excludedinvestordetails .investor-label {
+    color: #888888;
+}
+
+.excludedinvestordetails a {
+    text-decoration: unset;
+    text-align: center;
+}
+
+.excludedinvestordetails .remove {
+    color: #d43f3a;
+    margin-top: 5px;
+}
+
+.excludedinvestordetails .close-sidebar {
+     color: #1d769f;
+     margin-top: 20px;
+}
+/* -------- END EXCLUDEDINVESTORDETAILSCOMPONENT -------- */

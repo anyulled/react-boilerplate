@@ -115,6 +115,15 @@ export default function createRoutes(store) {
               .catch(errorLoading);
           },
         },
+        {
+          path: '/excludedInvestorDetail',
+          name: 'excluded investor detail',
+          getComponent(location, cb) {
+            System.import('components/Version4/derisking/ExcludedInvestorDetailsComponent')
+              .then(loadModule(cb))
+              .catch(errorLoading);
+          },
+        },
       ],
     }, {
       path: '*',
