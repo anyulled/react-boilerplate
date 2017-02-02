@@ -67,11 +67,10 @@ RefData.LABELS = [
   {
     derisking: [
       { text: 'De-Risking', type: 'section' },
-      //{ text: '', type: 'deRiskingComponent' },
       { text: 'De-Risking instructions / restrictions', type: 'textarea' },
       { text: 'Asset trading clause' },
       { text: 'Minimum investor rating required' },
-      { text: 'Excluded investors', type: 'excludedInvestorsComponent' }
+      { text: 'Excluded investors', type: 'excludedInvestorsComponent' },
     ],
   },
 ];
@@ -199,25 +198,24 @@ RefData.DEAL_LIMITS = [
   {
     derisking: [
       { element: '', type: 'section' },
-      //{ element: 'deRiskingComponent', type: '' },
       { element: 'textarea', colSize: 10, optional: '(optional)' },
       {
-        element: 'toogleButton', 
-        colSize: 12, 
+        element: 'toogleButton',
+        colSize: 12,
         buttonsValues: [
           { value: 'Yes' },
           { value: 'Upon\'s client consent' },
           { value: 'No' },
-        ], 
+        ],
       },
       { element: 'select', colSize: 3, optional: '(optional)' },
-      { 
-        element: 'excludedInvestorsComponent', 
+      {
+        element: 'excludedInvestorsComponent',
         colSize: 12,
         excludedInvestors: [
-          { name: 'investor1' },
-          { name: 'investor2' },
-          { name: 'investor3' },
+          { id: 'Paragon ID', name: 'Paragon Name (if long, can be truncate ...', country: 'Country', cr: 'iA', sc: '1101' },
+          { id: 'Paragon ID', name: 'Paragon Name (if long, can be truncate ...', country: 'Country', cr: 'iA', sc: '1101' },
+          { id: 'Paragon ID', name: 'Paragon Name (if long, can be truncate ...', country: 'Country', cr: 'iA', sc: '1101' },
         ],
       },
     ],
@@ -339,25 +337,24 @@ RefData.DEAL_SUBLIMITS = [
   {
     derisking: [
       { element: '', type: 'section' },
-      //{ element: 'deRiskingComponent', type: '' },
       { element: 'textarea', colSize: 10, optional: '(optional)' },
       {
-        element: 'toogleButton', 
-        colSize: 12, 
+        element: 'toogleButton',
+        colSize: 12,
         buttonsValues: [
           { value: 'Yes' },
           { value: 'Upon\'s client consent' },
           { value: 'No' },
-        ], 
+        ],
       },
       { element: 'select', colSize: 3, optional: '(optional)' },
-      { 
-        element: 'excludedInvestorsComponent', 
+      {
+        element: 'excludedInvestorsComponent',
         colSize: 12,
         excludedInvestors: [
-          { name: 'investor1' },
-          { name: 'investor2' },
-          { name: 'investor3' },
+          { id: 'Paragon ID', name: 'Paragon Name (if long, can be truncate ...', country: 'Country', cr: 'iA', sc: '1101' },
+          { id: 'Paragon ID', name: 'Paragon Name (if long, can be truncate ...', country: 'Country', cr: 'iA', sc: '1101' },
+          { id: 'Paragon ID', name: 'Paragon Name (if long, can be truncate ...', country: 'Country', cr: 'iA', sc: '1101' },
         ],
       },
     ],

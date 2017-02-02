@@ -4,31 +4,42 @@
 *
 */
 
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
-import { Panel } from 'react-bootstrap';
+import { Panel, Row, Col } from 'react-bootstrap';
 
-function InvestorItem(props){
-	return(
-		<Panel>
-          Paragon ID Paragon Name (if it is too long ...
+function InvestorItem({ id, name, country, cr, sc }) {
+  return (
+    <Panel>
+      <Row>
+        <Col className="col">{id}</Col>
+        <Col className="col">{name.substring(0, 34)}</Col>
+        <Col className="btns">
           <Link to="/">
-          	<button className="btn-details">Details</button>
+            <button className="btn-details">Details</button>
           </Link>
-          <ul>
-            <li>
-              Country
-            </li>
-            <li>
-              <em>CR:</em> iA
-            </li>
-            <li>
-              <em>SC:</em> 1101
-            </li>
-          </ul>
-          <button className="btn-remove">Remove</button>
-        </Panel>
-	);
+        </Col>
+      </Row>
+      <Row>
+        <Col className="info">{country}</Col>
+        <Col className="info"><em>CR:</em> {cr}</Col>
+        <Col className="info"><em>SC:</em> {sc}</Col>
+        <Col className="btns">
+          <Link to="/">
+            <button className="btn-remove">Remove</button>
+          </Link>
+        </Col>
+      </Row>
+    </Panel>
+  );
 }
+
+InvestorItem.propTypes = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  country: PropTypes.string.isRequired,
+  cr: PropTypes.string.isRequired,
+  sc: PropTypes.string.isRequired,
+};
 
 export default InvestorItem;

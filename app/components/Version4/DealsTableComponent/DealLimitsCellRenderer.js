@@ -41,7 +41,7 @@ export default class DealLimitsCellRenderer extends React.Component { // eslint-
 
           {
             this.props.data[column].element === 'textarea' &&
-            <FormControl componentClass="textarea" style={{"height": "200px"}} />
+            <FormControl componentClass="textarea" style={{ height: '200px' }} />
           }
 
           { this.props.data[column].element === 'date' &&
