@@ -4,7 +4,9 @@
 *
 */
 import React, { PropTypes } from 'react';
+
 import InvestorItem from '../InvestorItem';
+
 function ExcludedInvestorsComponent({ children, excludedInvestors }) {
   if ((excludedInvestors) && (excludedInvestors.length > 0)) {
     const investorsItems = excludedInvestors.map((item, key) =>
@@ -24,8 +26,10 @@ function ExcludedInvestorsComponent({ children, excludedInvestors }) {
     </div>
   );
 }
+
 ExcludedInvestorsComponent.propTypes = {
   children: PropTypes.object,
   excludedInvestors: PropTypes.array.isRequired,
 };
+
 export default ExcludedInvestorsComponent;

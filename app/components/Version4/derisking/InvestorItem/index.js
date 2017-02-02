@@ -6,6 +6,7 @@
 import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 import { Panel, Row, Col } from 'react-bootstrap';
+
 function InvestorItem({ id, name, country, cr, sc }) {
   return (
     <Panel>
@@ -31,6 +32,7 @@ function InvestorItem({ id, name, country, cr, sc }) {
     </Panel>
   );
 }
+
 InvestorItem.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
@@ -38,4 +40,5 @@ InvestorItem.propTypes = {
   cr: PropTypes.string.isRequired,
   sc: PropTypes.string.isRequired,
 };
+
 export default InvestorItem;
