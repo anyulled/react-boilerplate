@@ -5,7 +5,8 @@
 */
 
 import React, { PropTypes } from 'react';
-import { Row, ControlLabel, FormGroup } from 'react-bootstrap';
+import { Link } from 'react-router';
+import { Row, ControlLabel, FormGroup, Button } from 'react-bootstrap';
 
 import SidebarHeaderComponent from '../../common/SidebarHeaderComponent';
 import SearchField from '../../common/SearchField';
@@ -13,6 +14,7 @@ import NotFoundComponent from '../../common/NotFoundComponent';
 import SearchList from '../../common/SearchList';
 import CounterpartyDetailComponent from '../../counterparty/CounterpartyDetailComponent';
 
+import ExcludedInvestorsComponent from '../ExcludedInvestorsComponent';
 import fakeData from '../fakeData';
 
 function ExcludeInvestor({ selectedProducts, expand, expandDetails, showSelectedProducts, searchItems, showItems, notFound, investorDetail, viewInvestor }) {
@@ -79,15 +81,23 @@ function ExcludeInvestor({ selectedProducts, expand, expandDetails, showSelected
                 }
 
                 {selectedProducts &&
-                  <div>
-                    investors
-                  </div>
+                  <ExcludedInvestorsComponent excludedInvestors={fakeData.excludedInvestors} />
                 }
               </FormGroup>
             </div>
           </div>
         </Row>
       </div>
+      <p className="text-center fixedButtons">
+        {selectedProducts &&
+          <Link to="/">
+            <Button bsStyle="primary">Finish</Button>
+          </Link>
+        }
+        <Link to="/">
+          <Button bsStyle="default">Cancel</Button>
+        </Link>
+      </p>
     </div>
   );
 }

@@ -26,4 +26,10 @@ export default {
       { label: 'Credit rating', value: 'iA' },
     ],
   },
+
+  excludedInvestors: [
+    { id: 'Paragon ID', name: 'Paragon Name (if it\'s too long, it can be truncated)', country: 'Country', cr: 'iA', sc: '1101' },
+    { id: 'Paragon ID', name: 'Paragon Name (if it\'s too long, it can be truncated)', country: 'Country', cr: 'iA', sc: '1101' },
+    { id: 'Paragon ID', name: 'Paragon Name (if it\'s too long, it can be truncated)', country: 'Country', cr: 'iA', sc: '1101' },
+  ],
 };
