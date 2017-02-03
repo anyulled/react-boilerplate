@@ -13,9 +13,6 @@ import fakeData from '../fakeData';
 
 
 function ExcludedInvestorDetailsComponent() {
-  const expand = true;
-  const showExpandButton = false;
-  const showAddToTheListButton = false;
   return (
     <div className="content-block excludedinvestordetails" >
       <SidebarHeaderComponent title="Details of investor excluded from the deal" />
@@ -23,11 +20,9 @@ function ExcludedInvestorDetailsComponent() {
       <SearchField onChangeFunction={() => {}} label="Paragon ID or Name" description="(Search and select one at a time)" />
 
       <CounterpartyDetailComponent
-        showExpandButton={showExpandButton}
-        showAddToTheListButton={showAddToTheListButton}
-        expand={expand}
+        showExpandButton={false}
+        expand
         expandDetails={() => {}}
-        showSelectedProducts={() => {}}
         data={fakeData.CounterpartyDetail}
       />
 

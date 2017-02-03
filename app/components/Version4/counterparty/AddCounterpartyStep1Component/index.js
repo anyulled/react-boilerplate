@@ -5,7 +5,7 @@
 */
 
 import React, { PropTypes } from 'react';
-import { Row, ControlLabel, FormGroup } from 'react-bootstrap';
+import { Row, ControlLabel, FormGroup, Button } from 'react-bootstrap';
 
 import StepsHeaderComponent from '../../common/StepsHeaderComponent';
 import NotFoundComponent from '../../common/NotFoundComponent';
@@ -17,8 +17,6 @@ import CounterpartySelectedComponent from '../CounterpartySelectedComponent';
 import CounterpartyRole from '../CounterpartyRole';
 
 function AddCounterpartyStep1Component({ counterpartyDetailFields, searchItems, showItems, viewCounterparty, counterpartyDetail, notFound, expand, expandDetails, showSelectedProducts, selectedProducts, showStep2, goBackStep1 }) {
-  const showExpandButton = true;
-  const showAddToTheListButton = true;
   let view;
   if (showItems) {
     view = <CounterpartyListComponent viewCounterparty={viewCounterparty} />;
@@ -55,14 +53,17 @@ function AddCounterpartyStep1Component({ counterpartyDetailFields, searchItems, 
 
             {counterpartyDetail && showItems &&
               <CounterpartyDetailComponent
-                showExpandButton={showExpandButton}
-                showAddToTheListButton={showAddToTheListButton}
+                showExpandButton
                 expand={expand}
                 expandDetails={expandDetails}
-                showSelectedProducts={showSelectedProducts}
                 data={counterpartyDetailFields}
               >
-                <CounterpartyRole />
+                <div>
+                  <CounterpartyRole />
+                  <p className="text-center">
+                    <Button bsStyle="primary" onClick={showSelectedProducts}>Add to the list</Button>
+                  </p>
+                </div>
               </CounterpartyDetailComponent>
             }
           </div>

@@ -9,7 +9,7 @@ import { Button } from 'react-bootstrap';
 
 import KeyValueComponent from '../../common/KeyValueComponent';
 
-function CounterpartyDetailComponent({ showExpandButton, showAddToTheListButton, expand, expandDetails, showSelectedProducts, data, children }) {
+function CounterpartyDetailComponent({ showExpandButton, expand, expandDetails, data, children }) {
   let expandButtonLabel;
   if (showExpandButton) {
     if (expand) {
@@ -61,12 +61,6 @@ function CounterpartyDetailComponent({ showExpandButton, showAddToTheListButton,
       }
 
       {children}
-
-      { showAddToTheListButton &&
-        <p className="text-center">
-          <Button bsStyle="primary" onClick={showSelectedProducts}>Add to the list</Button>
-        </p>
-      }
     </div>
   );
 }
@@ -76,9 +70,7 @@ CounterpartyDetailComponent.propTypes = {
   data: PropTypes.object.isRequired,
   expand: PropTypes.bool,
   expandDetails: PropTypes.func,
-  showSelectedProducts: PropTypes.func.isRequired,
   showExpandButton: PropTypes.bool,
-  showAddToTheListButton: PropTypes.bool,
 };
 
 export default CounterpartyDetailComponent;
