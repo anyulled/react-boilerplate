@@ -5,19 +5,25 @@
 */
 
 import React from 'react';
-import SidebarHeaderComponent from '../../common/SidebarHeaderComponent';
-import SearchField from '../../common/SearchField';
 import { Link } from 'react-router';
-import CounterpartyDetailComponent from '../../counterparty/CounterpartyDetailComponent';
-import fakeData from '../fakeData';
+import { Button } from 'react-bootstrap';
 
+import SidebarHeaderComponent from '../../common/SidebarHeaderComponent';
+
+import KeyValueComponent from '../../common/KeyValueComponent';
+
+import CounterpartyDetailComponent from '../../counterparty/CounterpartyDetailComponent';
+
+import fakeData from '../fakeData';
 
 function ExcludedInvestorDetailsComponent() {
   return (
     <div className="content-block excludedinvestordetails" >
       <SidebarHeaderComponent title="Details of investor excluded from the deal" />
 
-      <SearchField onChangeFunction={() => {}} label="Paragon ID or Name" description="(Search and select one at a time)" />
+      <div className="no-padding" style={{ display: 'inline-block' }}>
+        <KeyValueComponent label="Paragon ID - Name" value="1234567890 - SIEMENS AKTIENGESELLSCHAFT" colSize={12} />
+      </div>
 
       <CounterpartyDetailComponent
         showExpandButton={false}
@@ -30,9 +36,11 @@ function ExcludedInvestorDetailsComponent() {
         <p className="remove">Remove excluded investor from the deal</p>
       </Link>
 
-      <Link to="/">
-        <p className="close-sidebar">Close</p>
-      </Link>
+      <p className="text-center fixedButtons">
+        <Link to="/">
+          <Button bsStyle="default">Cancel</Button>
+        </Link>
+      </p>
     </div>
   );
 }
