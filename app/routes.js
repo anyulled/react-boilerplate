@@ -115,6 +115,15 @@ export default function createRoutes(store) {
               .catch(errorLoading);
           },
         },
+        {
+          path: '/excludeInvestor',
+          name: 'booking detail',
+          getComponent(location, cb) {
+            System.import('containers/Version4/ExcludeInvestorContainer')
+              .then(loadModule(cb))
+              .catch(errorLoading);
+          },
+        },
       ],
     }, {
       path: '*',

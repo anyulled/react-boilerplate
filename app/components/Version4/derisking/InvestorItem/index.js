@@ -8,11 +8,17 @@ import { Link } from 'react-router';
 import { Panel, Row, Col } from 'react-bootstrap';
 
 function InvestorItem({ id, name, country, cr, sc }) {
+  let shortString = '';
+  if (name.length >= 40) {
+    shortString = `${name.substring(0, 40)} ...`;
+  } else {
+    shortString = name;
+  }
   return (
     <Panel>
       <Row>
         <Col className="col">{id}</Col>
-        <Col className="col">{name.substring(0, 34)}</Col>
+        <Col className="col">{shortString}</Col>
         <Col className="btns">
           <Link to="/">
             <button className="btn-details">Details</button>

@@ -1,0 +1,28 @@
+.search-list {
+    float: left;
+    list-style: none;
+    margin: 0px 0px 10px;
+    padding: 0px;
+    width: 100%;
+}
+
+.search-list li {
+    float: left;
+    margin: 5px 0px 10px;
+    width: 100%;
+}
+
+.search-list span {
+    float: left;    
+}
+
+.search-list .paragon-id {
+    margin-right: 10px;
+    width: 70px;
+}
+
+.search-list .glyphicon {
+    color: #1d769f;
+    cursor: pointer;
+    float: right;
+} 
