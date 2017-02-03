@@ -14,6 +14,7 @@ import SearchField from '../../common/SearchField';
 import CounterpartyListComponent from '../CounterpartyListComponent';
 import CounterpartyDetailComponent from '../CounterpartyDetailComponent';
 import CounterpartySelectedComponent from '../CounterpartySelectedComponent';
+import CounterpartyRole from '../CounterpartyRole';
 
 function AddCounterpartyStep1Component({ counterpartyDetailFields, searchItems, showItems, viewCounterparty, counterpartyDetail, notFound, expand, expandDetails, showSelectedProducts, selectedProducts, showStep2, goBackStep1 }) {
   let view;
@@ -51,7 +52,14 @@ function AddCounterpartyStep1Component({ counterpartyDetailFields, searchItems, 
             }
 
             {counterpartyDetail && showItems &&
-              <CounterpartyDetailComponent expand={expand} expandDetails={expandDetails} showSelectedProducts={showSelectedProducts} data={counterpartyDetailFields} />
+              <CounterpartyDetailComponent
+                expand={expand}
+                expandDetails={expandDetails}
+                showSelectedProducts={showSelectedProducts}
+                data={counterpartyDetailFields}
+              >
+                <CounterpartyRole />
+              </CounterpartyDetailComponent>
             }
           </div>
         </div>

@@ -1,5 +1,13 @@
 export default {
-  InvestorDetail: {
+  searchList: [
+    { paragonID: '123456789', name: 'Lorem ipsum dolor sit amet, consectetuer adipiscin' },
+    { paragonID: '123456789', name: 'Lorem ipsum dolor sit amet, consectetuer adipiscin' },
+    { paragonID: '123456789', name: 'Lorem ipsum dolor sit amet, consectetuer adipiscin' },
+    { paragonID: '123456789', name: 'Lorem ipsum dolor sit amet, consectetuer adipiscin' },
+    { paragonID: '123456789', name: 'Lorem ipsum dolor sit amet, consectetuer adipiscin' },
+  ],
+
+  CounterpartyDetail: {
     general: [
       { label: 'CRM Responsible', value: 'Peter Mustermann' },
       { label: 'Credit rating', value: 'iA', colSize: 5 },
@@ -18,4 +26,10 @@ export default {
       { label: 'Credit rating', value: 'iA' },
     ],
   },
+
+  excludedInvestors: [
+    { id: 'Paragon ID', name: 'Paragon Name (if it\'s too long, it can be truncated)', country: 'Country', cr: 'iA', sc: '1101' },
+    { id: 'Paragon ID', name: 'Paragon Name (if it\'s too long, it can be truncated)', country: 'Country', cr: 'iA', sc: '1101' },
+    { id: 'Paragon ID', name: 'Paragon Name (if it\'s too long, it can be truncated)', country: 'Country', cr: 'iA', sc: '1101' },
+  ],
 };

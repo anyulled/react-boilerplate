@@ -71,7 +71,7 @@ export default class DealLimitsCellRenderer extends React.Component { // eslint-
 
           { this.props.data[column].element === 'excludedInvestorsComponent' &&
             <ExcludedInvestorsComponent excludedInvestors={this.props.data[column].excludedInvestors}>
-              <Link to="/">
+              <Link to="/excludeInvestor">
                 <Button bsStyle="primary">Exclude investors</Button>
               </Link>
             </ExcludedInvestorsComponent>
