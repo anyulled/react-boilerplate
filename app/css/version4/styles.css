@@ -1242,3 +1242,23 @@ html, body{
     color: #d43f3a;
 }
 /* -------- END INVESTORITEMCOMPONENT -------- */
+/* -------- EXCLUDEDINVESTORDETAILSCOMPONENT -------- */
+.excludedinvestordetails > .expanded {
+    max-height: 600px;
+}
+
+.excludedinvestordetails a {
+    text-decoration: unset;
+    text-align: center;
+}
+
+.excludedinvestordetails .remove {
+    color: #d43f3a;
+    margin-top: 30px;
+}
+
+.excludedinvestordetails .close-sidebar {
+    color: #1d769f;
+    margin-top: 70px;
+}
+/* -------- END EXCLUDEDINVESTORDETAILSCOMPONENT -------- */

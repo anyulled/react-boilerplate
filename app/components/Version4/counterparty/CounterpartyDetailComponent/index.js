@@ -9,12 +9,14 @@ import { Button } from 'react-bootstrap';
 
 import KeyValueComponent from '../../common/KeyValueComponent';
 
-function CounterpartyDetailComponent({ expand, expandDetails, showSelectedProducts, data, children }) {
+function CounterpartyDetailComponent({ showExpandButton, expand, expandDetails, data, children }) {
   let expandButtonLabel;
-  if (expand) {
-    expandButtonLabel = 'Collapse details';
-  } else {
-    expandButtonLabel = 'Expand details';
+  if (showExpandButton) {
+    if (expand) {
+      expandButtonLabel = 'Collapse details';
+    } else {
+      expandButtonLabel = 'Expand details';
+    }
   }
 
   const generalList = data.general.map((item, key) =>
@@ -46,29 +48,32 @@ function CounterpartyDetailComponent({ expand, expandDetails, showSelectedProduc
         {parentList}
       </div>
 
-      <p className="text-center">
-        <Button bsStyle="info" onClick={expandDetails}>
-          {expandButtonLabel}
-        </Button>
-      </p>
+      { showExpandButton &&
+        <div>
+          <p className="text-center">
+            <Button bsStyle="info" onClick={expandDetails}>
+              {expandButtonLabel}
+            </Button>
+          </p>
 
-      <hr />
+          <hr />
+        </div>
+      }
 
       {children}
-
-      <p className="text-center">
-        <Button bsStyle="primary" onClick={showSelectedProducts}>Add to the list</Button>
-      </p>
     </div>
   );
 }
 
 CounterpartyDetailComponent.propTypes = {
-  children: PropTypes.object,
+  children: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.array,
+  ]),
   data: PropTypes.object.isRequired,
   expand: PropTypes.bool,
   expandDetails: PropTypes.func,
-  showSelectedProducts: PropTypes.func.isRequired,
+  showExpandButton: PropTypes.bool,
 };
 
 export default CounterpartyDetailComponent;

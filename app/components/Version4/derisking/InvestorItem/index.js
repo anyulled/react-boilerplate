@@ -20,7 +20,7 @@ function InvestorItem({ id, name, country, cr, sc }) {
         <Col className="col">{id}</Col>
         <Col className="col">{shortString}</Col>
         <Col className="btns">
-          <Link to="/">
+          <Link to="/excludedInvestorDetail">
             <button className="btn-details">Details</button>
           </Link>
         </Col>

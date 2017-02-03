@@ -116,8 +116,17 @@ export default function createRoutes(store) {
           },
         },
         {
+          path: '/excludedInvestorDetail',
+          name: 'excluded investor detail',
+          getComponent(location, cb) {
+            System.import('components/Version4/derisking/ExcludedInvestorDetailsComponent')
+              .then(loadModule(cb))
+              .catch(errorLoading);
+          },
+        },
+        {
           path: '/excludeInvestor',
-          name: 'booking detail',
+          name: 'exclude investor',
           getComponent(location, cb) {
             System.import('containers/Version4/ExcludeInvestorContainer')
               .then(loadModule(cb))

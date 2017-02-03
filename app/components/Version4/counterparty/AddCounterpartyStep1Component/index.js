@@ -5,7 +5,7 @@
 */
 
 import React, { PropTypes } from 'react';
-import { Row, ControlLabel, FormGroup } from 'react-bootstrap';
+import { Row, ControlLabel, FormGroup, Button } from 'react-bootstrap';
 
 import StepsHeaderComponent from '../../common/StepsHeaderComponent';
 import NotFoundComponent from '../../common/NotFoundComponent';
@@ -53,12 +53,15 @@ function AddCounterpartyStep1Component({ counterpartyDetailFields, searchItems, 
 
             {counterpartyDetail && showItems &&
               <CounterpartyDetailComponent
+                showExpandButton
                 expand={expand}
                 expandDetails={expandDetails}
-                showSelectedProducts={showSelectedProducts}
                 data={counterpartyDetailFields}
               >
                 <CounterpartyRole />
+                <p className="text-center">
+                  <Button bsStyle="primary" onClick={showSelectedProducts}>Add to the list</Button>
+                </p>
               </CounterpartyDetailComponent>
             }
           </div>
