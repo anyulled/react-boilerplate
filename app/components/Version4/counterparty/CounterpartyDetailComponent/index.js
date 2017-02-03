@@ -66,7 +66,10 @@ function CounterpartyDetailComponent({ showExpandButton, expand, expandDetails, 
 }
 
 CounterpartyDetailComponent.propTypes = {
-  children: PropTypes.object,
+  children: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.array,
+  ]),
   data: PropTypes.object.isRequired,
   expand: PropTypes.bool,
   expandDetails: PropTypes.func,

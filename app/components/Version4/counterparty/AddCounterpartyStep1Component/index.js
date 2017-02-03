@@ -58,12 +58,10 @@ function AddCounterpartyStep1Component({ counterpartyDetailFields, searchItems, 
                 expandDetails={expandDetails}
                 data={counterpartyDetailFields}
               >
-                <div>
-                  <CounterpartyRole />
-                  <p className="text-center">
-                    <Button bsStyle="primary" onClick={showSelectedProducts}>Add to the list</Button>
-                  </p>
-                </div>
+                <CounterpartyRole />
+                <p className="text-center">
+                  <Button bsStyle="primary" onClick={showSelectedProducts}>Add to the list</Button>
+                </p>
               </CounterpartyDetailComponent>
             }
           </div>
