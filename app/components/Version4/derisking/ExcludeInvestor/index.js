@@ -18,6 +18,8 @@ import ExcludedInvestorsComponent from '../ExcludedInvestorsComponent';
 import fakeData from '../fakeData';
 
 function ExcludeInvestor({ selectedProducts, expand, expandDetails, showSelectedProducts, searchItems, showItems, notFound, investorDetail, viewInvestor }) {
+  const showExpandButton = true;
+  const showAddToTheListButton = true;
   let view;
   if (showItems) {
     view = <SearchList list={fakeData.searchList} clickFunction={viewInvestor} />;
@@ -60,6 +62,8 @@ function ExcludeInvestor({ selectedProducts, expand, expandDetails, showSelected
 
               {investorDetail && showItems &&
                 <CounterpartyDetailComponent
+                  showExpandButton={showExpandButton}
+                  showAddToTheListButton={showAddToTheListButton}
                   expand={expand}
                   expandDetails={expandDetails}
                   showSelectedProducts={showSelectedProducts}

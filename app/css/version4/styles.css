@@ -1243,6 +1243,10 @@ html, body{
 }
 /* -------- END INVESTORITEMCOMPONENT -------- */
 /* -------- EXCLUDEDINVESTORDETAILSCOMPONENT -------- */
+.excludedinvestordetails > .expanded {
+    max-height: 600px;
+}
+
 .excludedinvestordetails a {
     text-decoration: unset;
     text-align: center;
@@ -1258,29 +1262,3 @@ html, body{
     margin-top: 70px;
 }
 /* -------- END EXCLUDEDINVESTORDETAILSCOMPONENT -------- */
-/* -------- INVESTORDETAILCOMPONENT -------- */
-.investordetail {
-    margin-bottom: 15px;
-    overflow: hidden;
-}
-
-.investordetail > div {
-    padding: 0px;
-}
-
-.investordetail b{
-    float: left;
-    width: 100%;
-}
-
-.investordetail h3{
-    float: left;
-    margin: 5px 0px;
-    padding: 0px;
-    width: 100%;
-}
-
-.investordetail h3 small{
-    font-weight: 600;    
-}
-/* -------- END INVESTORDETAILCOMPONENT -------- */

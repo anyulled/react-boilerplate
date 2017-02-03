@@ -17,6 +17,8 @@ import CounterpartySelectedComponent from '../CounterpartySelectedComponent';
 import CounterpartyRole from '../CounterpartyRole';
 
 function AddCounterpartyStep1Component({ counterpartyDetailFields, searchItems, showItems, viewCounterparty, counterpartyDetail, notFound, expand, expandDetails, showSelectedProducts, selectedProducts, showStep2, goBackStep1 }) {
+  const showExpandButton = true;
+  const showAddToTheListButton = true;
   let view;
   if (showItems) {
     view = <CounterpartyListComponent viewCounterparty={viewCounterparty} />;
@@ -53,6 +55,8 @@ function AddCounterpartyStep1Component({ counterpartyDetailFields, searchItems, 
 
             {counterpartyDetail && showItems &&
               <CounterpartyDetailComponent
+                showExpandButton={showExpandButton}
+                showAddToTheListButton={showAddToTheListButton}
                 expand={expand}
                 expandDetails={expandDetails}
                 showSelectedProducts={showSelectedProducts}
