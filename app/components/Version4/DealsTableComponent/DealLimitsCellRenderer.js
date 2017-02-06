@@ -10,6 +10,8 @@ import BookingComponent from '../booking/BookingComponent';
 
 import CollateralComponent from '../collateral/CollateralComponent';
 
+import ExcludedInvestorsComponent from '../derisking/ExcludedInvestorsComponent';
+
 import PanelItemComponent from '../common/PanelItemComponent';
 import DateField from '../common/DateField';
 
@@ -37,6 +39,11 @@ export default class DealLimitsCellRenderer extends React.Component { // eslint-
             <FormControl type="text" />
           }
 
+          {
+            this.props.data[column].element === 'textarea' &&
+            <FormControl componentClass="textarea" style={{ height: '200px' }} />
+          }
+
           { this.props.data[column].element === 'date' &&
             <DateField />
           }
@@ -60,6 +67,14 @@ export default class DealLimitsCellRenderer extends React.Component { // eslint-
               title="Counterparty"
               counterpartyAdded={this.props.data[column].counterpartyAdded}
             />
+          }
+
+          { this.props.data[column].element === 'excludedInvestorsComponent' &&
+            <ExcludedInvestorsComponent excludedInvestors={this.props.data[column].excludedInvestors}>
+              <Link to="/excludeInvestor">
+                <Button bsStyle="primary">Exclude investors</Button>
+              </Link>
+            </ExcludedInvestorsComponent>
           }
 
           { this.props.data[column].element === 'radio3' &&
@@ -141,7 +156,7 @@ export default class DealLimitsCellRenderer extends React.Component { // eslint-
           { this.props.data[column].element === 'collateralComponent' &&
             <CollateralComponent collateralList={this.props.data[column].collateral_list}>
               <p className="text-center">
-                <Link to="/">
+                <Link to="/addCollateral">
                   <Button bsStyle="primary">Add collateral</Button>
                 </Link>
               </p>

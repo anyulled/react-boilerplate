@@ -5,16 +5,18 @@
 */
 
 import React, { PropTypes } from 'react';
-import { Button, Row, Col, Tab, Nav, NavItem, FormGroup, ControlLabel, ButtonGroup, FormControl } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 import KeyValueComponent from '../../common/KeyValueComponent';
 
-function CounterpartyDetailComponent({ expand, expandDetails, showSelectedProducts, data }) {
+function CounterpartyDetailComponent({ showExpandButton, expand, expandDetails, data, children }) {
   let expandButtonLabel;
-  if (expand) {
-    expandButtonLabel = 'Collapse details';
-  } else {
-    expandButtonLabel = 'Expand details';
+  if (showExpandButton) {
+    if (expand) {
+      expandButtonLabel = 'Collapse details';
+    } else {
+      expandButtonLabel = 'Expand details';
+    }
   }
 
   const generalList = data.general.map((item, key) =>
@@ -46,85 +48,32 @@ function CounterpartyDetailComponent({ expand, expandDetails, showSelectedProduc
         {parentList}
       </div>
 
-      <p className="text-center">
-        <Button bsStyle="info" onClick={expandDetails}>
-          {expandButtonLabel}
-        </Button>
-      </p>
+      { showExpandButton &&
+        <div>
+          <p className="text-center">
+            <Button bsStyle="info" onClick={expandDetails}>
+              {expandButtonLabel}
+            </Button>
+          </p>
 
-      <hr />
+          <hr />
+        </div>
+      }
 
-      <div className="counterparty-role">
-        <p>Counterparty role in the deal</p>
-        <Tab.Container id="roles" defaultActiveKey="clientObligor">
-          <div>
-            <Row>
-              <Col sm={12}>
-                <Nav bsStyle="pills">
-                  <NavItem eventKey="clientObligor"> Client & Obligor </NavItem>
-                  <NavItem eventKey="client"> Client </NavItem>
-                  <NavItem eventKey="obligor"> Obligor </NavItem>
-                  <NavItem eventKey="guarantor"> Guarantor</NavItem>
-                </Nav>
-              </Col>
-            </Row>
-            <Row>
-              <Col sm={12}>
-                <Tab.Content animation>
-                  <Tab.Pane eventKey="clientObligor">
-                    <FormGroup>
-                      <ControlLabel>Joint and several liability</ControlLabel>
-                      <ButtonGroup>
-                        <Button bsStyle="default">No</Button>
-                        <Button bsStyle="success">Yes</Button>
-                      </ButtonGroup>
-                    </FormGroup>
-                  </Tab.Pane>
-
-                  <Tab.Pane eventKey="client">
-                  </Tab.Pane>
-
-                  <Tab.Pane eventKey="obligor">
-                    <FormGroup>
-                      <ControlLabel>Joint and several liability</ControlLabel>
-                      <ButtonGroup>
-                        <Button bsStyle="default">No</Button>
-                        <Button bsStyle="success">Yes</Button>
-                      </ButtonGroup>
-                    </FormGroup>
-
-                    <FormGroup>
-                      <ControlLabel>Linked to client</ControlLabel>
-                      <FormControl componentClass="select" placeholder="select">
-                      </FormControl>
-                    </FormGroup>
-                  </Tab.Pane>
-
-                  <Tab.Pane eventKey="guarantor">
-                    <FormGroup>
-                      <ControlLabel>Linked to counterparty</ControlLabel>
-                      <FormControl componentClass="select" placeholder="select">
-                      </FormControl>
-                    </FormGroup>
-                  </Tab.Pane>
-                </Tab.Content>
-              </Col>
-            </Row>
-          </div>
-        </Tab.Container>
-      </div>
-      <p className="text-center">
-        <Button bsStyle="primary" onClick={showSelectedProducts}>Add to the list</Button>
-      </p>
+      {children}
     </div>
   );
 }
 
 CounterpartyDetailComponent.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.array,
+  ]),
   data: PropTypes.object.isRequired,
   expand: PropTypes.bool,
   expandDetails: PropTypes.func,
-  showSelectedProducts: PropTypes.func.isRequired,
+  showExpandButton: PropTypes.bool,
 };
 
 export default CounterpartyDetailComponent;

@@ -65,6 +65,12 @@ export class RightSidebarContainer extends React.Component { // eslint-disable-l
           sidebarClass: 'product',
         });
         break;
+      case '/addCollateral':
+        this.setState({
+          visible: 'visible',
+          sidebarClass: 'product',
+        });
+        break;
       case '/addBooking':
         this.setState({
           visible: 'visible',
@@ -81,6 +87,18 @@ export class RightSidebarContainer extends React.Component { // eslint-disable-l
         this.setState({
           visible: 'visible',
           sidebarClass: '',
+        });
+        break;
+      case '/excludedInvestorDetail':
+        this.setState({
+          visible: 'visible',
+          sidebarClass: '',
+        });
+        break;
+      case '/excludeInvestor':
+        this.setState({
+          visible: 'visible',
+          sidebarClass: 'product',
         });
         break;
       default:

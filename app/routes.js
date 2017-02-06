@@ -89,6 +89,24 @@ export default function createRoutes(store) {
           },
         },
         {
+          path: '/bookingDetail',
+          name: 'booking detail',
+          getComponent(location, cb) {
+            System.import('components/Version4/booking/BookingEditDetails')
+              .then(loadModule(cb))
+              .catch(errorLoading);
+          },
+        },
+        {
+          path: '/addCollateral',
+          name: 'add collateral',
+          getComponent(location, cb) {
+            System.import('containers/Version4/AddCollateralContainer')
+              .then(loadModule(cb))
+              .catch(errorLoading);
+          },
+        },
+        {
           path: '/collateralDetail',
           name: 'collateral detail',
           getComponent(location, cb) {
@@ -98,10 +116,19 @@ export default function createRoutes(store) {
           },
         },
         {
-          path: '/bookingDetail',
-          name: 'booking detail',
+          path: '/excludedInvestorDetail',
+          name: 'excluded investor detail',
           getComponent(location, cb) {
-            System.import('components/Version4/booking/BookingEditDetails')
+            System.import('components/Version4/derisking/ExcludedInvestorDetailsComponent')
+              .then(loadModule(cb))
+              .catch(errorLoading);
+          },
+        },
+        {
+          path: '/excludeInvestor',
+          name: 'exclude investor',
+          getComponent(location, cb) {
+            System.import('containers/Version4/ExcludeInvestorContainer')
               .then(loadModule(cb))
               .catch(errorLoading);
           },
