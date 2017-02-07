@@ -25,7 +25,7 @@ export class BreadcrumbContainer extends React.Component { // eslint-disable-lin
   }
   render() {
     return (
-      <BreadcrumbComponent {...this.props} pageActionsBreadcrumb={this.state.pageActionsBreadcrumb}/>
+      <BreadcrumbComponent {...this.props} pageActionsBreadcrumb={this.state.pageActionsBreadcrumb} />
     );
   }
 }

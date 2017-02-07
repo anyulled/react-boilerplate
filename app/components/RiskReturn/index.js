@@ -3,20 +3,21 @@
  * RiskReturn
  *
  */
-import React from "react";
-import Panel from "../Panel";
+import React, { PropTypes } from 'react';
+import Panel from '../Panel';
 
 class RiskReturn extends React.Component { // eslint-disable-line react/prefer-stateless-function
-  constructor(props){
-    super(props);
-  }
   render() {
     return (
-      <Panel name="Risk Return" onToggleSize={ this.props.onToggleSize }>
+      <Panel name="Risk Return" onToggleSize={this.props.onToggleSize}>
         empty panel
       </Panel>
     );
   }
 }
+
+RiskReturn.propTypes = {
+  onToggleSize: PropTypes.func,
+};
 
 export default RiskReturn;

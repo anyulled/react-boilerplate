@@ -27,6 +27,6 @@ SearchField.propTypes = {
   description: PropTypes.string,
   label: PropTypes.string.isRequired,
   onChangeFunction: PropTypes.func.isRequired,
-}
+};
 
 export default SearchField;
