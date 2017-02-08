@@ -4,6 +4,7 @@
  *
  */
 
+/*
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import DealDetailsComponent from '../../../components/Version4/DealDetailsComponent';
@@ -51,7 +52,7 @@ export class DealDetailsContainer extends React.Component { // eslint-disable-li
         documents={this.state.documents}
         documentsHover={this.state.documentsHover}
         editFields={this.state.editFields} */
-        dealInformations={this.props.dealInformations}
+      /* dealInformations={this.props.dealInformations}
       />
     );
   }
@@ -68,3 +69,4 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(null, mapDispatchToProps)(DealDetailsContainer);
+*/

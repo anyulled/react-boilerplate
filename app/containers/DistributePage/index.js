@@ -3,17 +3,17 @@
  * DistributePage
  *
  */
-import React from "react";
-import {Grid, Row, Col, Navbar, Nav, NavItem, NavDropdown, MenuItem, Breadcrumb} from "react-bootstrap";
-import Deal from "../../components/Deal";
-import DealLimits from "../../components/DealLimits";
-import Counterparties from "../../components/Counterparties";
-import Collaterals from "../../components/Collaterals";
-import Contacts from "../../components/Contacts";
-import Derisking from "../../components/Derisking";
-import Utilization from "../../components/Utilization";
-import RiskReturn from "../../components/RiskReturn";
-import {connect} from "react-redux";
+import React from 'react';
+import { Grid, Row, Col, Navbar, Nav, NavItem, NavDropdown, MenuItem, Breadcrumb } from 'react-bootstrap';
+import Deal from '../../components/Deal';
+import DealLimits from '../../components/DealLimits';
+import Counterparties from '../../components/Counterparties';
+import Collaterals from '../../components/Collaterals';
+import Contacts from '../../components/Contacts';
+import Derisking from '../../components/Derisking';
+import Utilization from '../../components/Utilization';
+import RiskReturn from '../../components/RiskReturn';
+import { connect } from 'react-redux';
 export class DistributePage extends React.Component { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
@@ -21,7 +21,7 @@ export class DistributePage extends React.Component { // eslint-disable-line rea
         <Navbar inverse>
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="#">DB Distribute</a>
+              <a href="/">DB Distribute</a>
             </Navbar.Brand>
           </Navbar.Header>
           <Nav>
@@ -31,7 +31,7 @@ export class DistributePage extends React.Component { // eslint-disable-line rea
               <MenuItem eventKey={3.1}>Action</MenuItem>
               <MenuItem eventKey={3.2}>Another action</MenuItem>
               <MenuItem eventKey={3.3}>Something else here</MenuItem>
-              <MenuItem divider/>
+              <MenuItem divider />
               <MenuItem eventKey={3.3}>Separated link</MenuItem>
             </NavDropdown>
           </Nav>
@@ -49,14 +49,14 @@ export class DistributePage extends React.Component { // eslint-disable-line rea
         </Breadcrumb>
         <Grid fluid>
           <Row>
-            <Col sm={4}><Deal/></Col>
-            <Col sm={4}><DealLimits/></Col>
-            <Col sm={4}><Counterparties/></Col>
-            <Col sm={4}><Collaterals/></Col>
-            <Col sm={4}><Contacts/></Col>
-            <Col sm={4}><Derisking/></Col>
-            <Col sm={4}><Utilization/></Col>
-            <Col sm={4}><RiskReturn/></Col>
+            <Col sm={4}><Deal /></Col>
+            <Col sm={4}><DealLimits /></Col>
+            <Col sm={4}><Counterparties /></Col>
+            <Col sm={4}><Collaterals /></Col>
+            <Col sm={4}><Contacts /></Col>
+            <Col sm={4}><Derisking /></Col>
+            <Col sm={4}><Utilization /></Col>
+            <Col sm={4}><RiskReturn /></Col>
           </Row>
         </Grid>
       </div>

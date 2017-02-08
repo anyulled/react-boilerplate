@@ -3,7 +3,7 @@
 * NewProductComponent
 *
 */
-
+/*
 import React, { PropTypes } from 'react';
 
 import ProductListItemComponent from '../ProductListItemComponent';
@@ -26,4 +26,4 @@ NewProductComponent.propTypes = {
   showProductDetails: PropTypes.func,
 };
 
-export default NewProductComponent;
+export default NewProductComponent;*/

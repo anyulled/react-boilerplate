@@ -85,6 +85,9 @@ class DealsTableComponent extends React.Component { // eslint-disable-line react
         this.api.setColumnDefs(columnDefs);
       },
     };
+
+    this.onGridReady = this.onGridReady.bind(this);
+    this.gridOptions.setNewColumns = this.gridOptions.setNewColumns.bind(this);
   }
 
   onGridReady(params) {
@@ -101,12 +104,12 @@ class DealsTableComponent extends React.Component { // eslint-disable-line react
       <div style={{ height: '100%', width: '100%' }}>
         <AgGridReact
           gridOptions={this.gridOptions}
-          onGridReady={this.onGridReady.bind(this)}
+          onGridReady={this.onGridReady}
           columnDefs={this.state.columnDefs}
           rowData={this.state.rowData}
           headerHeight={40}
         />
-        <Button className="add-column" onClick={this.gridOptions.setNewColumns.bind()}>
+        <Button className="add-column" onClick={this.gridOptions.setNewColumns}>
           Add Column
         </Button>
       </div>
