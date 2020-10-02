@@ -100,9 +100,10 @@ ag-grid-react@6.0.x:
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/ag-grid-react/-/ag-grid-react-6.0.1.tgz#2e13359f9ac580bb3f5f0e04d727cef94f58d965"
 
-ag-grid@6.0.x:
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/ag-grid/-/ag-grid-6.0.1.tgz#4e586f9a0b136f55c0c11a83982ded36f809071f"
+ag-grid@18.1.2:
+  version "18.1.2"
+  resolved "https://registry.yarnpkg.com/ag-grid/-/ag-grid-18.1.2.tgz#d98b3dd824b9cb82d9f638e4bab5a5771513869b"
+  integrity sha512-HtJt8iFcRKCBj5UHBDmwSLLr72F3XDACeBNarH4nJWFHIqcnu7u0Ifrd2nftPmfEBj6YjFHawDqcZL2yo3YfmQ==
 
 ajv-keywords@^1.0.0:
   version "1.5.1"
