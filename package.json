@@ -183,7 +183,7 @@
     ]
   },
   "dependencies": {
-    "ag-grid": "6.0.x",
+    "ag-grid": "18.1.2",
     "ag-grid-react": "6.0.x",
     "babel-polyfill": "6.26.0",
     "chalk": "1.1.3",
