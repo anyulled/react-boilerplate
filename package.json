@@ -251,7 +251,7 @@
     "eventsource-polyfill": "0.9.6",
     "expect": "1.20.2",
     "expect-jsx": "2.6.0",
-    "exports-loader": "0.7.0",
+    "exports-loader": "1.1.0",
     "file-loader": "0.11.2",
     "html-loader": "0.5.5",
     "html-webpack-plugin": "2.30.1",
