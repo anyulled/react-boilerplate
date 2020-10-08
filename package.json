@@ -271,7 +271,7 @@
     "lint-staged": "10.4.0",
     "mocha": "3.1.2",
     "ngrok": "2.2.3",
-    "null-loader": "0.1.1",
+    "null-loader": "4.0.0",
     "offline-plugin": "3.4.2",
     "plop": "1.5.0",
     "pre-commit": "1.2.2",
