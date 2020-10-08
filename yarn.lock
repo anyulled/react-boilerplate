@@ -640,10 +640,12 @@ after@0.8.2:
   resolved "https://registry.yarnpkg.com/after/-/after-0.8.2.tgz#fedb394f9f0e02aa9768e702bda23b505fae7e1f"
   integrity sha1-/ts5T58OAqqXaOcCvaI7UF+ufh8=
 
-ag-grid-react@6.0.1:
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/ag-grid-react/-/ag-grid-react-6.0.1.tgz#2e13359f9ac580bb3f5f0e04d727cef94f58d965"
-  integrity sha1-LhM1n5rFgLs/Xw4E1yfO+U9Y2WU=
+ag-grid-react@24.0.0:
+  version "24.0.0"
+  resolved "https://registry.yarnpkg.com/ag-grid-react/-/ag-grid-react-24.0.0.tgz#35874d549c658f5ac9d5711b652a4e3e09875607"
+  integrity sha512-Yp91jA4I/BO90UtUV6hSdhDV+J1OhClM6iu/aXHIhCHxt+aSfUg1i1ZUCGvgW8R2zxR4WtwDV2CRPsbAhxFdMw==
+  dependencies:
+    prop-types "^15.6.2"
 
 ag-grid@18.1.2:
   version "18.1.2"
