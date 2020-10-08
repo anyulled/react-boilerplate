@@ -5342,7 +5342,7 @@ imagemin@^5.2.2:
     pify "^2.3.0"
     replace-ext "^1.0.0"
 
-immutable@3.8.2, immutable@^3.7.6:
+immutable@3.8.2:
   version "3.8.2"
   resolved "https://registry.yarnpkg.com/immutable/-/immutable-3.8.2.tgz#c2439951455bb39913daf281376f1530e104adf3"
   integrity sha1-wkOZUUVbs5kT2vKBN28VMOEErfM=
@@ -7068,6 +7068,9 @@ minizlib@^2.1.1:
 mixin-deep@^1.2.0:
   version "1.3.2"
   resolved "https://registry.yarnpkg.com/mixin-deep/-/mixin-deep-1.3.2.tgz#1120b43dc359a785dce65b55b82e257ccf479566"
+  dependencies:
+    for-in "^1.0.2"
+    is-extendable "^1.0.1"
 
 mkdirp@0.5.1:
   version "0.5.1"
@@ -8692,11 +8695,10 @@ redent@^1.0.0:
     indent-string "^2.1.0"
     strip-indent "^1.0.1"
 
-redux-immutable@3.0.8:
-  version "3.0.8"
-  resolved "https://registry.yarnpkg.com/redux-immutable/-/redux-immutable-3.0.8.tgz#df5a5d601c88227ba38f474cf82f7d00e56f8c14"
-  dependencies:
-    immutable "^3.7.6"
+redux-immutable@4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/redux-immutable/-/redux-immutable-4.0.0.tgz#3a1a32df66366462b63691f0e1dc35e472bbc9f3"
+  integrity sha1-Ohoy32Y2ZGK2NpHw4dw15HK7yfM=
 
 redux-saga@1.1.3:
   version "1.1.3"
@@ -10382,6 +10384,9 @@ unpipe@1.0.0, unpipe@~1.0.0:
 unset-value@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/unset-value/-/unset-value-1.0.0.tgz#8376873f7d2335179ffb1e6fc3a8ed0dfc8ab559"
+  dependencies:
+    has-value "^0.3.1"
+    isobject "^3.0.0"
 
 unzip-response@^1.0.2:
   version "1.0.2"
