@@ -252,7 +252,7 @@
     "expect": "26.5.2",
     "expect-jsx": "5.0.0",
     "exports-loader": "1.1.0",
-    "file-loader": "6.1.0",
+    "file-loader": "6.1.1",
     "html-loader": "1.3.1",
     "html-webpack-plugin": "4.5.0",
     "image-webpack-loader": "7.0.1",
