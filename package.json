@@ -215,7 +215,7 @@
     "reselect": "4.0.0",
     "sanitize.css": "4.1.0",
     "styled-components": "4.0.0",
-    "warning": "3.0.0",
+    "warning": "4.0.3",
     "whatwg-fetch": "1.0.0"
   },
   "devDependencies": {
