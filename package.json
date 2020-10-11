@@ -249,7 +249,7 @@
     "eslint-plugin-react": "7.21.4",
     "eslint-plugin-redux-saga": "1.2.1",
     "eventsource-polyfill": "0.9.6",
-    "expect": "26.5.2",
+    "expect": "26.5.3",
     "expect-jsx": "5.0.0",
     "exports-loader": "1.1.1",
     "file-loader": "6.1.1",
