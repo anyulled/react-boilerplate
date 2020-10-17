@@ -268,7 +268,7 @@
     "karma-safari-launcher": "1.0.0",
     "karma-sourcemap-loader": "0.3.8",
     "karma-webpack": "4.0.2",
-    "lint-staged": "10.4.1",
+    "lint-staged": "10.4.2",
     "mocha": "8.2.0",
     "ngrok": "3.3.0",
     "null-loader": "4.0.1",
