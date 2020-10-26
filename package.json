@@ -197,10 +197,8 @@
     "ip": "1.1.5",
     "lodash": "4.17.20",
     "minimist": "1.2.5",
-
     "react": "17.0.1",
     "react-bootstrap": "1.4.0",
-
     "react-dom": "17.0.1",
     "react-grid-layout": "1.1.1",
     "react-helmet": "6.1.0",
@@ -240,7 +238,7 @@
     "coveralls": "3.1.0",
     "css-loader": "5.0.0",
     "enzyme": "3.11.0",
-    "eslint": "7.11.0",
+    "eslint": "7.12.0",
     "eslint-config-airbnb": "18.2.0",
     "eslint-config-airbnb-base": "14.2.0",
     "eslint-import-resolver-webpack": "0.13.0",
