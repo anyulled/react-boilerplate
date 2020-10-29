@@ -292,10 +292,10 @@
     intl-messageformat-parser "^6.0.11"
     tslib "^2.0.1"
 
-"@formatjs/ts-transformer@^2.11.5":
-  version "2.11.5"
-  resolved "https://registry.yarnpkg.com/@formatjs/ts-transformer/-/ts-transformer-2.11.5.tgz#8f8c52ab0f2d8b9deb8c71d554835b9424511973"
-  integrity sha512-vwFZx3y9By5VYa7cTAc0OeMgDAaukoChkTYkgPM/UARE63+1TZRdqbJFSs4JT5ray3DqDACNNGu/eT250tKMig==
+"@formatjs/ts-transformer@^2.12.0":
+  version "2.12.0"
+  resolved "https://registry.yarnpkg.com/@formatjs/ts-transformer/-/ts-transformer-2.12.0.tgz#71bb3d1af3e818996211b36231d1b753859f46f9"
+  integrity sha512-bi7XVicXTPHMEK4vapp29wJQnBHt9IrNW5QREiBPR5NF52EGvuVQeLmfU17nnojnHf4+X0PoamW7Sr0WPTtmWA==
   dependencies:
     intl-messageformat-parser "^6.0.11"
     tslib "^2.0.1"
@@ -1503,15 +1503,15 @@ babel-plugin-istanbul@6.0.0:
     istanbul-lib-instrument "^4.0.0"
     test-exclude "^6.0.0"
 
-babel-plugin-react-intl@8.2.9:
-  version "8.2.9"
-  resolved "https://registry.yarnpkg.com/babel-plugin-react-intl/-/babel-plugin-react-intl-8.2.9.tgz#849a9afb322851082b409f4b4d0419747d0e44ff"
-  integrity sha512-L6PJDsW/SGIyFX1N6yCfv1K1hPS8IQwASSm2yVQePd/R5L8FQGMbx5A8yeEjSSC3fXr71EMu+Re8i45JbBKvRg==
+babel-plugin-react-intl@8.2.10:
+  version "8.2.10"
+  resolved "https://registry.yarnpkg.com/babel-plugin-react-intl/-/babel-plugin-react-intl-8.2.10.tgz#b80db63ea462a195918aa630b28bb8cbd3a73169"
+  integrity sha512-+cEBDvRWM7CvZsbjpm3W+CX4D9JA8dbH+EMod6vEW7wEhUqePwPrMG7ES3WO1/4HPZUJEZNz2hggtftCABRsJQ==
   dependencies:
     "@babel/core" "^7.9.0"
     "@babel/helper-plugin-utils" "^7.8.3"
     "@babel/types" "^7.9.5"
-    "@formatjs/ts-transformer" "^2.11.5"
+    "@formatjs/ts-transformer" "^2.12.0"
     "@types/babel__core" "^7.1.7"
     "@types/schema-utils" "^2.4.0"
     intl-messageformat-parser "^6.0.11"
