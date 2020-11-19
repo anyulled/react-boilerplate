@@ -1512,10 +1512,10 @@ babel-plugin-istanbul@6.0.0:
     istanbul-lib-instrument "^4.0.0"
     test-exclude "^6.0.0"
 
-babel-plugin-react-intl@8.2.17:
-  version "8.2.17"
-  resolved "https://registry.yarnpkg.com/babel-plugin-react-intl/-/babel-plugin-react-intl-8.2.17.tgz#1567503761bb3d43c74921c70adb7c958a524950"
-  integrity sha512-AYtQV3YwYSFXlpzAoCChr6maWQZDUPIW+qFU6XFZHhEGMoSy0uBzKO4LchA68MkrOftZSX6pdCKQn5nTd5Iffw==
+babel-plugin-react-intl@8.2.18:
+  version "8.2.18"
+  resolved "https://registry.yarnpkg.com/babel-plugin-react-intl/-/babel-plugin-react-intl-8.2.18.tgz#0bf1db4157ececa6b97d514006e2eabd3ac8c692"
+  integrity sha512-wTjBFdu7DjH5k5w3XyvT6GrcJmJVQbrbxjFmXZOyo2KXnyE+zrOmIpaehiRHxTisZ0lWN5D50SKQM1cARi4nLQ==
   dependencies:
     "@babel/core" "^7.9.0"
     "@babel/helper-plugin-utils" "^7.8.3"
