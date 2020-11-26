@@ -220,7 +220,7 @@
     "babel-cli": "6.26.0",
     "babel-core": "6.26.3",
     "babel-eslint": "10.1.0",
-    "babel-loader": "8.2.1",
+    "babel-loader": "8.2.2",
     "babel-plugin-istanbul": "6.0.0",
     "babel-plugin-react-intl": "8.2.20",
     "babel-plugin-react-transform": "3.0.0",
