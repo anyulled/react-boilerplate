@@ -301,12 +301,12 @@
     intl-messageformat-parser "6.1.0"
     tslib "^2.0.1"
 
-"@formatjs/ts-transformer@2.12.11":
-  version "2.12.11"
-  resolved "https://registry.yarnpkg.com/@formatjs/ts-transformer/-/ts-transformer-2.12.11.tgz#fedbc44a44a7da6925d149e3051cd8a7a869d8c2"
-  integrity sha512-XjknAXQEy7s8Q9LsyECFo1369kctH/C841o/JeDqHRDhkgn1vV/IlF3v2qli7mxEc+L2JcO8LUwqOALpTBW/5A==
+"@formatjs/ts-transformer@2.12.12":
+  version "2.12.12"
+  resolved "https://registry.yarnpkg.com/@formatjs/ts-transformer/-/ts-transformer-2.12.12.tgz#8c5aebcafd8839f20867f6ecdb4833bc0656a179"
+  integrity sha512-MWmZcdtHQzYl+zwDU4ms9pktLq5/kkRTAaqh14Yt+Tlm5UPshCUUwv99w1Q9HZckXyUOuBnHCiA8s286c78mDw==
   dependencies:
-    intl-messageformat-parser "6.1.0"
+    intl-messageformat-parser "6.1.1"
     tslib "^2.0.1"
     typescript "^4.0"
 
@@ -1508,18 +1508,18 @@ babel-plugin-istanbul@6.0.0:
     istanbul-lib-instrument "^4.0.0"
     test-exclude "^6.0.0"
 
-babel-plugin-react-intl@8.2.22:
-  version "8.2.22"
-  resolved "https://registry.yarnpkg.com/babel-plugin-react-intl/-/babel-plugin-react-intl-8.2.22.tgz#076bbcf792a7d975803917dd49c9906799285ece"
-  integrity sha512-maUrmP2NY1falW5dYXGfq77YjGpQPLZUpzTgs/jRevTLTcey1u1+lTv01pA6so+iPtUfxkH3er7Z1P9zZNvKOg==
+babel-plugin-react-intl@8.2.23:
+  version "8.2.23"
+  resolved "https://registry.yarnpkg.com/babel-plugin-react-intl/-/babel-plugin-react-intl-8.2.23.tgz#0b1e5d8827195fb7d648b834f2da15df2adfa732"
+  integrity sha512-4QNZLWDtv+ztNyX+CLpa54XFeWZJj6gjWGC8Kthhag4ssp+nK/D5R1AbKGn2t1mepmYD1bcDsnDV+kF4/TtlQg==
   dependencies:
     "@babel/core" "^7.9.0"
     "@babel/helper-plugin-utils" "^7.8.3"
     "@babel/types" "^7.9.5"
-    "@formatjs/ts-transformer" "2.12.11"
+    "@formatjs/ts-transformer" "2.12.12"
     "@types/babel__core" "^7.1.7"
     "@types/schema-utils" "^2.4.0"
-    intl-messageformat-parser "6.1.0"
+    intl-messageformat-parser "6.1.1"
     schema-utils "^3.0.0"
     tslib "^2.0.1"
 
@@ -5890,6 +5890,14 @@ intl-messageformat-parser@6.1.0:
   version "6.1.0"
   resolved "https://registry.yarnpkg.com/intl-messageformat-parser/-/intl-messageformat-parser-6.1.0.tgz#134328151c41592d9e1a61f5c6779c06c8eb3f08"
   integrity sha512-nPPh2kOrKqlh4D9bCAetxkrUiq5/6S1exPQyg52Ihusy0ECNGhZ0Qmq8pFRK9gWIuiQPVmLA7eSNp8diC2tX3w==
+  dependencies:
+    "@formatjs/ecma402-abstract" "1.5.0"
+    tslib "^2.0.1"
+
+intl-messageformat-parser@6.1.1:
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/intl-messageformat-parser/-/intl-messageformat-parser-6.1.1.tgz#060971897bba3c15baec05ab65831657e32a06c2"
+  integrity sha512-LtIWD8MbLZYgnaQAwRjaieO2Fd7wDetcmCwqMOFgi0fq69Ll6C2QiJacUSRl7CIw3ZPewdU7bLBFb2U/hS+Whg==
   dependencies:
     "@formatjs/ecma402-abstract" "1.5.0"
     tslib "^2.0.1"
