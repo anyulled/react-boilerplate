@@ -961,10 +961,10 @@ after@0.8.2:
   resolved "https://registry.yarnpkg.com/after/-/after-0.8.2.tgz#fedb394f9f0e02aa9768e702bda23b505fae7e1f"
   integrity sha1-/ts5T58OAqqXaOcCvaI7UF+ufh8=
 
-ag-grid-react@24.1.1:
-  version "24.1.1"
-  resolved "https://registry.yarnpkg.com/ag-grid-react/-/ag-grid-react-24.1.1.tgz#56d0086316d262cf6e5804e2b4bdeeb5fb3279b9"
-  integrity sha512-MuITqlVo1QD48DzLFFOcX/8eG7XvezkgqymSJrIo4JI6znAqNRpnRgDt+oFHRDgK1NSDh6rZRXGFZI/DRYWq0A==
+ag-grid-react@25.0.0:
+  version "25.0.0"
+  resolved "https://registry.yarnpkg.com/ag-grid-react/-/ag-grid-react-25.0.0.tgz#e79181c1c4d48d3912bd857af27e41bf21eb2129"
+  integrity sha512-nUC9dUQSRArdfXbAv1jB4no3MLoUxlZsEyMSPjT3/51/Ok2ggs/vk1ji+BBRTpEGPg0vVqbyFa8PAlhh6xcIEA==
   dependencies:
     prop-types "^15.6.2"
 
