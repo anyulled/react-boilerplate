@@ -273,7 +273,7 @@
     "offline-plugin": "5.0.7",
     "plop": "2.7.4",
     "pre-commit": "1.2.2",
-    "psi": "4.0.1",
+    "psi": "4.1.0",
     "rimraf": "3.0.2",
     "shelljs": "0.8.4",
     "sinon": "9.2.3",
