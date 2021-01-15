@@ -965,10 +965,10 @@ acorn@^8.0.4:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.0.4.tgz#7a3ae4191466a6984eee0fe3407a4f3aa9db8354"
   integrity sha512-XNP0PqF1XD19ZlLKvB7cMmnZswW4C/03pRHgirB30uSJTaS3A3V1/P4sS3HPvFmjoriPCJQs+JDSbm4bL1TxGQ==
 
-ag-grid-react@25.0.0:
-  version "25.0.0"
-  resolved "https://registry.yarnpkg.com/ag-grid-react/-/ag-grid-react-25.0.0.tgz#e79181c1c4d48d3912bd857af27e41bf21eb2129"
-  integrity sha512-nUC9dUQSRArdfXbAv1jB4no3MLoUxlZsEyMSPjT3/51/Ok2ggs/vk1ji+BBRTpEGPg0vVqbyFa8PAlhh6xcIEA==
+ag-grid-react@25.0.1:
+  version "25.0.1"
+  resolved "https://registry.yarnpkg.com/ag-grid-react/-/ag-grid-react-25.0.1.tgz#26f363fdf255c286a544e9a6bf0b1205beb54bec"
+  integrity sha512-o4lGsTX5PWmlzcT8gfJ1C3YuQmljQVT9UXetMhTsbOjwJbZiMyPDm8fFKotFMxbf/VhgYD4SQmcMD3Fy9r/y1g==
   dependencies:
     prop-types "^15.6.2"
 
