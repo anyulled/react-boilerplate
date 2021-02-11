@@ -267,7 +267,7 @@
     "karma-sourcemap-loader": "0.3.8",
     "karma-webpack": "5.0.0",
     "lint-staged": "10.5.4",
-    "mocha": "8.2.1",
+    "mocha": "8.3.0",
     "ngrok": "3.4.0",
     "null-loader": "4.0.1",
     "offline-plugin": "5.0.7",
