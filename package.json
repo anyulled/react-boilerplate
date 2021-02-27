@@ -214,7 +214,7 @@
     "sanitize.css": "12.0.1",
     "styled-components": "5.2.1",
     "warning": "4.0.3",
-    "whatwg-fetch": "3.6.1"
+    "whatwg-fetch": "3.6.2"
   },
   "devDependencies": {
     "babel-cli": "6.26.0",
