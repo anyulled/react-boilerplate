@@ -290,16 +290,16 @@
     "@formatjs/ecma402-abstract" "1.6.4"
     tslib "^2.1.0"
 
-"@formatjs/intl@1.8.5":
-  version "1.8.5"
-  resolved "https://registry.yarnpkg.com/@formatjs/intl/-/intl-1.8.5.tgz#2c57b2a344033285270e23b35776f993bf49eb27"
-  integrity sha512-0ZAhhf3TgPwcTKITjYm31n9pIIXTks15fP+Uano0a5sTELKMHTaTPIwU7VHaodygtZvJgThIggK7zDNxng1/Jg==
+"@formatjs/intl@1.9.0":
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/@formatjs/intl/-/intl-1.9.0.tgz#5fc85b31d6ddd7caf7ff03e0924d8585a27d9f75"
+  integrity sha512-8bB9ePQbSbC6Ow7jzNr4tFArpfLcjYZ7xC4Od7O3OscSp6kCs1H2ScJMOdECN8oHp9uu+gMGunAQTlQHSPcaOQ==
   dependencies:
     "@formatjs/ecma402-abstract" "1.6.4"
     "@formatjs/intl-displaynames" "4.0.12"
     "@formatjs/intl-listformat" "5.0.13"
     fast-memoize "^2.5.2"
-    intl-messageformat "9.5.4"
+    intl-messageformat "9.6.0"
     intl-messageformat-parser "6.4.4"
     tslib "^2.1.0"
 
@@ -5856,10 +5856,10 @@ intl-messageformat-parser@6.4.4:
     "@formatjs/ecma402-abstract" "1.6.4"
     tslib "^2.1.0"
 
-intl-messageformat@9.5.4:
-  version "9.5.4"
-  resolved "https://registry.yarnpkg.com/intl-messageformat/-/intl-messageformat-9.5.4.tgz#3e55b02a18224ca42701ea2dba54f8eed67accca"
-  integrity sha512-SmlachKBr6IaV21zcPWsEwD5KtmgSKtaHW0ud0+88nuDK8XiFeDqIFWESkwj6Hjoixj4AVErijZsLBwm49SaEA==
+intl-messageformat@9.6.0:
+  version "9.6.0"
+  resolved "https://registry.yarnpkg.com/intl-messageformat/-/intl-messageformat-9.6.0.tgz#1b808501688cbcedd67198c9316d0a72fca966a6"
+  integrity sha512-WvppfvzaLRoe413YtWwEjaXjW226j10Q3SO4Wm1x7v71/LKNRzit9X6ayKnz3VU9xRtLSTj6m6NQiFPxZK1yvg==
   dependencies:
     fast-memoize "^2.5.2"
     intl-messageformat-parser "6.4.4"
@@ -8803,18 +8803,18 @@ react-helmet@6.1.0:
     react-fast-compare "^3.1.1"
     react-side-effect "^2.1.0"
 
-react-intl@5.14.1:
-  version "5.14.1"
-  resolved "https://registry.yarnpkg.com/react-intl/-/react-intl-5.14.1.tgz#f600d18948f6b4e6bc8d717a7792e46e698f3ffd"
-  integrity sha512-HC0fpaxnlc0Eua9f7odV04P1nO54M0NKlT3w6o/LFGEk49AoNj8axmBViQYeBCW3NdaZSbXN58VkFcvMEBuyfw==
+react-intl@5.15.0:
+  version "5.15.0"
+  resolved "https://registry.yarnpkg.com/react-intl/-/react-intl-5.15.0.tgz#e07b61178626dcfd9dc91a79a0541ce7284de636"
+  integrity sha512-IpqOrqdIB/fBHDvg2A8TBWFCr+JwQ/dMINNT8raA6ldDayhOlm2QE3vjZvqtWiRckiK4njPsEdzZqLmHXhXmQg==
   dependencies:
     "@formatjs/ecma402-abstract" "1.6.4"
-    "@formatjs/intl" "1.8.5"
+    "@formatjs/intl" "1.9.0"
     "@formatjs/intl-displaynames" "4.0.12"
     "@formatjs/intl-listformat" "5.0.13"
     "@types/hoist-non-react-statics" "^3.3.1"
     hoist-non-react-statics "^3.3.2"
-    intl-messageformat "9.5.4"
+    intl-messageformat "9.6.0"
     intl-messageformat-parser "6.4.4"
     tslib "^2.1.0"
 
