@@ -186,7 +186,7 @@
     "ag-grid": "18.1.2",
     "ag-grid-react": "25.1.0",
     "babel-polyfill": "6.26.0",
-    "chalk": "4.1.0",
+    "chalk": "4.1.1",
     "compression": "1.7.4",
     "cross-env": "7.0.3",
     "express": "4.17.1",
