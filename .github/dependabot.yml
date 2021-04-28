@@ -1,0 +1,55 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "04:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: css-loader
+    versions:
+    - 5.2.4
+  - dependency-name: sinon
+    versions:
+    - 10.0.1
+  - dependency-name: karma
+    versions:
+    - 6.3.2
+  - dependency-name: eslint-plugin-react
+    versions:
+    - 7.23.1
+  - dependency-name: react-grid-layout
+    versions:
+    - 1.2.4
+  - dependency-name: react-dom
+    versions:
+    - 17.0.2
+  - dependency-name: react
+    versions:
+    - 17.0.2
+  - dependency-name: copy-webpack-plugin
+    versions:
+    - 8.1.0
+  - dependency-name: react-redux
+    versions:
+    - 7.2.3
+  - dependency-name: webpack
+    versions:
+    - 5.20.1
+    - 5.25.1
+    - 5.27.1
+  - dependency-name: react-intl
+    versions:
+    - 5.12.0
+    - 5.12.1
+    - 5.12.2
+    - 5.12.5
+    - 5.13.0
+    - 5.13.4
+  - dependency-name: html-loader
+    versions:
+    - 2.1.2
+  - dependency-name: react-bootstrap
+    versions:
+    - 1.5.0
