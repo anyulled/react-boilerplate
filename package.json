@@ -277,7 +277,7 @@
     "rimraf": "3.0.2",
     "shelljs": "0.8.4",
     "sinon": "11.1.2",
-    "style-loader": "3.2.1",
+    "style-loader": "3.3.0",
     "url-loader": "4.1.1",
     "webpack": "5.53.0",
     "webpack-dev-middleware": "5.1.0",
