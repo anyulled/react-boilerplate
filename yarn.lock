@@ -6071,10 +6071,10 @@ import-lazy@^3.1.0:
   resolved "https://registry.yarnpkg.com/import-lazy/-/import-lazy-3.1.0.tgz#891279202c8a2280fdbd6674dbd8da1a1dfc67cc"
   integrity sha512-8/gvXvX2JMn0F+CDlSC4l6kOmVaLOO3XLkksI7CI3Ud95KDYJuYur2b9P/PUt/i/pDAMd/DulQsNbbbmRRsDIQ==
 
-imports-loader@3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/imports-loader/-/imports-loader-3.0.0.tgz#069c314cb55a80e59ae72b5313273dafff8b3fc4"
-  integrity sha512-PhDB+rxpc95/1cM8ehxWAcuDIDi3eXhqHhax09iyUeAYBJ2bT6QbBp7aDj8IfU9Ns+2l1K226GhoWVAU823CTA==
+imports-loader@3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/imports-loader/-/imports-loader-3.1.0.tgz#d43449ac5948f7260226555ad8085896e012d5f6"
+  integrity sha512-W5hcDVhb7T2b2MsPOd9QcBIC36jS72ENAuOHWji8mWthuBDYpGoiAOtht6I/oWT+iyR4jP7LNZmgZJhe/Us1bg==
   dependencies:
     source-map "^0.6.1"
     strip-comments "^2.0.1"
