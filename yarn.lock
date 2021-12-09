@@ -4409,10 +4409,10 @@ eslint-plugin-react@7.27.1:
     semver "^6.3.0"
     string.prototype.matchall "^4.0.6"
 
-eslint-plugin-redux-saga@1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-redux-saga/-/eslint-plugin-redux-saga-1.2.2.tgz#930d82956d698cf47b296c77983d1ecf3b415ef3"
-  integrity sha512-C9fi03Gr4V8bYBS1TTDlIxAysPY0KfPf5NGCsOaE1DdUJF0p00VtIPaqNmLGKus5yINKwFdIeVpZdU9PvkipWg==
+eslint-plugin-redux-saga@1.3.2:
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-redux-saga/-/eslint-plugin-redux-saga-1.3.2.tgz#e9b386c4c9a3cd87b029a3f71ff8f791d53531d3"
+  integrity sha512-cqkzrmXhp9DEPnjqSb1dL89+0FQPydnLNsEb6MDie2tQWkYZqxq/OjUpOpT6IWJ9+weG4i/MBfbLFpP6zW+g4g==
 
 eslint-scope@5.1.1:
   version "5.1.1"
