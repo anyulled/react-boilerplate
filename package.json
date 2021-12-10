@@ -234,7 +234,7 @@
     "chai": "4.3.4",
     "chai-enzyme": "0.8.0",
     "cheerio": "0.22.0",
-    "copy-webpack-plugin": "10.0.0",
+    "copy-webpack-plugin": "10.1.0",
     "coveralls": "3.1.1",
     "css-loader": "6.5.1",
     "enzyme": "3.11.0",
