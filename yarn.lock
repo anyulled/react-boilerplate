@@ -1247,12 +1247,10 @@ acorn@^8.7.0:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.7.0.tgz#90951fde0f8f09df93549481e5fc141445b791cf"
   integrity sha512-V/LGr1APy+PXIwKebEWrkZPwoeoF+w1jiOBUmuxuiUIaOHtob8Qc9BTrYo7VuI5fR8tqsy+buA2WFooR5olqvQ==
 
-ag-grid-react@26.2.0:
-  version "26.2.0"
-  resolved "https://registry.yarnpkg.com/ag-grid-react/-/ag-grid-react-26.2.0.tgz#79e851130a1806a5d3d3ba004ca0eecc7f344a63"
-  integrity sha512-sFU1C3OFWun/V5l5+93b4XQegT+RA21AUY1TqUcHActDY0myeEllPJkR0xKj82EZuKihNuH52WQjOrrhzAjoHA==
-  dependencies:
-    prop-types "^15.6.2"
+ag-grid-react@27.0.0:
+  version "27.0.0"
+  resolved "https://registry.yarnpkg.com/ag-grid-react/-/ag-grid-react-27.0.0.tgz#11fc0c1da6dd09dfc4bd2c29a0b79623cfd92d40"
+  integrity sha512-b9S2jK/PvxemV2BdP34913/0prO9FsBzatkO8ycVo1K2OcsTb5c4zszXHwuh+rsx13pXjWBPNF01tTR+o9Tr0A==
 
 ag-grid@18.1.2:
   version "18.1.2"
