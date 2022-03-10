@@ -189,7 +189,7 @@
     "chalk": "5.0.0",
     "compression": "1.7.4",
     "cross-env": "7.0.3",
-    "express": "4.17.2",
+    "express": "4.17.3",
     "fontfaceobserver": "2.1.0",
     "immutable": "4.0.0",
     "intl": "1.2.5",
